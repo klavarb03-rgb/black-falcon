@@ -1,0 +1,41 @@
+import express, { Request, Response } from 'express';
+import helmet from 'helmet';
+import compression from 'compression';
+import bodyParser from 'body-parser';
+import { corsMiddleware } from './middleware/cors';
+import { errorHandler, notFoundHandler } from './middleware/errorHandler';
+import authRoutes from './routes/auth.routes';
+import userRoutes from './routes/user.routes';
+import itemRoutes from './routes/item.routes';
+
+const app = express();
+
+// Security & compression
+app.use(helmet());
+app.use(corsMiddleware);
+app.use(compression());
+
+// Body parsing
+app.use(bodyParser.json({ limit: '10mb' }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
+
+// Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/items', itemRoutes);
+
+// Health check
+app.get('/health', (_req: Request, res: Response) => {
+  res.status(200).json({
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    environment: process.env['NODE_ENV'] ?? 'development',
+  });
+});
+
+// 404 & error handlers (must be last)
+app.use(notFoundHandler);
+app.use(errorHandler);
+
+export default app;
