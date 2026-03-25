@@ -2,7 +2,7 @@ import { app, BrowserWindow, shell, ipcMain, safeStorage } from 'electron'
 import { join } from 'path'
 import * as fs from 'fs'
 import { is } from '@electron-toolkit/utils'
-import { initDatabase, closeDatabase } from '../src/database'
+import { initDatabase, closeDatabase, getDatabase } from '../src/database'
 
 const getTokenFilePath = (): string => join(app.getPath('userData'), '.auth_token')
 
@@ -32,6 +32,83 @@ function registerAuthHandlers(): void {
     if (fs.existsSync(filePath)) {
       fs.unlinkSync(filePath)
     }
+  })
+}
+
+interface CreateItemPayload {
+  name: string
+  status: 'government' | 'volunteer'
+  quantity: number
+  unit: string
+  description?: string
+  metadata?: string
+  ownerId: string
+  token: string
+}
+
+function registerItemHandlers(): void {
+  ipcMain.handle('items:create', async (_event, payload: CreateItemPayload) => {
+    const db = getDatabase()
+    const itemRepo = db.getRepository('Item')
+    const syncRepo = db.getRepository('SyncQueue')
+
+    // 1. Save to SQLite
+    const itemData = {
+      name: payload.name,
+      status: payload.status,
+      quantity: payload.quantity,
+      unit: payload.unit,
+      description: payload.description ?? null,
+      metadata: payload.metadata ?? null,
+      ownerId: payload.ownerId
+    }
+    const saved = await itemRepo.save(itemRepo.create(itemData))
+
+    // 2. Queue for sync
+    await syncRepo.save(
+      syncRepo.create({
+        entityType: 'item',
+        entityId: saved.id,
+        operation: 'create',
+        payload: JSON.stringify(saved),
+        synced: false
+      })
+    )
+
+    // 3. Best-effort immediate sync with backend
+    let synced = false
+    try {
+      const apiUrl = process.env['API_URL'] ?? 'http://localhost:3000/api'
+      const res = await fetch(`${apiUrl}/items`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${payload.token}`
+        },
+        body: JSON.stringify({
+          id: saved.id,
+          name: saved.name,
+          status: saved.status,
+          quantity: saved.quantity,
+          unit: saved.unit,
+          description: saved.description,
+          metadata: saved.metadata,
+          ownerId: saved.ownerId
+        }),
+        signal: AbortSignal.timeout(5000)
+      })
+      if (res.ok) {
+        const syncEntry = await syncRepo.findOneBy({ entityId: saved.id })
+        if (syncEntry) {
+          await syncRepo.save({ ...syncEntry, synced: true, syncedAt: new Date() })
+        }
+        synced = true
+      }
+    } catch {
+      // Offline or server unavailable — will sync later via sync queue
+    }
+
+    return { item: saved, synced }
   })
 }
 
@@ -74,6 +151,7 @@ function createWindow(): void {
 app.whenReady().then(async () => {
   await initDatabase()
   registerAuthHandlers()
+  registerItemHandlers()
   createWindow()
 
   // macOS: re-create window when dock icon is clicked and no windows are open

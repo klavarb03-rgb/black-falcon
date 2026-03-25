@@ -7,6 +7,8 @@ import { errorHandler, notFoundHandler } from './middleware/errorHandler';
 import authRoutes from './routes/auth.routes';
 import userRoutes from './routes/user.routes';
 import itemRoutes from './routes/item.routes';
+import operationRoutes from './routes/operation.routes';
+import reportRoutes from './routes/report.routes';
 
 const app = express();
 
@@ -23,6 +25,8 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/items', itemRoutes);
+app.use('/api/operations', operationRoutes);
+app.use('/api/reports', reportRoutes);
 
 // Health check
 app.get('/health', (_req: Request, res: Response) => {

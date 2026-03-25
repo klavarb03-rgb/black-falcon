@@ -402,6 +402,12 @@ async function initDatabase() {
   await dataSource.initialize();
   return dataSource;
 }
+function getDatabase() {
+  if (!dataSource || !dataSource.isInitialized) {
+    throw new Error("Database not initialized. Call initDatabase() first.");
+  }
+  return dataSource;
+}
 async function closeDatabase() {
   if (dataSource?.isInitialized) {
     await dataSource.destroy();
@@ -433,6 +439,63 @@ function registerAuthHandlers() {
     if (fs__namespace.existsSync(filePath)) {
       fs__namespace.unlinkSync(filePath);
     }
+  });
+}
+function registerItemHandlers() {
+  electron.ipcMain.handle("items:create", async (_event, payload) => {
+    const db = getDatabase();
+    const itemRepo = db.getRepository("Item");
+    const syncRepo = db.getRepository("SyncQueue");
+    const itemData = {
+      name: payload.name,
+      status: payload.status,
+      quantity: payload.quantity,
+      unit: payload.unit,
+      description: payload.description ?? null,
+      metadata: payload.metadata ?? null,
+      ownerId: payload.ownerId
+    };
+    const saved = await itemRepo.save(itemRepo.create(itemData));
+    await syncRepo.save(
+      syncRepo.create({
+        entityType: "item",
+        entityId: saved.id,
+        operation: "create",
+        payload: JSON.stringify(saved),
+        synced: false
+      })
+    );
+    let synced = false;
+    try {
+      const apiUrl = process.env["API_URL"] ?? "http://localhost:3000/api";
+      const res = await fetch(`${apiUrl}/items`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${payload.token}`
+        },
+        body: JSON.stringify({
+          id: saved.id,
+          name: saved.name,
+          status: saved.status,
+          quantity: saved.quantity,
+          unit: saved.unit,
+          description: saved.description,
+          metadata: saved.metadata,
+          ownerId: saved.ownerId
+        }),
+        signal: AbortSignal.timeout(5e3)
+      });
+      if (res.ok) {
+        const syncEntry = await syncRepo.findOneBy({ entityId: saved.id });
+        if (syncEntry) {
+          await syncRepo.save({ ...syncEntry, synced: true, syncedAt: /* @__PURE__ */ new Date() });
+        }
+        synced = true;
+      }
+    } catch {
+    }
+    return { item: saved, synced };
   });
 }
 function createWindow() {
@@ -467,6 +530,7 @@ function createWindow() {
 electron.app.whenReady().then(async () => {
   await initDatabase();
   registerAuthHandlers();
+  registerItemHandlers();
   createWindow();
   electron.app.on("activate", () => {
     if (electron.BrowserWindow.getAllWindows().length === 0) {

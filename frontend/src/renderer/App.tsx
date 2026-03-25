@@ -1,21 +1,43 @@
 import React, { useEffect, useState } from 'react'
 import { Layout } from '@components/Layout'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@components/ui/card'
-import { Button } from '@components/ui/button'
 import { LoginScreen } from './screens/LoginScreen'
+import { DashboardScreen } from './screens/DashboardScreen'
+import { ItemsListScreen } from './screens/ItemsListScreen'
+import { AddItemScreen } from './screens/AddItemScreen'
+import { WriteOffScreen } from './screens/WriteOffScreen'
+import { ReportsScreen } from './screens/ReportsScreen'
 import { useAuthStore } from './store/authStore'
 import { Loader2 } from 'lucide-react'
+
+function renderPage(page: string, onNavigate: (p: string) => void) {
+  switch (page) {
+    case 'dashboard':
+      return <DashboardScreen onNavigate={onNavigate} />
+    case 'inventory':
+      return <ItemsListScreen onNavigate={onNavigate} />
+    case 'add-item':
+      return <AddItemScreen onBack={() => onNavigate('inventory')} />
+    case 'writeoff':
+      return <WriteOffScreen onBack={() => onNavigate('dashboard')} />
+    case 'reports':
+      return <ReportsScreen />
+    default:
+      return (
+        <div className="flex items-center justify-center h-full text-muted-foreground text-sm">
+          Розділ у розробці
+        </div>
+      )
+  }
+}
 
 function App(): React.JSX.Element {
   const { isAuthenticated, isLoading, restoreSession } = useAuthStore()
   const [page, setPage] = useState('dashboard')
 
-  // Attempt to restore session from encrypted token on startup
   useEffect(() => {
     restoreSession()
   }, [restoreSession])
 
-  // Restoring session on startup
   if (isLoading) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-background">
@@ -27,57 +49,13 @@ function App(): React.JSX.Element {
     )
   }
 
-  // Not authenticated — show login screen
   if (!isAuthenticated) {
     return <LoginScreen />
   }
 
-  // Authenticated — show main app
   return (
     <Layout activePage={page} onNavigate={setPage}>
-      <div className="space-y-6">
-        <div className="grid gap-4 md:grid-cols-3">
-          <Card>
-            <CardHeader className="pb-2">
-              <CardDescription>Всього позицій</CardDescription>
-              <CardTitle className="text-3xl">—</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-xs text-muted-foreground">Інвентар не ініціалізовано</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="pb-2">
-              <CardDescription>Операцій сьогодні</CardDescription>
-              <CardTitle className="text-3xl">—</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-xs text-muted-foreground">Немає даних</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="pb-2">
-              <CardDescription>Активних донорів</CardDescription>
-              <CardTitle className="text-3xl">—</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-xs text-muted-foreground">Немає даних</p>
-            </CardContent>
-          </Card>
-        </div>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Ласкаво просимо до Black Falcon</CardTitle>
-            <CardDescription>
-              Система обліку та інвентаризації. Ініціалізуйте базу даних для початку роботи.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button>Ініціалізувати базу даних</Button>
-          </CardContent>
-        </Card>
-      </div>
+      {renderPage(page, setPage)}
     </Layout>
   )
 }

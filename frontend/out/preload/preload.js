@@ -17,6 +17,9 @@ if (process.contextIsolated) {
       getToken: () => electron.ipcRenderer.invoke("auth:getToken"),
       clearToken: () => electron.ipcRenderer.invoke("auth:clearToken")
     });
+    electron.contextBridge.exposeInMainWorld("itemsAPI", {
+      createItem: (input) => electron.ipcRenderer.invoke("items:create", input)
+    });
   } catch (error) {
     console.error(error);
   }

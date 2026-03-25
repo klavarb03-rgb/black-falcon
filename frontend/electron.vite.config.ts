@@ -11,8 +11,13 @@ export default defineConfig({
       }
     },
     build: {
-      lib: {
-        entry: resolve(__dirname, 'electron/main.ts')
+      rollupOptions: {
+        input: {
+          index: resolve(__dirname, 'electron/main.ts')
+        },
+        output: {
+          format: 'cjs'
+        }
       }
     },
     plugins: [externalizeDepsPlugin()]
