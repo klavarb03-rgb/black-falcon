@@ -28,8 +28,8 @@ export class Operation {
   @JoinColumn({ name: 'item_id' })
   item!: Item;
 
-  @Column({ type: 'int', name: 'quantity_delta' })
-  quantityDelta!: number; // positive = in, negative = out
+  @Column({ type: 'numeric', name: 'quantity' })
+  quantity!: number;
 
   @Column({ type: 'uuid', nullable: true, name: 'from_user_id' })
   fromUserId!: string | null;

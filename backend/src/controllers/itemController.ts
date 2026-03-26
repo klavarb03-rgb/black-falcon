@@ -257,7 +257,8 @@ export async function transferToBalance(
       operationRepo.create({
         type: 'transfer_to_balance',
         itemId: item.id,
-        quantityDelta: 0,
+        quantity: item.quantity || 1,
+        toUserId: item.ownerId, // Встановлюємо to_user_id щоб задовольнити constraint
         createdById: req.user!.userId,
         notes: `Transferred to balance. Document: ${document_number}, Supplier: ${supplier_name}`,
         metadata: {

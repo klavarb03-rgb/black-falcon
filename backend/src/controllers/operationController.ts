@@ -118,7 +118,7 @@ export async function createTransfer(
       itemId,
       fromUserId,
       toUserId,
-      quantityDelta: -quantity,
+      quantity: -quantity,
       createdById,
       notes: notes ?? null,
       metadata: {
@@ -193,7 +193,7 @@ export async function createWriteoff(
       itemId,
       fromUserId: item.ownerId,
       toUserId: null,
-      quantityDelta: -quantity,
+      quantity: -quantity,
       createdById,
       notes: reason ?? null,
       metadata,
