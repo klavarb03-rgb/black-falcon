@@ -108,7 +108,6 @@ export async function createTransfer(
         donorId: item.donorId,
         ownerId: toUserId,
         metadata: item.metadata,
-        deletedAt: IsNull(),
       });
       receiverItem = await queryRunner.manager.save(Item, receiverItem);
     }

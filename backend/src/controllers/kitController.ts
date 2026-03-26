@@ -87,7 +87,6 @@ export async function createTemplate(req: Request, res: Response, next: NextFunc
       description: description ?? null,
       items: validatedItems,
       metadata: metadata ?? null,
-      deletedAt: IsNull(),
     });
 
     res.status(201).json({ status: 'success', data: template });
@@ -283,7 +282,6 @@ export async function assembleKit(req: Request, res: Response, next: NextFunctio
           ownerId,
           items: validatedItems,
           metadata: metadata ?? null,
-          deletedAt: IsNull(),
           version: 1,
         }),
       );
