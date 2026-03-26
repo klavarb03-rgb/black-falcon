@@ -5,119 +5,45 @@ npm warn Unknown env config "_jsr-registry". This will stop working in the next 
 > backend@1.0.0 start
 > node dist/src/server.js
 
-[dotenv@17.3.1] injecting env (11) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[dotenv@17.3.1] injecting env (11) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
 [server] Running on http://0.0.0.0:3000
 [server] Environment: development
 [server] Health check: http://0.0.0.0:3000/health
-[Error] Error: Route not found
-    at notFoundHandler (/Users/contfactory/black-falcon/backend/dist/src/middleware/errorHandler.js:18:19)
-    at Layer.handleRequest (/Users/contfactory/black-falcon/backend/node_modules/router/lib/layer.js:152:17)
-    at trimPrefix (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:342:13)
-    at /Users/contfactory/black-falcon/backend/node_modules/router/index.js:297:9
-    at processParams (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:582:12)
-    at next (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:291:5)
-    at read (/Users/contfactory/black-falcon/backend/node_modules/body-parser/lib/read.js:53:5)
-    at urlencodedParser (/Users/contfactory/black-falcon/backend/node_modules/body-parser/lib/types/urlencoded.js:57:5)
-    at Layer.handleRequest (/Users/contfactory/black-falcon/backend/node_modules/router/lib/layer.js:152:17)
-    at trimPrefix (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:342:13)
-    at /Users/contfactory/black-falcon/backend/node_modules/router/index.js:297:9
-    at processParams (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:582:12)
-    at next (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:291:5)
-    at read (/Users/contfactory/black-falcon/backend/node_modules/body-parser/lib/read.js:53:5)
-    at jsonParser (/Users/contfactory/black-falcon/backend/node_modules/body-parser/lib/types/json.js:88:5)
-    at Layer.handleRequest (/Users/contfactory/black-falcon/backend/node_modules/router/lib/layer.js:152:17) {
-  statusCode: 404,
-  isOperational: true
-}
-[Error] Error: Authentication required
-    at authenticate (/Users/contfactory/black-falcon/backend/dist/src/middleware/auth.js:9:21)
-    at Layer.handleRequest (/Users/contfactory/black-falcon/backend/node_modules/router/lib/layer.js:152:17)
-    at trimPrefix (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:342:13)
-    at /Users/contfactory/black-falcon/backend/node_modules/router/index.js:297:9
-    at processParams (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:582:12)
-    at next (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:291:5)
-    at router.handle (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:186:3)
-    at router (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:60:12)
-    at Layer.handleRequest (/Users/contfactory/black-falcon/backend/node_modules/router/lib/layer.js:152:17)
-    at trimPrefix (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:342:13)
-    at /Users/contfactory/black-falcon/backend/node_modules/router/index.js:297:9
-    at processParams (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:582:12)
-    at next (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:291:5)
-    at read (/Users/contfactory/black-falcon/backend/node_modules/body-parser/lib/read.js:53:5)
-    at urlencodedParser (/Users/contfactory/black-falcon/backend/node_modules/body-parser/lib/types/urlencoded.js:57:5)
-    at Layer.handleRequest (/Users/contfactory/black-falcon/backend/node_modules/router/lib/layer.js:152:17) {
-  statusCode: 401,
-  isOperational: true
-}
-[Error] Error: Authentication required
-    at authenticate (/Users/contfactory/black-falcon/backend/dist/src/middleware/auth.js:9:21)
-    at Layer.handleRequest (/Users/contfactory/black-falcon/backend/node_modules/router/lib/layer.js:152:17)
-    at trimPrefix (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:342:13)
-    at /Users/contfactory/black-falcon/backend/node_modules/router/index.js:297:9
-    at processParams (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:582:12)
-    at next (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:291:5)
-    at router.handle (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:186:3)
-    at router (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:60:12)
-    at Layer.handleRequest (/Users/contfactory/black-falcon/backend/node_modules/router/lib/layer.js:152:17)
-    at trimPrefix (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:342:13)
-    at /Users/contfactory/black-falcon/backend/node_modules/router/index.js:297:9
-    at processParams (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:582:12)
-    at next (/Users/contfactory/black-falcon/backend/node_modules/router/index.js:291:5)
-    at read (/Users/contfactory/black-falcon/backend/node_modules/body-parser/lib/read.js:53:5)
-    at urlencodedParser (/Users/contfactory/black-falcon/backend/node_modules/body-parser/lib/types/urlencoded.js:57:5)
-    at Layer.handleRequest (/Users/contfactory/black-falcon/backend/node_modules/router/lib/layer.js:152:17) {
-  statusCode: 401,
-  isOperational: true
-}
 query: SELECT version()
 query: SELECT * FROM current_schema()
 query: CREATE EXTENSION IF NOT EXISTS "uuid-ossp"
-query: SELECT "User"."id" AS "User_id", "User"."email" AS "User_email", "User"."password_hash" AS "User_password_hash", "User"."name" AS "User_name", "User"."role" AS "User_role", "User"."is_active" AS "User_is_active", "User"."metadata" AS "User_metadata", "User"."version" AS "User_version", "User"."deleted_at" AS "User_deleted_at", "User"."created_at" AS "User_created_at", "User"."updated_at" AS "User_updated_at" FROM "users" "User" WHERE (("User"."email" = $1) AND ("User"."deleted_at" IS NULL)) LIMIT 1 -- PARAMETERS: ["admin@test.com"]
-query: START TRANSACTION
-query: INSERT INTO "items"("id", "name", "description", "status", "quantity", "unit", "ownerId", "groupId", "donorId", "balance_status", "document_number", "document_date", "supplier_name", "isDeleted", "version", "metadata", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, DEFAULT, $14, DEFAULT, DEFAULT) RETURNING "id", "quantity", "balance_status", "isDeleted", "version", "createdAt", "updatedAt" -- PARAMETERS: ["QA Test OFF_BALANCE Item",null,"volunteer",5,"pcs","4cf9e84f-3c12-41da-8a82-075f7a98426b",null,null,"off_balance",null,null,null,false,null]
-query failed: INSERT INTO "items"("id", "name", "description", "status", "quantity", "unit", "ownerId", "groupId", "donorId", "balance_status", "document_number", "document_date", "supplier_name", "isDeleted", "version", "metadata", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, DEFAULT, $14, DEFAULT, DEFAULT) RETURNING "id", "quantity", "balance_status", "isDeleted", "version", "createdAt", "updatedAt" -- PARAMETERS: ["QA Test OFF_BALANCE Item",null,"volunteer",5,"pcs","4cf9e84f-3c12-41da-8a82-075f7a98426b",null,null,"off_balance",null,null,null,false,null]
-error: error: column "ownerId" of relation "items" does not exist
-query: ROLLBACK
-[Error] QueryFailedError: column "ownerId" of relation "items" does not exist
+query: SELECT "User"."id" AS "User_id", "User"."email" AS "User_email", "User"."password_hash" AS "User_password_hash", "User"."name" AS "User_name", "User"."role" AS "User_role", "User"."is_active" AS "User_is_active", "User"."metadata" AS "User_metadata", "User"."version" AS "User_version", "User"."deleted_at" AS "User_deleted_at", "User"."created_at" AS "User_created_at", "User"."updated_at" AS "User_updated_at" FROM "users" "User" WHERE (("User"."email" = $1) AND ("User"."deleted_at" IS NULL)) LIMIT 1 -- PARAMETERS: ["admin"]
+query: SELECT "User"."id" AS "User_id", "User"."email" AS "User_email", "User"."password_hash" AS "User_password_hash", "User"."name" AS "User_name", "User"."role" AS "User_role", "User"."is_active" AS "User_is_active", "User"."metadata" AS "User_metadata", "User"."version" AS "User_version", "User"."deleted_at" AS "User_deleted_at", "User"."created_at" AS "User_created_at", "User"."updated_at" AS "User_updated_at" FROM "users" "User" WHERE (("User"."email" = $1) AND ("User"."deleted_at" IS NULL)) LIMIT 1 -- PARAMETERS: ["admin"]
+query: SELECT "User"."id" AS "User_id", "User"."email" AS "User_email", "User"."password_hash" AS "User_password_hash", "User"."name" AS "User_name", "User"."role" AS "User_role", "User"."is_active" AS "User_is_active", "User"."metadata" AS "User_metadata", "User"."version" AS "User_version", "User"."deleted_at" AS "User_deleted_at", "User"."created_at" AS "User_created_at", "User"."updated_at" AS "User_updated_at" FROM "users" "User" WHERE (("User"."email" = $1) AND ("User"."deleted_at" IS NULL)) LIMIT 1 -- PARAMETERS: ["qa@test.com"]
+query: SELECT "User"."id" AS "User_id", "User"."email" AS "User_email", "User"."password_hash" AS "User_password_hash", "User"."name" AS "User_name", "User"."role" AS "User_role", "User"."is_active" AS "User_is_active", "User"."metadata" AS "User_metadata", "User"."version" AS "User_version", "User"."deleted_at" AS "User_deleted_at", "User"."created_at" AS "User_created_at", "User"."updated_at" AS "User_updated_at" FROM "users" "User" WHERE (("User"."email" = $1) AND ("User"."deleted_at" IS NULL)) LIMIT 1 -- PARAMETERS: ["qa@test.com"]
+query: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+query failed: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+error: error: column Item__Item_donor.description does not exist
+[Error] QueryFailedError: column Item__Item_donor.description does not exist
     at PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)
     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
-    at async InsertQueryBuilder.execute (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/InsertQueryBuilder.js:106:33)
-    at async SubjectExecutor.executeInsertOperations (/Users/contfactory/black-falcon/backend/node_modules/typeorm/persistence/SubjectExecutor.js:260:42)
-    at async SubjectExecutor.execute (/Users/contfactory/black-falcon/backend/node_modules/typeorm/persistence/SubjectExecutor.js:92:9)
-    at async EntityPersistExecutor.execute (/Users/contfactory/black-falcon/backend/node_modules/typeorm/persistence/EntityPersistExecutor.js:140:21)
-    at async createItem (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:30:22) {
-  query: 'INSERT INTO "items"("id", "name", "description", "status", "quantity", "unit", "ownerId", "groupId", "donorId", "balance_status", "document_number", "document_date", "supplier_name", "isDeleted", "version", "metadata", "createdAt", "updatedAt") VALUES (DEFAULT, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, DEFAULT, $14, DEFAULT, DEFAULT) RETURNING "id", "quantity", "balance_status", "isDeleted", "version", "createdAt", "updatedAt"',
-  parameters: [
-    'QA Test OFF_BALANCE Item',
-    null,
-    'volunteer',
-    5,
-    'pcs',
-    '4cf9e84f-3c12-41da-8a82-075f7a98426b',
-    null,
-    null,
-    'off_balance',
-    null,
-    null,
-    null,
-    false,
-    null
-  ],
-  driverError: error: column "ownerId" of relation "items" does not exist
+    at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+    at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+    at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+    at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+  query: 'SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0',
+  parameters: [],
+  driverError: error: column Item__Item_donor.description does not exist
       at /Users/contfactory/black-falcon/backend/node_modules/pg/lib/client.js:631:17
       at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
       at async PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:181:25)
-      at async InsertQueryBuilder.execute (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/InsertQueryBuilder.js:106:33)
-      at async SubjectExecutor.executeInsertOperations (/Users/contfactory/black-falcon/backend/node_modules/typeorm/persistence/SubjectExecutor.js:260:42)
-      at async SubjectExecutor.execute (/Users/contfactory/black-falcon/backend/node_modules/typeorm/persistence/SubjectExecutor.js:92:9)
-      at async EntityPersistExecutor.execute (/Users/contfactory/black-falcon/backend/node_modules/typeorm/persistence/EntityPersistExecutor.js:140:21)
-      at async createItem (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:30:22) {
-    length: 125,
+      at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+      at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+      at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+      at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+      at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+    length: 128,
     severity: 'ERROR',
     code: '42703',
     detail: undefined,
     hint: undefined,
-    position: '80',
+    position: '2010',
     internalPosition: undefined,
     internalQuery: undefined,
     where: undefined,
@@ -126,16 +52,16 @@ query: ROLLBACK
     column: undefined,
     dataType: undefined,
     constraint: undefined,
-    file: 'parse_target.c',
-    line: '1071',
-    routine: 'checkInsertTargets'
+    file: 'parse_relation.c',
+    line: '3727',
+    routine: 'errorMissingColumn'
   },
-  length: 125,
+  length: 128,
   severity: 'ERROR',
   code: '42703',
   detail: undefined,
   hint: undefined,
-  position: '80',
+  position: '2010',
   internalPosition: undefined,
   internalQuery: undefined,
   where: undefined,
@@ -144,9 +70,877 @@ query: ROLLBACK
   column: undefined,
   dataType: undefined,
   constraint: undefined,
-  file: 'parse_target.c',
-  line: '1071',
-  routine: 'checkInsertTargets'
+  file: 'parse_relation.c',
+  line: '3727',
+  routine: 'errorMissingColumn'
 }
-[server] SIGTERM received, shutting down gracefully
-[server] Closed
+query: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+query failed: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+error: error: column Item__Item_donor.contactInfo does not exist
+[Error] QueryFailedError: column Item__Item_donor.contactInfo does not exist
+    at PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+    at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+    at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+    at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+  query: 'SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0',
+  parameters: [],
+  driverError: error: column Item__Item_donor.contactInfo does not exist
+      at /Users/contfactory/black-falcon/backend/node_modules/pg/lib/client.js:631:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:181:25)
+      at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+      at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+      at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+      at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+      at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+    length: 204,
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+    position: '2078',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3738',
+    routine: 'errorMissingColumn'
+  },
+  length: 204,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+  position: '2078',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3738',
+  routine: 'errorMissingColumn'
+}
+query: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+query failed: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+error: error: column Item__Item_donor.contactInfo does not exist
+[Error] QueryFailedError: column Item__Item_donor.contactInfo does not exist
+    at PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+    at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+    at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+    at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+  query: 'SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0',
+  parameters: [],
+  driverError: error: column Item__Item_donor.contactInfo does not exist
+      at /Users/contfactory/black-falcon/backend/node_modules/pg/lib/client.js:631:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:181:25)
+      at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+      at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+      at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+      at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+      at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+    length: 204,
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+    position: '2078',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3738',
+    routine: 'errorMissingColumn'
+  },
+  length: 204,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+  position: '2078',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3738',
+  routine: 'errorMissingColumn'
+}
+query: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+query failed: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+error: error: column Item__Item_donor.contactInfo does not exist
+[Error] QueryFailedError: column Item__Item_donor.contactInfo does not exist
+    at PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+    at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+    at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+    at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+  query: 'SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0',
+  parameters: [],
+  driverError: error: column Item__Item_donor.contactInfo does not exist
+      at /Users/contfactory/black-falcon/backend/node_modules/pg/lib/client.js:631:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:181:25)
+      at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+      at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+      at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+      at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+      at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+    length: 204,
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+    position: '2078',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3738',
+    routine: 'errorMissingColumn'
+  },
+  length: 204,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+  position: '2078',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3738',
+  routine: 'errorMissingColumn'
+}
+query: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+query failed: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+error: error: column Item__Item_donor.contactInfo does not exist
+[Error] QueryFailedError: column Item__Item_donor.contactInfo does not exist
+    at PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+    at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+    at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+    at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+  query: 'SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0',
+  parameters: [],
+  driverError: error: column Item__Item_donor.contactInfo does not exist
+      at /Users/contfactory/black-falcon/backend/node_modules/pg/lib/client.js:631:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:181:25)
+      at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+      at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+      at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+      at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+      at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+    length: 204,
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+    position: '2078',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3738',
+    routine: 'errorMissingColumn'
+  },
+  length: 204,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+  position: '2078',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3738',
+  routine: 'errorMissingColumn'
+}
+query: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+query failed: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+error: error: column Item__Item_donor.contactInfo does not exist
+[Error] QueryFailedError: column Item__Item_donor.contactInfo does not exist
+    at PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+    at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+    at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+    at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+  query: 'SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0',
+  parameters: [],
+  driverError: error: column Item__Item_donor.contactInfo does not exist
+      at /Users/contfactory/black-falcon/backend/node_modules/pg/lib/client.js:631:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:181:25)
+      at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+      at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+      at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+      at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+      at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+    length: 204,
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+    position: '2078',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3738',
+    routine: 'errorMissingColumn'
+  },
+  length: 204,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+  position: '2078',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3738',
+  routine: 'errorMissingColumn'
+}
+query: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+query failed: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+error: error: column Item__Item_donor.contactInfo does not exist
+[Error] QueryFailedError: column Item__Item_donor.contactInfo does not exist
+    at PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+    at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+    at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+    at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+  query: 'SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0',
+  parameters: [],
+  driverError: error: column Item__Item_donor.contactInfo does not exist
+      at /Users/contfactory/black-falcon/backend/node_modules/pg/lib/client.js:631:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:181:25)
+      at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+      at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+      at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+      at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+      at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+    length: 204,
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+    position: '2078',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3738',
+    routine: 'errorMissingColumn'
+  },
+  length: 204,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+  position: '2078',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3738',
+  routine: 'errorMissingColumn'
+}
+query: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 1 OFFSET 0
+query failed: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 1 OFFSET 0
+error: error: column Item__Item_donor.contactInfo does not exist
+[Error] QueryFailedError: column Item__Item_donor.contactInfo does not exist
+    at PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+    at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+    at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+    at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+  query: 'SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 1 OFFSET 0',
+  parameters: [],
+  driverError: error: column Item__Item_donor.contactInfo does not exist
+      at /Users/contfactory/black-falcon/backend/node_modules/pg/lib/client.js:631:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:181:25)
+      at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+      at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+      at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+      at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+      at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+    length: 204,
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+    position: '2078',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3738',
+    routine: 'errorMissingColumn'
+  },
+  length: 204,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+  position: '2078',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3738',
+  routine: 'errorMissingColumn'
+}
+query: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+query failed: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+error: error: column Item__Item_donor.contactInfo does not exist
+[Error] QueryFailedError: column Item__Item_donor.contactInfo does not exist
+    at PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+    at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+    at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+    at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+  query: 'SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0',
+  parameters: [],
+  driverError: error: column Item__Item_donor.contactInfo does not exist
+      at /Users/contfactory/black-falcon/backend/node_modules/pg/lib/client.js:631:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:181:25)
+      at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+      at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+      at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+      at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+      at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+    length: 204,
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+    position: '2078',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3738',
+    routine: 'errorMissingColumn'
+  },
+  length: 204,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+  position: '2078',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3738',
+  routine: 'errorMissingColumn'
+}
+query: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+query failed: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+error: error: column Item__Item_donor.contactInfo does not exist
+[Error] QueryFailedError: column Item__Item_donor.contactInfo does not exist
+    at PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+    at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+    at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+    at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+  query: 'SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0',
+  parameters: [],
+  driverError: error: column Item__Item_donor.contactInfo does not exist
+      at /Users/contfactory/black-falcon/backend/node_modules/pg/lib/client.js:631:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:181:25)
+      at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+      at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+      at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+      at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+      at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+    length: 204,
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+    position: '2078',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3738',
+    routine: 'errorMissingColumn'
+  },
+  length: 204,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+  position: '2078',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3738',
+  routine: 'errorMissingColumn'
+}
+query: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+query failed: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+error: error: column Item__Item_donor.contactInfo does not exist
+[Error] QueryFailedError: column Item__Item_donor.contactInfo does not exist
+    at PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+    at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+    at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+    at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+  query: 'SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0',
+  parameters: [],
+  driverError: error: column Item__Item_donor.contactInfo does not exist
+      at /Users/contfactory/black-falcon/backend/node_modules/pg/lib/client.js:631:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:181:25)
+      at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+      at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+      at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+      at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+      at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+    length: 204,
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+    position: '2078',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3738',
+    routine: 'errorMissingColumn'
+  },
+  length: 204,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+  position: '2078',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3738',
+  routine: 'errorMissingColumn'
+}
+query: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+query failed: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+error: error: column Item__Item_donor.contactInfo does not exist
+[Error] QueryFailedError: column Item__Item_donor.contactInfo does not exist
+    at PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+    at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+    at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+    at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+  query: 'SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0',
+  parameters: [],
+  driverError: error: column Item__Item_donor.contactInfo does not exist
+      at /Users/contfactory/black-falcon/backend/node_modules/pg/lib/client.js:631:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:181:25)
+      at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+      at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+      at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+      at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+      at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+    length: 204,
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+    position: '2078',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3738',
+    routine: 'errorMissingColumn'
+  },
+  length: 204,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+  position: '2078',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3738',
+  routine: 'errorMissingColumn'
+}
+query: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+query failed: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+error: error: column Item__Item_donor.contactInfo does not exist
+[Error] QueryFailedError: column Item__Item_donor.contactInfo does not exist
+    at PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+    at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+    at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+    at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+  query: 'SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0',
+  parameters: [],
+  driverError: error: column Item__Item_donor.contactInfo does not exist
+      at /Users/contfactory/black-falcon/backend/node_modules/pg/lib/client.js:631:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:181:25)
+      at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+      at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+      at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+      at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+      at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+    length: 204,
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+    position: '2078',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3738',
+    routine: 'errorMissingColumn'
+  },
+  length: 204,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+  position: '2078',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3738',
+  routine: 'errorMissingColumn'
+}
+query: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+query failed: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+error: error: column Item__Item_donor.contactInfo does not exist
+[Error] QueryFailedError: column Item__Item_donor.contactInfo does not exist
+    at PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+    at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+    at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+    at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+  query: 'SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0',
+  parameters: [],
+  driverError: error: column Item__Item_donor.contactInfo does not exist
+      at /Users/contfactory/black-falcon/backend/node_modules/pg/lib/client.js:631:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:181:25)
+      at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+      at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+      at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+      at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+      at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+    length: 204,
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+    position: '2078',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3738',
+    routine: 'errorMissingColumn'
+  },
+  length: 204,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+  position: '2078',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3738',
+  routine: 'errorMissingColumn'
+}
+query: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+query failed: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+error: error: column Item__Item_donor.contactInfo does not exist
+[Error] QueryFailedError: column Item__Item_donor.contactInfo does not exist
+    at PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+    at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+    at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+    at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+  query: 'SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0',
+  parameters: [],
+  driverError: error: column Item__Item_donor.contactInfo does not exist
+      at /Users/contfactory/black-falcon/backend/node_modules/pg/lib/client.js:631:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:181:25)
+      at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+      at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+      at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+      at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+      at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+    length: 204,
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+    position: '2078',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3738',
+    routine: 'errorMissingColumn'
+  },
+  length: 204,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+  position: '2078',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3738',
+  routine: 'errorMissingColumn'
+}
+query: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+query failed: SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0
+error: error: column Item__Item_donor.contactInfo does not exist
+[Error] QueryFailedError: column Item__Item_donor.contactInfo does not exist
+    at PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:216:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+    at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+    at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+    at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+  query: 'SELECT DISTINCT "distinctAlias"."Item_id" AS "ids_Item_id", "distinctAlias"."Item_created_at" FROM (SELECT "Item"."id" AS "Item_id", "Item"."name" AS "Item_name", "Item"."description" AS "Item_description", "Item"."status" AS "Item_status", "Item"."quantity" AS "Item_quantity", "Item"."unit" AS "Item_unit", "Item"."user_id" AS "Item_user_id", "Item"."group_id" AS "Item_group_id", "Item"."donor_id" AS "Item_donor_id", "Item"."balance_status" AS "Item_balance_status", "Item"."document_number" AS "Item_document_number", "Item"."document_date" AS "Item_document_date", "Item"."supplier_name" AS "Item_supplier_name", "Item"."deleted_at" AS "Item_deleted_at", "Item"."version" AS "Item_version", "Item"."metadata" AS "Item_metadata", "Item"."created_at" AS "Item_created_at", "Item"."updated_at" AS "Item_updated_at", "Item__Item_owner"."id" AS "Item__Item_owner_id", "Item__Item_owner"."email" AS "Item__Item_owner_email", "Item__Item_owner"."password_hash" AS "Item__Item_owner_password_hash", "Item__Item_owner"."name" AS "Item__Item_owner_name", "Item__Item_owner"."role" AS "Item__Item_owner_role", "Item__Item_owner"."is_active" AS "Item__Item_owner_is_active", "Item__Item_owner"."metadata" AS "Item__Item_owner_metadata", "Item__Item_owner"."version" AS "Item__Item_owner_version", "Item__Item_owner"."deleted_at" AS "Item__Item_owner_deleted_at", "Item__Item_owner"."created_at" AS "Item__Item_owner_created_at", "Item__Item_owner"."updated_at" AS "Item__Item_owner_updated_at", "Item__Item_group"."id" AS "Item__Item_group_id", "Item__Item_group"."name" AS "Item__Item_group_name", "Item__Item_group"."level" AS "Item__Item_group_level", "Item__Item_group"."parent_id" AS "Item__Item_group_parent_id", "Item__Item_group"."user_id" AS "Item__Item_group_user_id", "Item__Item_group"."created_at" AS "Item__Item_group_created_at", "Item__Item_group"."updated_at" AS "Item__Item_group_updated_at", "Item__Item_donor"."id" AS "Item__Item_donor_id", "Item__Item_donor"."name" AS "Item__Item_donor_name", "Item__Item_donor"."description" AS "Item__Item_donor_description", "Item__Item_donor"."contactInfo" AS "Item__Item_donor_contactInfo", "Item__Item_donor"."deleted_at" AS "Item__Item_donor_deleted_at", "Item__Item_donor"."metadata" AS "Item__Item_donor_metadata", "Item__Item_donor"."created_at" AS "Item__Item_donor_created_at", "Item__Item_donor"."updated_at" AS "Item__Item_donor_updated_at" FROM "items" "Item" LEFT JOIN "users" "Item__Item_owner" ON "Item__Item_owner"."id"="Item"."user_id"  LEFT JOIN "item_groups" "Item__Item_group" ON "Item__Item_group"."id"="Item"."group_id"  LEFT JOIN "donors" "Item__Item_donor" ON "Item__Item_donor"."id"="Item"."donor_id" WHERE (("Item"."deleted_at" IS NULL))) "distinctAlias" ORDER BY "distinctAlias"."Item_created_at" DESC, "Item_id" ASC LIMIT 20 OFFSET 0',
+  parameters: [],
+  driverError: error: column Item__Item_donor.contactInfo does not exist
+      at /Users/contfactory/black-falcon/backend/node_modules/pg/lib/client.js:631:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async PostgresQueryRunner.query (/Users/contfactory/black-falcon/backend/node_modules/typeorm/driver/postgres/PostgresQueryRunner.js:181:25)
+      at async SelectQueryBuilder.loadRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2231:25)
+      at async SelectQueryBuilder.getRawMany (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:646:29)
+      at async SelectQueryBuilder.executeEntitiesAndRawResults (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:2018:26)
+      at async SelectQueryBuilder.getManyAndCount (/Users/contfactory/black-falcon/backend/node_modules/typeorm/query-builder/SelectQueryBuilder.js:850:36)
+      at async getItems (/Users/contfactory/black-falcon/backend/dist/src/controllers/itemController.js:73:32) {
+    length: 204,
+    severity: 'ERROR',
+    code: '42703',
+    detail: undefined,
+    hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+    position: '2078',
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'parse_relation.c',
+    line: '3738',
+    routine: 'errorMissingColumn'
+  },
+  length: 204,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "Item__Item_donor.contact_info".',
+  position: '2078',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3738',
+  routine: 'errorMissingColumn'
+}

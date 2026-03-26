@@ -5,9 +5,7 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
-  OneToMany,
 } from 'typeorm';
-import { Item } from './Item';
 
 @Entity('donors')
 export class Donor {
@@ -20,26 +18,22 @@ export class Donor {
   @Column({ type: 'text', nullable: true })
   description!: string | null;
 
-  @Column({ type: 'varchar', length: 255, nullable: true })
-  contactInfo!: string | null;
+  // Using snake_case to match DB column exactly (TypeORM limitation)
+  @Column({ type: 'jsonb', nullable: false, default: '{}' })
+  contact_info!: Record<string, unknown>;
 
-  @Column({ type: 'timestamptz', nullable: true, name: 'deleted_at' })
-  deletedAt!: Date | null;
-  
-  // Compatibility getter for soft delete
-  get isDeleted(): boolean {
-    return this.deletedAt !== null;
-  }
+  @Column({ type: 'text', nullable: true })
+  notes!: string | null;
 
-  @Column({ type: 'jsonb', nullable: true })
-  metadata!: Record<string, unknown> | null;
+  @Column({ type: 'int', default: 1 })
+  version!: number;
 
-  @CreateDateColumn({ type: 'timestamptz', name: 'created_at' })
-  createdAt!: Date;
+  @Column({ type: 'timestamptz', nullable: true })
+  deleted_at!: Date | null;
 
-  @UpdateDateColumn({ type: 'timestamptz', name: 'updated_at' })
-  updatedAt!: Date;
+  @CreateDateColumn({ type: 'timestamptz' })
+  created_at!: Date;
 
-  @OneToMany(() => Item, (item) => item.donor)
-  items!: Item[];
+  @UpdateDateColumn({ type: 'timestamptz' })
+  updated_at!: Date;
 }

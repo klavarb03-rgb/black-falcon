@@ -54,7 +54,7 @@ export class Item {
   @Column({ type: 'uuid', nullable: true, name: 'donor_id' })
   donorId!: string | null;
 
-  @ManyToOne(() => Donor, (donor) => donor.items, { nullable: true, onDelete: 'SET NULL' })
+  @ManyToOne(() => Donor, { nullable: true, onDelete: 'SET NULL' })
   @JoinColumn({ name: 'donor_id' })
   donor!: Donor | null;
 

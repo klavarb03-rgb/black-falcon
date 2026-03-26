@@ -9,19 +9,19 @@ export class DonorRepository {
   }
 
   findById(id: string): Promise<Donor | null> {
-    return this.repo.findOne({ where: { id, deletedAt: IsNull() } });
+    return this.repo.findOne({ where: { id, deleted_at: IsNull() } as any });
   }
 
   findAll(): Promise<Donor[]> {
     return this.repo.find({
-      where: { deletedAt: IsNull() },
+      where: { deleted_at: IsNull() } as any,
       order: { name: 'ASC' },
     });
   }
 
   findPaginated(page: number, limit: number): Promise<[Donor[], number]> {
     return this.repo.findAndCount({
-      where: { deletedAt: IsNull() },
+      where: { deleted_at: IsNull() } as any,
       order: { name: 'ASC' },
       skip: (page - 1) * limit,
       take: limit,
@@ -39,6 +39,6 @@ export class DonorRepository {
   }
 
   async softDelete(id: string): Promise<void> {
-    await this.repo.update(id, { deletedAt: new Date() } as any);
+    await this.repo.update(id, { deleted_at: new Date() } as any);
   }
 }

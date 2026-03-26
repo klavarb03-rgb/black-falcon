@@ -47,7 +47,7 @@ export async function getDonors(req: Request, res: Response, next: NextFunction)
 // POST /api/donors
 export async function createDonor(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    const { name, description, contactInfo, metadata } = req.body;
+    const { name, description, contactInfo, notes } = req.body;
 
     if (!name || typeof name !== 'string' || !name.trim()) {
       return badRequest(next, "Ім'я донора є обов'язковим");
@@ -58,8 +58,8 @@ export async function createDonor(req: Request, res: Response, next: NextFunctio
     const donor = await donorRepo.save({
       name: (name as string).trim(),
       description: description ?? null,
-      contactInfo: contactInfo ?? null,
-      metadata: metadata ?? null,
+      contact_info: contactInfo ?? {},
+      notes: notes ?? null,
     });
 
     res.status(201).json({ status: 'success', data: donor });
@@ -77,7 +77,7 @@ export async function updateDonor(req: Request, res: Response, next: NextFunctio
 
     if (!donor) return notFound(next);
 
-    const { name, description, contactInfo, metadata } = req.body;
+    const { name, description, contactInfo, notes } = req.body;
 
     if (name !== undefined && (typeof name !== 'string' || !name.trim())) {
       return badRequest(next, "Ім'я донора не може бути порожнім");
@@ -86,8 +86,8 @@ export async function updateDonor(req: Request, res: Response, next: NextFunctio
     const updated = await donorRepo.update(donor.id, {
       ...(name !== undefined && { name: (name as string).trim() }),
       ...(description !== undefined && { description }),
-      ...(contactInfo !== undefined && { contactInfo }),
-      ...(metadata !== undefined && { metadata }),
+      ...(contactInfo !== undefined && { contact_info: contactInfo }),
+      ...(notes !== undefined && { notes }),
     });
 
     res.json({ status: 'success', data: updated });
