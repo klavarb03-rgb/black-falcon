@@ -25,14 +25,24 @@ bot.use(async (ctx, next) => {
 // Commands
 bot.command('start', async (ctx) => {
   await ctx.reply(
-    '👋 <b>Бот Імпорту Black Falcon</b>\n\n' +
-    'Я допоможу завантажити матеріальні цінності через Excel файли.\n\n' +
-    '<b>Команди:</b>\n' +
-    '/import_excel - Завантажити Excel з МЦ\n' +
-    '/template - Отримати шаблон Excel\n' +
-    '/help - Довідка\n\n' +
-    '<i>Версія: 1.0.0-MVP</i>',
-    { parse_mode: 'HTML' }
+    '👋 <b>Import Bot</b>\n\n' +
+    'Завантажуй МЦ через Excel файли.\n\n' +
+    'Обери дію:',
+    {
+      parse_mode: 'HTML',
+      reply_markup: {
+        inline_keyboard: [
+          [
+            { text: '📋 Шаблон Excel', callback_data: 'template' },
+            { text: '📥 Імпортувати', callback_data: 'import' }
+          ],
+          [
+            { text: '📊 Статус', callback_data: 'status' },
+            { text: '❓ Допомога', callback_data: 'help' }
+          ]
+        ]
+      }
+    }
   );
 });
 
@@ -62,6 +72,39 @@ bot.command('help', async (ctx) => {
 
 bot.command('import_excel', handleImportCommand);
 bot.command('template', handleTemplateCommand);
+
+// Handle callback queries (inline buttons)
+bot.on('callback_query:data', async (ctx) => {
+  const data = ctx.callbackQuery.data;
+  
+  await ctx.answerCallbackQuery();
+  
+  if (data === 'template') {
+    await handleTemplateCommand(ctx);
+  } else if (data === 'import') {
+    await handleImportCommand(ctx);
+  } else if (data === 'status') {
+    await ctx.reply('📊 <b>Статус імпорту</b>\n\nПоки що статус не реалізовано.\nБудь ласка, використовуйте /import_excel для імпорту.', { parse_mode: 'HTML' });
+  } else if (data === 'help') {
+    await ctx.reply(
+      '📖 <b>Довідка</b>\n\n' +
+      '<b>Як користуватися:</b>\n' +
+      '1. Натисни "📋 Шаблон Excel"\n' +
+      '2. Заповни таблицю своїми МЦ\n' +
+      '3. Натисни "📥 Імпортувати"\n' +
+      '4. Надішли Excel файл\n\n' +
+      '<b>Формат:</b>\n' +
+      '• Назва (обов\'язково)\n' +
+      '• Кількість (число)\n' +
+      '• Статус: on_balance / off_balance\n\n' +
+      'Для on_balance обов\'язково:\n' +
+      '• Номер документа\n' +
+      '• Дата (YYYY-MM-DD)\n' +
+      '• Постачальник',
+      { parse_mode: 'HTML' }
+    );
+  }
+});
 
 // Handle document uploads
 bot.on('message:document', handleDocumentUpload);

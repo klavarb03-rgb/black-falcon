@@ -26,17 +26,28 @@ bot.use(async (ctx, next) => {
 // Commands
 bot.command('start', async (ctx) => {
   await ctx.reply(
-    '👋 <b>Black Falcon Boss Bot</b>\n\n' +
-    'Бот для операцій керівника з матеріальними цінностями.\n\n' +
-    '<b>Команди:</b>\n' +
-    '/list - Показати всі МЦ\n' +
-    '/list_on_balance - МЦ на балансі\n' +
-    '/list_off_balance - МЦ позабаланс\n' +
-    '/search [запит] - Пошук МЦ\n' +
-    '/stats - Статистика\n' +
-    '/help - Довідка\n\n' +
-    '<i>Версія: 1.0.0-MVP</i>',
-    { parse_mode: 'HTML' }
+    '👋 <b>Manager Bot</b>\n\n' +
+    'Операції з матеріальними цінностями.\n\n' +
+    'Обери дію:',
+    {
+      parse_mode: 'HTML',
+      reply_markup: {
+        inline_keyboard: [
+          [
+            { text: '📋 Список МЦ', callback_data: 'list_all' },
+            { text: '🔍 Пошук', callback_data: 'search' }
+          ],
+          [
+            { text: '✅ На балансі', callback_data: 'list_on' },
+            { text: '📦 Позабаланс', callback_data: 'list_off' }
+          ],
+          [
+            { text: '📊 Статистика', callback_data: 'stats' },
+            { text: '❓ Допомога', callback_data: 'help' }
+          ]
+        ]
+      }
+    }
   );
 });
 
@@ -63,6 +74,39 @@ bot.command('list_on_balance', handleListOnBalance);
 bot.command('list_off_balance', handleListOffBalance);
 bot.command('search', handleSearchCommand);
 bot.command('stats', handleStatsCommand);
+
+// Handle callback queries (inline buttons)
+bot.on('callback_query:data', async (ctx) => {
+  const data = ctx.callbackQuery.data;
+  
+  await ctx.answerCallbackQuery();
+  
+  if (data === 'list_all') {
+    await handleListCommand(ctx);
+  } else if (data === 'list_on') {
+    await handleListOnBalance(ctx);
+  } else if (data === 'list_off') {
+    await handleListOffBalance(ctx);
+  } else if (data === 'search') {
+    await ctx.reply('🔍 <b>Пошук МЦ</b>\n\nВведи назву або опис МЦ для пошуку.\n\nПриклад: <code>Дрон DJI</code>', { parse_mode: 'HTML' });
+  } else if (data === 'stats') {
+    await handleStatsCommand(ctx);
+  } else if (data === 'help') {
+    await ctx.reply(
+      '📖 <b>Довідка</b>\n\n' +
+      '<b>Кнопки:</b>\n' +
+      '📋 Список МЦ - Всі матеріальні цінності\n' +
+      '✅ На балансі - Тільки на балансі\n' +
+      '📦 Позабаланс - Тільки позабаланс\n' +
+      '🔍 Пошук - Знайти за назвою\n' +
+      '📊 Статистика - Загальна статистика\n\n' +
+      '<b>Команди:</b>\n' +
+      '/search [назва] - Пошук МЦ\n' +
+      '/list - Список всіх МЦ',
+      { parse_mode: 'HTML' }
+    );
+  }
+});
 
 // Unknown commands
 bot.on('message:text', async (ctx) => {
