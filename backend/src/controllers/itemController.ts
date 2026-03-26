@@ -245,6 +245,18 @@ export async function transferToBalance(
       return next(err);
     }
 
+    // Validate document_date is not in the future
+    const documentDate = new Date(document_date);
+    const today = new Date();
+    today.setHours(23, 59, 59, 999); // End of today
+
+    if (documentDate > today) {
+      const err: AppError = new Error('Document date cannot be in the future');
+      err.statusCode = 400;
+      err.isOperational = true;
+      return next(err);
+    }
+
     // Update item to on_balance and store document data
     const updated = await itemRepo.transferToBalance(item.id, {
       document_number,

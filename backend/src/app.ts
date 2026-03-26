@@ -13,6 +13,7 @@ import groupRoutes from './routes/group.routes';
 import syncRoutes from './routes/sync.routes';
 import kitRoutes from './routes/kit.routes';
 import donorRoutes from './routes/donor.routes';
+import dashboardRoutes from './routes/dashboard.routes';
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use('/api/groups', groupRoutes);
 app.use('/api/sync', syncRoutes);
 app.use('/api/kits', kitRoutes);
 app.use('/api/donors', donorRoutes);
+app.use('/api/dashboard', dashboardRoutes);
 
 // Health check
 app.get('/health', (_req: Request, res: Response) => {
