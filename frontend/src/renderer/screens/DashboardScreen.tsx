@@ -11,6 +11,8 @@ import {
   TrendingUp,
   Layers,
   AlertTriangle,
+  Download,
+  FileText,
 } from 'lucide-react'
 import {
   PieChart,
@@ -29,6 +31,7 @@ import {
 } from 'recharts'
 import { reportService } from '@renderer/services/reportService'
 import { itemService } from '@renderer/services/itemService'
+import { Button } from '@components/ui/button'
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -56,6 +59,72 @@ function lastNDates(n: number): string[] {
 function fmtDate(iso: string): string {
   const [, m, d] = iso.split('-')
   return `${d}.${m}`
+}
+
+// ── Export functions ──────────────────────────────────────────────────────────
+
+async function downloadExcel(token: string | null) {
+  if (!token) {
+    alert('Помилка: не авторизований')
+    return
+  }
+  
+  try {
+    const response = await fetch('http://localhost:3000/api/reports/export/excel', {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+    
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`)
+    }
+    
+    const blob = await response.blob()
+    const url = window.URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `mc-report-${new Date().toISOString().split('T')[0]}.xlsx`
+    document.body.appendChild(link)
+    link.click()
+    link.remove()
+    window.URL.revokeObjectURL(url)
+  } catch (error) {
+    console.error('Export Excel failed:', error)
+    alert(`Помилка експорту Excel: ${error instanceof Error ? error.message : 'Невідома помилка'}`)
+  }
+}
+
+async function downloadPDF(token: string | null) {
+  if (!token) {
+    alert('Помилка: не авторизований')
+    return
+  }
+  
+  try {
+    const response = await fetch('http://localhost:3000/api/reports/export/pdf', {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+    
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`)
+    }
+    
+    const blob = await response.blob()
+    const url = window.URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `mc-report-${new Date().toISOString().split('T')[0]}.pdf`
+    document.body.appendChild(link)
+    link.click()
+    link.remove()
+    window.URL.revokeObjectURL(url)
+  } catch (error) {
+    console.error('Export PDF failed:', error)
+    alert(`Помилка експорту PDF: ${error instanceof Error ? error.message : 'Невідома помилка'}`)
+  }
 }
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -198,14 +267,26 @@ export function DashboardScreen({ onNavigate }: DashboardScreenProps) {
 
   return (
     <div className="space-y-6">
-      {/* Welcome */}
-      <div>
-        <h2 className="text-xl font-semibold">
-          Вітаємо, {user?.fullName ?? 'Користувач'}
-        </h2>
-        <p className="text-sm text-muted-foreground mt-1">
-          {roleLabels[user?.role ?? ''] ?? user?.role} · Огляд системи
-        </p>
+      {/* Welcome + Export */}
+      <div className="flex items-start justify-between">
+        <div>
+          <h2 className="text-xl font-semibold">
+            Вітаємо, {user?.fullName ?? 'Користувач'}
+          </h2>
+          <p className="text-sm text-muted-foreground mt-1">
+            {roleLabels[user?.role ?? ''] ?? user?.role} · Огляд системи
+          </p>
+        </div>
+        <div className="flex gap-2">
+          <Button variant="outline" size="sm" onClick={() => downloadExcel(token)}>
+            <Download className="w-4 h-4 mr-1.5" />
+            Excel
+          </Button>
+          <Button variant="outline" size="sm" onClick={() => downloadPDF(token)}>
+            <FileText className="w-4 h-4 mr-1.5" />
+            PDF
+          </Button>
+        </div>
       </div>
 
       {/* Stats cards */}

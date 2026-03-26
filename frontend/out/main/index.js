@@ -298,7 +298,11 @@ function registerItemHandlers() {
       unit: payload.unit,
       description: payload.description ?? null,
       metadata: payload.metadata ?? null,
-      ownerId: payload.ownerId
+      ownerId: payload.ownerId,
+      balance_status: payload.balance_status ?? "off_balance",
+      document_number: payload.document_number ?? null,
+      document_date: payload.document_date ?? null,
+      supplier_name: payload.supplier_name ?? null
     };
     const saved = await itemRepo.save(itemRepo.create(itemData));
     await syncRepo.save(
@@ -327,7 +331,11 @@ function registerItemHandlers() {
           unit: saved.unit,
           description: saved.description,
           metadata: saved.metadata,
-          ownerId: saved.ownerId
+          ownerId: saved.ownerId,
+          balance_status: saved.balance_status,
+          document_number: saved.document_number,
+          document_date: saved.document_date,
+          supplier_name: saved.supplier_name
         }),
         signal: AbortSignal.timeout(5e3)
       });
