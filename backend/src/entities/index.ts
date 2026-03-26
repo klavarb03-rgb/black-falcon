@@ -1,10 +1,12 @@
 export { User } from './User';
 export type { UserRole } from './User';
 export { Item } from './Item';
-export type { ItemStatus } from './Item';
+export type { ItemStatus, BalanceStatus } from './Item';
 export { Operation } from './Operation';
 export type { OperationType } from './Operation';
 export { Group } from './Group';
 export { Kit, KitTemplate } from './Kit';
 export type { KitItemEntry } from './Kit';
 export { Donor } from './Donor';
+export { SyncQueue } from './SyncQueue';
+export type { SyncOperation, SyncStatus } from './SyncQueue';

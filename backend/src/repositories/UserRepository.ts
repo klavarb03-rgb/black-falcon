@@ -1,4 +1,4 @@
-import { DataSource, Repository } from 'typeorm';
+import { DataSource, Repository, IsNull } from 'typeorm';
 import { User, UserRole } from '../entities';
 
 export class UserRepository {
@@ -13,7 +13,8 @@ export class UserRepository {
   }
 
   findByUsername(username: string): Promise<User | null> {
-    return this.repo.findOne({ where: { username } });
+    // Username це насправді email в нашій БД
+    return this.repo.findOne({ where: { email: username, deletedAt: IsNull() } });
   }
 
   findAll(includeInactive = false): Promise<User[]> {

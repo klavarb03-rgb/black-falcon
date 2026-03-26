@@ -1,13 +1,28 @@
 import { Request, Response, NextFunction } from 'express';
 import { getDataSource } from '../database';
+import {
+  exportInventoryExcel,
+  exportInventoryPdf,
+  exportOperationsExcel,
+  exportOperationsPdf,
+  exportDonorExcel,
+  exportDonorPdf,
+  InventoryRow,
+  OperationRow,
+  DonorRow,
+} from '../services/exportService';
 
-// GET /api/reports/inventory
-// Inventory by user: item counts and quantities grouped by owner
+type ExportFormat = 'excel' | 'pdf' | undefined;
+
+// ─── Inventory ────────────────────────────────────────────────────────────────
+
+// GET /api/reports/inventory?format=excel|pdf
 export async function getInventoryReport(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
     const ds = await getDataSource();
     const { role, userId } = req.user!;
     const isManager = role === 'manager';
+    const format = req.query['format'] as ExportFormat;
 
     const ownerFilter = isManager ? 'AND i.owner_id = $1' : '';
     const params: string[] = isManager ? [userId] : [];
@@ -38,7 +53,7 @@ export async function getInventoryReport(req: Request, res: Response, next: Next
       params,
     );
 
-    const data = rows.map((r) => ({
+    const data: InventoryRow[] = rows.map((r) => ({
       userId: r.user_id,
       username: r.username,
       fullName: r.full_name,
@@ -50,19 +65,24 @@ export async function getInventoryReport(req: Request, res: Response, next: Next
       },
     }));
 
+    if (format === 'excel') return void (await exportInventoryExcel(data, res));
+    if (format === 'pdf') return void exportInventoryPdf(data, res);
+
     res.json({ status: 'success', data });
   } catch (err) {
     next(err);
   }
 }
 
-// GET /api/reports/operations
-// Operations history with optional date range filter: ?from=YYYY-MM-DD&to=YYYY-MM-DD
+// ─── Operations ───────────────────────────────────────────────────────────────
+
+// GET /api/reports/operations?from=YYYY-MM-DD&to=YYYY-MM-DD&format=excel|pdf
 export async function getOperationsReport(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
     const ds = await getDataSource();
     const { role, userId } = req.user!;
     const isManager = role === 'manager';
+    const format = req.query['format'] as ExportFormat;
 
     const from = req.query['from'] as string | undefined;
     const to = req.query['to'] as string | undefined;
@@ -89,34 +109,8 @@ export async function getOperationsReport(req: Request, res: Response, next: Nex
 
     const whereClause = conditions.length ? `WHERE ${conditions.join(' AND ')}` : '';
 
-    // Count query
-    const countRows = await ds.query<{ total: string }[]>(
-      `SELECT COUNT(*)::int AS total
-       FROM operations o
-       LEFT JOIN items i ON o.item_id = i.id
-       ${whereClause}`,
-      params,
-    );
-    const total = parseInt(countRows[0]?.total ?? '0', 10);
-
-    // Data query
-    params.push(limit, offset);
-    const rows = await ds.query<{
-      id: string;
-      type: string;
-      quantity_delta: number;
-      notes: string | null;
-      created_at: string;
-      item_id: string;
-      item_name: string;
-      from_user_id: string | null;
-      from_username: string | null;
-      to_user_id: string | null;
-      to_username: string | null;
-      created_by_id: string;
-      created_by_username: string;
-    }[]>(
-      `SELECT
+    const baseQuery = `
+      SELECT
          o.id,
          o.type,
          o.quantity_delta,
@@ -136,12 +130,25 @@ export async function getOperationsReport(req: Request, res: Response, next: Nex
        LEFT JOIN users tu ON o.to_user_id    = tu.id
        LEFT JOIN users cu ON o.created_by_id = cu.id
        ${whereClause}
-       ORDER BY o.created_at DESC
-       LIMIT $${params.length - 1} OFFSET $${params.length}`,
-      params,
-    );
+       ORDER BY o.created_at DESC`;
 
-    const data = rows.map((r) => ({
+    type RawRow = {
+      id: string;
+      type: string;
+      quantity_delta: number;
+      notes: string | null;
+      created_at: string;
+      item_id: string;
+      item_name: string;
+      from_user_id: string | null;
+      from_username: string | null;
+      to_user_id: string | null;
+      to_username: string | null;
+      created_by_id: string;
+      created_by_username: string;
+    };
+
+    const mapRow = (r: RawRow): OperationRow => ({
       id: r.id,
       type: r.type,
       quantityDelta: r.quantity_delta,
@@ -151,11 +158,36 @@ export async function getOperationsReport(req: Request, res: Response, next: Nex
       fromUser: r.from_user_id ? { id: r.from_user_id, username: r.from_username } : null,
       toUser: r.to_user_id ? { id: r.to_user_id, username: r.to_username } : null,
       createdBy: { id: r.created_by_id, username: r.created_by_username },
-    }));
+    });
+
+    // For exports fetch all rows (no pagination)
+    if (format === 'excel' || format === 'pdf') {
+      const exportRows = await ds.query<RawRow[]>(baseQuery, params);
+      const data = exportRows.map(mapRow);
+      if (format === 'excel') return void (await exportOperationsExcel(data, res));
+      return void exportOperationsPdf(data, res);
+    }
+
+    // Paginated JSON response
+    const countRows = await ds.query<{ total: string }[]>(
+      `SELECT COUNT(*)::int AS total
+       FROM operations o
+       LEFT JOIN items i ON o.item_id = i.id
+       ${whereClause}`,
+      params,
+    );
+    const total = parseInt(countRows[0]?.total ?? '0', 10);
+
+    const paginatedParams = [...params, limit, offset];
+    const rows = await ds.query<RawRow[]>(
+      `${baseQuery}
+       LIMIT $${paginatedParams.length - 1} OFFSET $${paginatedParams.length}`,
+      paginatedParams,
+    );
 
     res.json({
       status: 'success',
-      data,
+      data: rows.map(mapRow),
       pagination: { page, limit, total, pages: Math.ceil(total / limit) },
     });
   } catch (err) {
@@ -163,8 +195,9 @@ export async function getOperationsReport(req: Request, res: Response, next: Nex
   }
 }
 
+// ─── Summary ──────────────────────────────────────────────────────────────────
+
 // GET /api/reports/summary
-// Aggregated totals: overall, by status, by group/category
 export async function getSummaryReport(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
     const ds = await getDataSource();
@@ -175,7 +208,6 @@ export async function getSummaryReport(req: Request, res: Response, next: NextFu
     const ownerCondition = isManager ? 'AND owner_id = $1' : '';
     const joinOwnerCondition = isManager ? `AND i.owner_id = $1` : '';
 
-    // Overall totals
     const [totalsRow] = await ds.query<{
       total_items: string;
       total_quantity: string;
@@ -197,7 +229,6 @@ export async function getSummaryReport(req: Request, res: Response, next: NextFu
       ownerParam,
     );
 
-    // By category (item_groups)
     const byCategory = await ds.query<{
       group_id: string | null;
       group_name: string | null;
@@ -250,6 +281,151 @@ export async function getSummaryReport(req: Request, res: Response, next: NextFu
         })),
       },
     });
+  } catch (err) {
+    next(err);
+  }
+}
+
+// ─── Off-Balance ──────────────────────────────────────────────────────────────
+
+// GET /api/reports/off-balance
+export async function getOffBalanceReport(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const ds = await getDataSource();
+    const { role, userId } = req.user!;
+    const isManager = role === 'manager';
+
+    const params: string[] = [];
+    const conditions: string[] = ["i.balance_status = 'off_balance'", 'i.is_deleted = false'];
+
+    if (isManager) {
+      params.push(userId);
+      conditions.push(`i.owner_id = $${params.length}`);
+    }
+
+    const whereClause = `WHERE ${conditions.join(' AND ')}`;
+
+    const rows = await ds.query<{
+      item_id: string;
+      item_name: string;
+      item_description: string | null;
+      item_status: string;
+      quantity: number;
+      unit: string | null;
+      created_at: string;
+      owner_id: string;
+      owner_username: string;
+      owner_full_name: string | null;
+    }[]>(
+      `SELECT
+         i.id              AS item_id,
+         i.name            AS item_name,
+         i.description     AS item_description,
+         i.status          AS item_status,
+         i.quantity,
+         i.unit,
+         i.created_at,
+         u.id              AS owner_id,
+         u.username        AS owner_username,
+         u.full_name       AS owner_full_name
+       FROM items i
+       JOIN users u ON i.owner_id = u.id
+       ${whereClause}
+       ORDER BY i.created_at DESC`,
+      params,
+    );
+
+    // Group items by owner
+    const byOwner: Record<
+      string,
+      {
+        ownerId: string;
+        ownerUsername: string;
+        ownerFullName: string | null;
+        items: {
+          id: string;
+          name: string;
+          description: string | null;
+          status: string;
+          quantity: number;
+          unit: string | null;
+          createdAt: string;
+        }[];
+      }
+    > = {};
+
+    for (const row of rows) {
+      if (!byOwner[row.owner_id]) {
+        byOwner[row.owner_id] = {
+          ownerId: row.owner_id,
+          ownerUsername: row.owner_username,
+          ownerFullName: row.owner_full_name,
+          items: [],
+        };
+      }
+      byOwner[row.owner_id].items.push({
+        id: row.item_id,
+        name: row.item_name,
+        description: row.item_description,
+        status: row.item_status,
+        quantity: row.quantity,
+        unit: row.unit,
+        createdAt: row.created_at,
+      });
+    }
+
+    res.json({
+      status: 'success',
+      data: {
+        totalCount: rows.length,
+        byOwner: Object.values(byOwner),
+      },
+    });
+  } catch (err) {
+    next(err);
+  }
+}
+
+// ─── Donors ───────────────────────────────────────────────────────────────────
+
+// GET /api/reports/donors?format=excel|pdf
+export async function getDonorReport(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const ds = await getDataSource();
+    const format = req.query['format'] as ExportFormat;
+
+    const rows = await ds.query<{
+      donor_id: string | null;
+      donor_name: string;
+      contact_info: string | null;
+      item_count: string;
+      total_quantity: string;
+    }[]>(
+      `SELECT
+         d.id                                      AS donor_id,
+         d.name                                    AS donor_name,
+         d.contact_info,
+         COUNT(i.id)::int                          AS item_count,
+         COALESCE(SUM(i.quantity), 0)::int         AS total_quantity
+       FROM donors d
+       LEFT JOIN items i ON i.donor_id = d.id AND i.is_deleted = false
+       WHERE d.is_deleted = false
+       GROUP BY d.id, d.name, d.contact_info
+       ORDER BY d.name`,
+    );
+
+    const data: DonorRow[] = rows.map((r) => ({
+      donorId: r.donor_id,
+      donorName: r.donor_name,
+      contactInfo: r.contact_info,
+      itemCount: r.item_count,
+      totalQuantity: r.total_quantity,
+    }));
+
+    if (format === 'excel') return void (await exportDonorExcel(data, res));
+    if (format === 'pdf') return void exportDonorPdf(data, res);
+
+    res.json({ status: 'success', data });
   } catch (err) {
     next(err);
   }

@@ -22,6 +22,9 @@ export class KitTemplate {
   @Column({ type: 'text', nullable: true })
   description!: string | null;
 
+  @Column({ type: 'jsonb', default: '[]' })
+  items!: KitItemEntry[]; // bill-of-materials for this template
+
   @Column({ type: 'boolean', default: false })
   isDeleted!: boolean;
 

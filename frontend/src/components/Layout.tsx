@@ -7,6 +7,7 @@ import {
   Layers,
   Box,
   BarChart3,
+  Heart,
   Users,
   Settings,
   Sun,
@@ -15,10 +16,16 @@ import {
   ChevronRight,
   Bird,
   LogOut,
+  Wifi,
+  WifiOff,
+  LoaderCircle,
+  AlertCircle,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { useAuthStore } from '@renderer/store/authStore'
+import { useSync } from '@renderer/hooks/useSync'
+import logoBlackFalcon from '@/assets/logo-black-falcon.jpg'
 
 // ── Theme ──────────────────────────────────────────────────────────────────────
 
@@ -36,6 +43,54 @@ const ThemeContext = createContext<ThemeContextValue>({
 
 export function useTheme() {
   return useContext(ThemeContext)
+}
+
+// ── Sync indicator ─────────────────────────────────────────────────────────────
+
+function SyncIndicator() {
+  const { isOnline, isSyncing, isOffline, isError, lastSyncLabel, pendingCount, forceSync } = useSync()
+
+  let icon: React.ReactNode
+  let label: string
+  let colorCls: string
+
+  if (isOffline) {
+    icon = <WifiOff className="h-3.5 w-3.5" />
+    label = 'Офлайн'
+    colorCls = 'text-amber-500'
+  } else if (isSyncing) {
+    icon = <LoaderCircle className="h-3.5 w-3.5 animate-spin" />
+    label = 'Синхронізація…'
+    colorCls = 'text-primary'
+  } else if (isError) {
+    icon = <AlertCircle className="h-3.5 w-3.5" />
+    label = 'Помилка синхр.'
+    colorCls = 'text-destructive'
+  } else {
+    icon = <Wifi className="h-3.5 w-3.5" />
+    label = lastSyncLabel
+    colorCls = isOnline ? 'text-emerald-500' : 'text-muted-foreground'
+  }
+
+  return (
+    <button
+      onClick={forceSync}
+      title={`Синхронізовано: ${lastSyncLabel}${pendingCount > 0 ? ` • ${pendingCount} очікують` : ''}. Натисніть для оновлення.`}
+      className={cn(
+        'hidden sm:flex items-center gap-1.5 text-xs font-medium px-2 py-1 rounded-md transition-colors',
+        'hover:bg-muted',
+        colorCls,
+      )}
+    >
+      {icon}
+      <span>{label}</span>
+      {pendingCount > 0 && (
+        <span className="flex items-center justify-center w-4 h-4 rounded-full bg-amber-500/20 text-amber-600 text-[10px] font-bold">
+          {pendingCount}
+        </span>
+      )}
+    </button>
+  )
 }
 
 // ── Navigation types ───────────────────────────────────────────────────────────
@@ -57,6 +112,7 @@ const mainNavItems: NavItem[] = [
   { id: 'writeoff', label: 'Списання', icon: Trash2 },
   { id: 'groups', label: 'Групи', icon: Layers },
   { id: 'kits', label: 'Комплекти', icon: Box },
+  { id: 'donors', label: 'Донори', icon: Heart },
   { id: 'reports', label: 'Звіти', icon: BarChart3 },
 ]
 
@@ -95,9 +151,13 @@ function Sidebar({ activeItem, onNavigate, collapsed, onToggleCollapse, navSecti
     >
       {/* Logo */}
       <div className="flex items-center h-14 px-3 border-b border-sidebar-border shrink-0">
-        <div className="flex items-center gap-2.5 min-w-0">
-          <div className="flex items-center justify-center w-8 h-8 rounded-md bg-primary shrink-0">
-            <Bird className="w-5 h-5 text-primary-foreground" />
+        <div className="flex items-center gap-4 min-w-0">
+          <div className="flex items-center justify-center w-9 h-9 rounded-md bg-white shrink-0 overflow-hidden">
+            <img 
+              src={logoBlackFalcon} 
+              alt="Black Falcon" 
+              className="w-full h-full object-cover"
+            />
           </div>
           {!collapsed && (
             <div className="min-w-0">
@@ -191,6 +251,7 @@ const pageTitles: Record<string, string> = {
   writeoff: 'Списання',
   groups: 'Групи',
   kits: 'Комплекти',
+  donors: 'Донори',
   reports: 'Звіти',
   users: 'Користувачі',
   settings: 'Налаштування',
@@ -263,6 +324,8 @@ export function Layout({ children, activePage, onNavigate }: LayoutProps) {
             <h1 className="text-base font-semibold flex-1">
               {pageTitles[currentPage] ?? currentPage}
             </h1>
+
+            <SyncIndicator />
 
             {/* User info */}
             <div className="flex items-center gap-2.5">

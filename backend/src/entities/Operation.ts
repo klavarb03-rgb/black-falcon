@@ -11,14 +11,14 @@ import {
 import { User } from './User';
 import { Item } from './Item';
 
-export type OperationType = 'transfer' | 'write_off' | 'receive' | 'adjustment';
+export type OperationType = 'transfer' | 'write_off' | 'receive' | 'adjustment' | 'transfer_to_balance';
 
 @Entity('operations')
 export class Operation {
   @PrimaryGeneratedColumn('uuid')
   id!: string;
 
-  @Column({ type: 'enum', enum: ['transfer', 'write_off', 'receive', 'adjustment'] })
+  @Column({ type: 'enum', enum: ['transfer', 'write_off', 'receive', 'adjustment', 'transfer_to_balance'] })
   type!: OperationType;
 
   @Column({ type: 'uuid' })
@@ -48,7 +48,7 @@ export class Operation {
   @Column({ type: 'uuid' })
   createdById!: string;
 
-  @ManyToOne(() => User, (user) => user.operations, { onDelete: 'RESTRICT' })
+  @ManyToOne(() => User, (user) => user.performedOperations, { onDelete: 'RESTRICT' })
   @JoinColumn({ name: 'createdById' })
   createdBy!: User;
 

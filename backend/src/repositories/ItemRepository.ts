@@ -1,5 +1,5 @@
 import { DataSource, Repository } from 'typeorm';
-import { Item, ItemStatus } from '../entities';
+import { Item, ItemStatus, BalanceStatus } from '../entities';
 
 export class ItemRepository {
   private repo: Repository<Item>;
@@ -50,5 +50,40 @@ export class ItemRepository {
 
   async softDelete(id: string): Promise<void> {
     await this.repo.update(id, { isDeleted: true });
+  }
+
+  findByBalanceStatus(
+    ownerId: string,
+    balanceStatus: BalanceStatus | 'all',
+    role: string,
+  ): Promise<Item[]> {
+    const baseWhere = role === 'manager' ? { ownerId, isDeleted: false } : { isDeleted: false };
+
+    if (balanceStatus === 'all') {
+      return this.repo.find({
+        where: baseWhere,
+        relations: ['owner', 'group', 'donor'],
+        order: { createdAt: 'DESC' },
+      });
+    }
+
+    return this.repo.find({
+      where: { ...baseWhere, balance_status: balanceStatus },
+      relations: ['owner', 'group', 'donor'],
+      order: { createdAt: 'DESC' },
+    });
+  }
+
+  async transferToBalance(
+    itemId: string,
+    documentData: { document_number: string; document_date: Date; supplier_name: string },
+  ): Promise<Item | null> {
+    await this.repo.update(itemId, {
+      balance_status: 'on_balance',
+      document_number: documentData.document_number,
+      document_date: documentData.document_date,
+      supplier_name: documentData.supplier_name,
+    });
+    return this.findById(itemId);
   }
 }

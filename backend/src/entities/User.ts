@@ -19,34 +19,45 @@ export class User {
   id!: string;
 
   @Column({ type: 'varchar', length: 255, unique: true })
-  username!: string;
+  email!: string;
+  
+  // Alias для сумісності
+  get username(): string {
+    return this.email;
+  }
 
-  @Column({ type: 'varchar', length: 255 })
+  @Column({ type: 'varchar', length: 255, name: 'password_hash' })
   passwordHash!: string;
 
-  @Column({ type: 'varchar', length: 255, nullable: true })
+  @Column({ type: 'varchar', length: 255, nullable: true, name: 'name' })
   fullName!: string | null;
 
   @Column({ type: 'enum', enum: ['admin', 'leader', 'manager'], default: 'manager' })
   role!: UserRole;
-
-  @Column({ type: 'boolean', default: true })
+  
+  @Column({ type: 'boolean', default: true, name: 'is_active' })
   isActive!: boolean;
+  
+  @Column({ type: 'jsonb', default: {} })
+  metadata!: Record<string, any>;
+  
+  @Column({ type: 'int', default: 1 })
+  version!: number;
+  
+  @Column({ type: 'timestamp', nullable: true, name: 'deleted_at' })
+  deletedAt!: Date | null;
 
-  @Column({ type: 'jsonb', nullable: true })
-  metadata!: Record<string, unknown> | null;
-
-  @CreateDateColumn({ type: 'timestamptz' })
+  @CreateDateColumn({ name: 'created_at' })
   createdAt!: Date;
 
-  @UpdateDateColumn({ type: 'timestamptz' })
+  @UpdateDateColumn({ name: 'updated_at' })
   updatedAt!: Date;
 
   @OneToMany(() => Item, (item) => item.owner)
   items!: Item[];
 
-  @OneToMany(() => Operation, (op) => op.createdBy)
-  operations!: Operation[];
+  @OneToMany(() => Operation, (operation) => operation.createdBy)
+  performedOperations!: Operation[];
 
   @OneToMany(() => Group, (group) => group.owner)
   groups!: Group[];

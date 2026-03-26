@@ -9,6 +9,7 @@ import { Button } from '@components/ui/button'
 import { Input } from '@components/ui/input'
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@components/ui/form'
 import { cn } from '@lib/utils'
+import logoBlackFalcon from '@/assets/logo-black-falcon.jpg'
 
 // ── Validation schema ────────────────────────────────────────────────────────
 
@@ -28,35 +29,40 @@ type LoginFormValues = z.infer<typeof loginSchema>
 // ── Component ────────────────────────────────────────────────────────────────
 
 export function LoginScreen(): React.JSX.Element {
-  const { login, isLoading, error, clearError } = useAuthStore()
   const [showPassword, setShowPassword] = React.useState(false)
+  const { login, isLoading, error } = useAuthStore()
 
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
     defaultValues: { email: '', password: '' }
   })
 
-  const onSubmit = async (values: LoginFormValues): Promise<void> => {
-    clearError()
-    try {
+  const onSubmit = React.useCallback(
+    async (values: LoginFormValues) => {
       await login(values.email, values.password)
-    } catch {
-      // Error is stored in the auth store
-    }
-  }
+    },
+    [login]
+  )
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="w-full max-w-sm space-y-8 px-4">
-        {/* Header */}
+      <div className="w-full max-w-sm space-y-6 px-4">
+        {/* Logo and Title */}
         <div className="text-center">
-          <h1 className="text-3xl font-bold tracking-tight text-foreground">Black Falcon</h1>
-          <p className="mt-2 text-sm text-muted-foreground">МЦ Система обліку майна</p>
+          <img 
+            src={logoBlackFalcon} 
+            alt="Black Falcon" 
+            className="mx-auto mb-6 h-40 w-40 object-contain rounded-lg shadow-xl"
+          />
+          <h1 className="text-3xl font-bold text-foreground">Black Falcon</h1>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Система обліку майна
+          </p>
         </div>
 
-        {/* Card */}
-        <div className="rounded-lg border bg-card p-6 shadow-sm">
-          <div className="mb-6">
+        {/* Login Card */}
+        <div className="rounded-lg bg-card p-6 shadow-lg">
+          <div className="mb-6 text-center">
             <h2 className="text-lg font-semibold text-card-foreground">Вхід до системи</h2>
             <p className="mt-1 text-sm text-muted-foreground">
               Введіть свої облікові дані для доступу
@@ -113,16 +119,18 @@ export function LoginScreen(): React.JSX.Element {
                         <Input
                           {...field}
                           type={showPassword ? 'text' : 'password'}
-                          placeholder="••••••••"
+                          placeholder="••••••"
                           autoComplete="current-password"
                           disabled={isLoading}
-                          className="pr-10"
                         />
                         <button
                           type="button"
-                          tabIndex={-1}
-                          onClick={() => setShowPassword((v) => !v)}
-                          className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground focus-visible:outline-none"
+                          onClick={() => setShowPassword((prev) => !prev)}
+                          className={cn(
+                            'absolute right-3 top-1/2 -translate-y-1/2',
+                            'text-muted-foreground hover:text-foreground',
+                            'focus:outline-none'
+                          )}
                           aria-label={showPassword ? 'Приховати пароль' : 'Показати пароль'}
                         >
                           {showPassword ? (

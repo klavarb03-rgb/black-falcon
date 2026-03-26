@@ -1,8 +1,10 @@
 import { useState, useEffect, useCallback } from 'react'
-import { itemService, type Item, type ItemStatus } from '@renderer/services/itemService'
+import { itemService, type Item, type ItemStatus, type BalanceStatus } from '@renderer/services/itemService'
 import { useAuthStore } from '@renderer/store/authStore'
 
 const PAGE_SIZE = 50
+
+export type BalanceFilter = 'all' | 'off_balance' | 'on_balance'
 
 export interface UseItemsResult {
   allItems: Item[]
@@ -12,10 +14,13 @@ export interface UseItemsResult {
   error: string | null
   search: string
   statusFilter: ItemStatus | ''
+  balanceFilter: BalanceFilter
   page: number
   totalPages: number
+  offBalanceCount: number
   setSearch: (value: string) => void
   setStatusFilter: (value: ItemStatus | '') => void
+  setBalanceFilter: (value: BalanceFilter) => void
   setPage: (page: number) => void
   refresh: () => void
 }
@@ -27,6 +32,7 @@ export function useItems(): UseItemsResult {
   const [error, setError] = useState<string | null>(null)
   const [search, setSearchState] = useState('')
   const [statusFilter, setStatusFilterState] = useState<ItemStatus | ''>('')
+  const [balanceFilter, setBalanceFilterState] = useState<BalanceFilter>('all')
   const [page, setPageState] = useState(1)
 
   const fetchItems = useCallback(async () => {
@@ -57,10 +63,25 @@ export function useItems(): UseItemsResult {
     setPageState(1)
   }
 
+  const setBalanceFilter = (value: BalanceFilter) => {
+    setBalanceFilterState(value)
+    setPageState(1)
+  }
+
+  // Count all off-balance items (regardless of other filters)
+  const offBalanceCount = allItems.filter(
+    (item) => !item.balance_status || item.balance_status === 'off_balance'
+  ).length
+
   const filteredItems = allItems.filter((item) => {
     const matchesSearch = search === '' || item.name.toLowerCase().includes(search.toLowerCase())
     const matchesStatus = statusFilter === '' || item.status === statusFilter
-    return matchesSearch && matchesStatus
+    const itemBalanceStatus: BalanceStatus = item.balance_status ?? 'off_balance'
+    const matchesBalance =
+      balanceFilter === 'all' ||
+      (balanceFilter === 'off_balance' && itemBalanceStatus === 'off_balance') ||
+      (balanceFilter === 'on_balance' && itemBalanceStatus === 'on_balance')
+    return matchesSearch && matchesStatus && matchesBalance
   })
 
   const totalPages = Math.max(1, Math.ceil(filteredItems.length / PAGE_SIZE))
@@ -75,10 +96,13 @@ export function useItems(): UseItemsResult {
     error,
     search,
     statusFilter,
+    balanceFilter,
     page: safePage,
     totalPages,
+    offBalanceCount,
     setSearch,
     setStatusFilter,
+    setBalanceFilter,
     setPage: setPageState,
     refresh: fetchItems
   }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ArrowLeft, CheckCircle2, AlertCircle, WifiOff } from 'lucide-react'
 
 import { Button } from '@components/ui/button'
@@ -7,6 +7,8 @@ import { cn } from '@lib/utils'
 import { ItemForm, type ItemFormOutput } from '@renderer/components/ItemForm'
 import { itemsApi } from '@renderer/utils/itemsApi'
 import { useAuthStore } from '@renderer/store/authStore'
+import { donorService } from '@renderer/services/donorService'
+import type { Donor } from '@renderer/services/donorService'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -28,6 +30,14 @@ export function AddItemScreen({ onBack }: AddItemScreenProps): React.JSX.Element
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [notification, setNotification] = useState<Notification | null>(null)
   const [formKey, setFormKey] = useState(0) // reset form after success
+  const [donors, setDonors] = useState<Donor[]>([])
+
+  useEffect(() => {
+    if (!token) return
+    donorService.getDonors(token).then(setDonors).catch(() => {
+      // donors are optional — silently ignore failures
+    })
+  }, [token])
 
   const handleSubmit = async (values: ItemFormOutput): Promise<void> => {
     if (!user || !token) {
@@ -58,7 +68,11 @@ export function AddItemScreen({ onBack }: AddItemScreenProps): React.JSX.Element
         description: values.notes || undefined,
         metadata,
         ownerId: user.id,
-        token
+        token,
+        balance_status: values.balance_status,
+        document_number: values.document_number || undefined,
+        document_date: values.document_date || undefined,
+        supplier_name: values.supplier_name || undefined,
       })
 
       setNotification({
@@ -123,6 +137,7 @@ export function AddItemScreen({ onBack }: AddItemScreenProps): React.JSX.Element
             key={formKey}
             onSubmit={handleSubmit}
             isSubmitting={isSubmitting}
+            donors={donors}
           />
         </CardContent>
       </Card>

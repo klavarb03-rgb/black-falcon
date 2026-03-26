@@ -36,10 +36,17 @@ export interface InventoryReport {
 }
 
 export interface OperationsReport {
-  operations: Operation[]
+  operations: { id: string; type: string; createdAt: string }[]
   total: number
   byType: { type: string; count: number }[]
   byDay: { date: string; count: number }[]
+}
+
+export interface CategoryStat {
+  groupId: string | null
+  groupName: string
+  itemCount: number
+  totalQuantity: number
 }
 
 export interface SummaryReport {
@@ -51,6 +58,7 @@ export interface SummaryReport {
   operationsByType: { type: string; count: number }[]
   itemsByStatus: { name: string; value: number }[]
   activityByDay: { date: string; операції: number }[]
+  byCategory: CategoryStat[]
 }
 
 // ── HTTP helper ────────────────────────────────────────────────────────────────
@@ -78,37 +86,6 @@ async function request<T>(path: string, token: string): Promise<T> {
   return res.json() as Promise<T>
 }
 
-// ── Helpers ────────────────────────────────────────────────────────────────────
-
-function groupByStatus(items: InventoryItem[]) {
-  const map = new Map<string, { count: number; quantity: number }>()
-  for (const item of items) {
-    const key = item.status
-    const existing = map.get(key) ?? { count: 0, quantity: 0 }
-    map.set(key, { count: existing.count + 1, quantity: existing.quantity + item.quantity })
-  }
-  return Array.from(map.entries()).map(([status, v]) => ({ status, ...v }))
-}
-
-function groupByType(ops: Operation[]) {
-  const map = new Map<string, number>()
-  for (const op of ops) {
-    map.set(op.type, (map.get(op.type) ?? 0) + 1)
-  }
-  return Array.from(map.entries()).map(([type, count]) => ({ type, count }))
-}
-
-function groupByDay(ops: Operation[]): { date: string; count: number }[] {
-  const map = new Map<string, number>()
-  for (const op of ops) {
-    const date = op.createdAt.slice(0, 10)
-    map.set(date, (map.get(date) ?? 0) + 1)
-  }
-  return Array.from(map.entries())
-    .sort((a, b) => a[0].localeCompare(b[0]))
-    .map(([date, count]) => ({ date, count }))
-}
-
 // ── Service ────────────────────────────────────────────────────────────────────
 
 export const reportService = {
@@ -118,10 +95,15 @@ export const reportService = {
       token
     )
     const items = res.data
+    const map = new Map<string, { count: number; quantity: number }>()
+    for (const item of items) {
+      const existing = map.get(item.status) ?? { count: 0, quantity: 0 }
+      map.set(item.status, { count: existing.count + 1, quantity: existing.quantity + item.quantity })
+    }
     return {
       items,
       total: res.pagination.total,
-      byStatus: groupByStatus(items),
+      byStatus: Array.from(map.entries()).map(([status, v]) => ({ status, ...v })),
     }
   },
 
@@ -130,48 +112,72 @@ export const reportService = {
     dateFrom: string,
     dateTo: string
   ): Promise<OperationsReport> {
-    const params = new URLSearchParams({ dateFrom, dateTo, limit: '500' })
-    let operations: Operation[] = []
+    const params = new URLSearchParams({ from: dateFrom, to: dateTo, limit: '500' })
+    let rows: { id: string; type: string; createdAt: string }[] = []
+    let total = 0
     try {
-      const res = await request<{ status: string; data: Operation[] }>(
-        `/operations?${params.toString()}`,
-        token
-      )
-      operations = res.data ?? []
+      const res = await request<{
+        status: string
+        data: { id: string; type: string; createdAt: string }[]
+        pagination: { total: number }
+      }>(`/reports/operations?${params.toString()}`, token)
+      rows = res.data ?? []
+      total = res.pagination?.total ?? rows.length
     } catch {
-      // endpoint may not be implemented yet — return empty
-      operations = []
+      rows = []
+      total = 0
     }
-    return {
-      operations,
-      total: operations.length,
-      byType: groupByType(operations),
-      byDay: groupByDay(operations),
+
+    // group by type
+    const typeMap = new Map<string, number>()
+    for (const op of rows) typeMap.set(op.type, (typeMap.get(op.type) ?? 0) + 1)
+    const byType = Array.from(typeMap.entries()).map(([type, count]) => ({ type, count }))
+
+    // group by day
+    const dayMap = new Map<string, number>()
+    for (const op of rows) {
+      const date = op.createdAt.slice(0, 10)
+      dayMap.set(date, (dayMap.get(date) ?? 0) + 1)
     }
+    const byDay = Array.from(dayMap.entries())
+      .sort((a, b) => a[0].localeCompare(b[0]))
+      .map(([date, count]) => ({ date, count }))
+
+    return { operations: rows, total, byType, byDay }
   },
 
   async getSummaryReport(token: string, dateFrom: string, dateTo: string): Promise<SummaryReport> {
-    const [inv, ops] = await Promise.all([
-      reportService.getInventoryReport(token),
+    // Fetch summary totals and operations activity in parallel
+    const [summaryRes, ops] = await Promise.all([
+      request<{
+        status: string
+        data: {
+          totals: { items: number; quantity: number }
+          byStatus: {
+            government: { items: number; quantity: number }
+            volunteer: { items: number; quantity: number }
+          }
+          byCategory: { groupId: string | null; groupName: string; itemCount: number; totalQuantity: number }[]
+        }
+      }>('/reports/summary', token),
       reportService.getOperationsReport(token, dateFrom, dateTo),
     ])
 
-    const govCount = inv.items.filter((i) => i.status === 'government').length
-    const volCount = inv.items.filter((i) => i.status === 'volunteer').length
-    const totalQty = inv.items.reduce((s, i) => s + i.quantity, 0)
+    const { totals, byStatus, byCategory } = summaryRes.data
 
     return {
-      totalItems: inv.total,
-      totalQuantity: totalQty,
-      governmentItems: govCount,
-      volunteerItems: volCount,
+      totalItems: totals.items,
+      totalQuantity: totals.quantity,
+      governmentItems: byStatus.government.items,
+      volunteerItems: byStatus.volunteer.items,
       totalOperations: ops.total,
       operationsByType: ops.byType,
       itemsByStatus: [
-        { name: 'Держ.', value: govCount },
-        { name: 'Волонт.', value: volCount },
+        { name: 'Держ.', value: byStatus.government.items },
+        { name: 'Волонт.', value: byStatus.volunteer.items },
       ],
       activityByDay: ops.byDay.map((d) => ({ date: d.date, операції: d.count })),
+      byCategory,
     }
   },
 }

@@ -6,6 +6,9 @@ import { ItemsListScreen } from './screens/ItemsListScreen'
 import { AddItemScreen } from './screens/AddItemScreen'
 import { WriteOffScreen } from './screens/WriteOffScreen'
 import { ReportsScreen } from './screens/ReportsScreen'
+import { GroupsScreen } from './screens/GroupsScreen'
+import { KitsScreen } from './screens/KitsScreen'
+import { DonorsScreen } from './screens/DonorsScreen'
 import { useAuthStore } from './store/authStore'
 import { Loader2 } from 'lucide-react'
 
@@ -21,6 +24,12 @@ function renderPage(page: string, onNavigate: (p: string) => void) {
       return <WriteOffScreen onBack={() => onNavigate('dashboard')} />
     case 'reports':
       return <ReportsScreen />
+    case 'groups':
+      return <GroupsScreen />
+    case 'kits':
+      return <KitsScreen />
+    case 'donors':
+      return <DonorsScreen />
     default:
       return (
         <div className="flex items-center justify-center h-full text-muted-foreground text-sm">

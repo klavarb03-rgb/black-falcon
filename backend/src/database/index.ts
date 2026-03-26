@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
-import { User, Item, Operation, Group, Kit, KitTemplate, Donor } from '../entities';
+import { User, Item, Operation, Group, Kit, KitTemplate, Donor, SyncQueue } from '../entities';
 
 let dataSource: DataSource | null = null;
 
@@ -12,9 +12,9 @@ export function createDataSource(): DataSource {
     username: process.env.DB_USER ?? 'postgres',
     password: process.env.DB_PASSWORD ?? '',
     database: process.env.DB_NAME ?? 'black_falcon',
-    synchronize: process.env.NODE_ENV === 'development',
+    synchronize: false, // Відключаю, бо вже є міграції
     logging: process.env.NODE_ENV === 'development',
-    entities: [User, Item, Operation, Group, Kit, KitTemplate, Donor],
+    entities: [User, Item, Operation, Group, Kit, KitTemplate, Donor, SyncQueue],
     migrations: ['dist/migrations/*.js'],
     subscribers: [],
     ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false,

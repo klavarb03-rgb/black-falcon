@@ -15,6 +15,7 @@ import { Donor } from './Donor';
 import { Operation } from './Operation';
 
 export type ItemStatus = 'government' | 'volunteer';
+export type BalanceStatus = 'off_balance' | 'on_balance';
 
 @Entity('items')
 export class Item {
@@ -56,6 +57,18 @@ export class Item {
   @ManyToOne(() => Donor, (donor) => donor.items, { nullable: true, onDelete: 'SET NULL' })
   @JoinColumn({ name: 'donorId' })
   donor!: Donor | null;
+
+  @Column({ type: 'varchar', length: 20, default: 'off_balance' })
+  balance_status!: BalanceStatus;
+
+  @Column({ type: 'varchar', length: 50, nullable: true })
+  document_number!: string | null;
+
+  @Column({ type: 'date', nullable: true })
+  document_date!: Date | null;
+
+  @Column({ type: 'varchar', length: 255, nullable: true })
+  supplier_name!: string | null;
 
   @Column({ type: 'boolean', default: false })
   isDeleted!: boolean;

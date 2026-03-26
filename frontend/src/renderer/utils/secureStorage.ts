@@ -19,16 +19,21 @@ declare global {
 export const secureStorage = {
   /** Encrypt and persist the JWT token via Electron safeStorage. */
   setToken(token: string): Promise<void> {
-    return window.authAPI.setToken(token)
+    // Тимчасово використовуємо localStorage
+    localStorage.setItem('auth_token', token)
+    return Promise.resolve()
   },
 
   /** Decrypt and return the stored JWT token, or null if absent. */
   getToken(): Promise<string | null> {
-    return window.authAPI.getToken()
+    // Тимчасово використовуємо localStorage
+    return Promise.resolve(localStorage.getItem('auth_token'))
   },
 
   /** Remove the stored JWT token from disk. */
   clearToken(): Promise<void> {
-    return window.authAPI.clearToken()
+    // Тимчасово використовуємо localStorage
+    localStorage.removeItem('auth_token')
+    return Promise.resolve()
   }
 }

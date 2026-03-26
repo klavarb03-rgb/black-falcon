@@ -58,7 +58,10 @@ export const authService = {
   async login(credentials: LoginCredentials): Promise<LoginResponse> {
     return request<LoginResponse>('/auth/login', {
       method: 'POST',
-      body: JSON.stringify(credentials)
+      body: JSON.stringify({
+        username: credentials.email, // Backend очікує username
+        password: credentials.password
+      })
     })
   },
 

@@ -9,6 +9,7 @@ import { Input } from '@components/ui/input'
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@components/ui/form'
 import { cn } from '@lib/utils'
 import type { ItemStatusType, ItemUnitType } from '@renderer/utils/itemsApi'
+import type { Donor } from '@renderer/services/donorService'
 
 // ── Validation schema ─────────────────────────────────────────────────────────
 // All fields use clean types (no z.preprocess) to stay compatible with
@@ -25,12 +26,17 @@ const itemSchema = z.object({
     .int('Кількість має бути цілим числом')
     .min(0, 'Кількість не може бути відʼємною'),
   unit: z.enum(['шт', 'кг', 'л', 'компл']),
+  donorId: z.string().optional(),
   serialNumber: z.string().max(100, 'Серійний номер занадто довгий').optional(),
   price: z
     .number({ error: 'Введіть коректну ціну' })
     .min(0, 'Ціна не може бути відʼємною')
     .optional(),
-  notes: z.string().max(1000, 'Нотатки не можуть перевищувати 1000 символів').optional()
+  notes: z.string().max(1000, 'Нотатки не можуть перевищувати 1000 символів').optional(),
+  balance_status: z.enum(['off_balance', 'on_balance']).default('off_balance'),
+  document_number: z.string().max(50).optional(),
+  document_date: z.string().optional(),
+  supplier_name: z.string().max(255).optional(),
 })
 
 export type ItemFormValues = z.infer<typeof itemSchema>
@@ -40,9 +46,14 @@ export interface ItemFormOutput {
   status: ItemStatusType
   quantity: number
   unit: ItemUnitType
+  donorId?: string
   serialNumber?: string
   price?: number
   notes?: string
+  balance_status: 'off_balance' | 'on_balance'
+  document_number?: string
+  document_date?: string
+  supplier_name?: string
 }
 
 // ── Select / textarea styles (mirror Input component) ────────────────────────
@@ -66,11 +77,12 @@ const textareaClass = cn(
 interface ItemFormProps {
   onSubmit: (values: ItemFormOutput) => Promise<void>
   isSubmitting?: boolean
+  donors?: Donor[]
 }
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
-export function ItemForm({ onSubmit, isSubmitting = false }: ItemFormProps): React.JSX.Element {
+export function ItemForm({ onSubmit, isSubmitting = false, donors }: ItemFormProps): React.JSX.Element {
   const form = useForm<ItemFormValues>({
     resolver: zodResolver(itemSchema),
     defaultValues: {
@@ -78,11 +90,18 @@ export function ItemForm({ onSubmit, isSubmitting = false }: ItemFormProps): Rea
       status: 'government',
       quantity: 1,
       unit: 'шт',
+      donorId: undefined,
       serialNumber: '',
       price: undefined,
-      notes: ''
+      notes: '',
+      balance_status: 'off_balance',
+      document_number: '',
+      document_date: '',
+      supplier_name: '',
     }
   })
+
+  const watchedBalanceStatus = form.watch('balance_status')
 
   const handleSubmit = async (values: ItemFormValues): Promise<void> => {
     await onSubmit({
@@ -90,9 +109,14 @@ export function ItemForm({ onSubmit, isSubmitting = false }: ItemFormProps): Rea
       status: values.status as ItemStatusType,
       quantity: values.quantity,
       unit: values.unit as ItemUnitType,
+      donorId: values.donorId || undefined,
       serialNumber: values.serialNumber || undefined,
       price: values.price,
-      notes: values.notes || undefined
+      notes: values.notes || undefined,
+      balance_status: values.balance_status,
+      document_number: values.balance_status === 'on_balance' ? (values.document_number || undefined) : undefined,
+      document_date: values.balance_status === 'on_balance' ? (values.document_date || undefined) : undefined,
+      supplier_name: values.balance_status === 'on_balance' ? (values.supplier_name || undefined) : undefined,
     })
   }
 
@@ -163,6 +187,34 @@ export function ItemForm({ onSubmit, isSubmitting = false }: ItemFormProps): Rea
             )}
           />
         </div>
+
+        {/* Донор */}
+        {donors && donors.length > 0 && (
+          <FormField
+            control={form.control}
+            name="donorId"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Донор</FormLabel>
+                <FormControl>
+                  <select
+                    {...field}
+                    value={field.value ?? ''}
+                    onChange={(e) => field.onChange(e.target.value || undefined)}
+                    className={selectClass}
+                    disabled={isSubmitting}
+                  >
+                    <option value="">— Не вказано —</option>
+                    {donors.map((d) => (
+                      <option key={d.id} value={d.id}>{d.name}</option>
+                    ))}
+                  </select>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        )}
 
         {/* Кількість + Ціна */}
         <div className="grid grid-cols-2 gap-4">
@@ -262,6 +314,94 @@ export function ItemForm({ onSubmit, isSubmitting = false }: ItemFormProps): Rea
             </FormItem>
           )}
         />
+
+        {/* Статус балансу */}
+        <FormField
+          control={form.control}
+          name="balance_status"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Статус балансу</FormLabel>
+              <FormControl>
+                <select {...field} className={selectClass} disabled={isSubmitting}>
+                  <option value="off_balance">⚠️ Позабаланс (без документів)</option>
+                  <option value="on_balance">📄 На балансі (з документами)</option>
+                </select>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        {/* Поля документів — показуються тільки коли обрано "На балансі" */}
+        {watchedBalanceStatus === 'on_balance' && (
+          <div className="rounded-md border border-border bg-muted/30 p-4 space-y-4">
+            <p className="text-sm font-medium text-muted-foreground">Дані накладної</p>
+
+            {/* Номер накладної */}
+            <FormField
+              control={form.control}
+              name="document_number"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Номер накладної</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      value={field.value ?? ''}
+                      placeholder="Наприклад: НК-2024-001"
+                      maxLength={50}
+                      disabled={isSubmitting}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            {/* Дата накладної + Постачальник */}
+            <div className="grid grid-cols-2 gap-4">
+              <FormField
+                control={form.control}
+                name="document_date"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Дата накладної</FormLabel>
+                    <FormControl>
+                      <Input
+                        {...field}
+                        value={field.value ?? ''}
+                        type="date"
+                        disabled={isSubmitting}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="supplier_name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Постачальник</FormLabel>
+                    <FormControl>
+                      <Input
+                        {...field}
+                        value={field.value ?? ''}
+                        placeholder="Наприклад: ТОВ «Постачальник»"
+                        maxLength={255}
+                        disabled={isSubmitting}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+          </div>
+        )}
 
         {/* Submit */}
         <Button type="submit" className="w-full" disabled={isSubmitting}>

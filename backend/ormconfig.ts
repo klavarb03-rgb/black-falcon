@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
 import * as dotenv from 'dotenv';
-import { User, Item, Operation, Group, Kit, KitTemplate, Donor } from './src/entities';
+import { User, Item, Operation, Group, Kit, KitTemplate, Donor, SyncQueue } from './src/entities';
 
 dotenv.config();
 
@@ -15,7 +15,7 @@ const AppDataSource = new DataSource({
   database: process.env.DB_NAME ?? 'black_falcon',
   synchronize: false,
   logging: true,
-  entities: [User, Item, Operation, Group, Kit, KitTemplate, Donor],
+  entities: [User, Item, Operation, Group, Kit, KitTemplate, Donor, SyncQueue],
   migrations: ['src/migrations/*.ts'],
   subscribers: [],
 });

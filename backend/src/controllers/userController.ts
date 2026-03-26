@@ -13,7 +13,7 @@ type SafeUser = Omit<User, 'passwordHash'>;
 function sanitizeUser(user: User): SafeUser {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { passwordHash: _passwordHash, ...safe } = user;
-  return safe;
+  return { ...safe, username: user.email };
 }
 
 export async function getUsers(req: Request, res: Response, next: NextFunction): Promise<void> {

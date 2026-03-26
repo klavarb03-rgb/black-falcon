@@ -8,6 +8,7 @@ import {
   TableRow,
   TableCell,
 } from '@components/ui/table'
+import { Button } from '@components/ui/button'
 import type { Item, ItemStatus } from '@renderer/services/itemService'
 
 const STATUS_LABELS: Record<ItemStatus, string> = {
@@ -25,9 +26,17 @@ const STATUS_CLASSES: Record<ItemStatus, string> = {
 interface ItemsTableProps {
   items: Item[]
   isLoading: boolean
+  /** If provided, shows "Оформити документи" button for off-balance items */
+  canRegisterDocuments?: boolean
+  onRegisterDocuments?: (item: Item) => void
 }
 
-export function ItemsTable({ items, isLoading }: ItemsTableProps): React.JSX.Element {
+export function ItemsTable({
+  items,
+  isLoading,
+  canRegisterDocuments = false,
+  onRegisterDocuments,
+}: ItemsTableProps): React.JSX.Element {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center py-16 text-muted-foreground">
@@ -49,6 +58,8 @@ export function ItemsTable({ items, isLoading }: ItemsTableProps): React.JSX.Ele
     )
   }
 
+  const showActionsColumn = canRegisterDocuments
+
   return (
     <Table>
       <TableHeader>
@@ -57,23 +68,48 @@ export function ItemsTable({ items, isLoading }: ItemsTableProps): React.JSX.Ele
           <TableHead>Статус</TableHead>
           <TableHead className="text-right">Кількість</TableHead>
           <TableHead>Одиниця</TableHead>
+          {showActionsColumn && <TableHead className="text-right">Дії</TableHead>}
         </TableRow>
       </TableHeader>
       <TableBody>
-        {items.map((item) => (
-          <TableRow key={item.id}>
-            <TableCell className="font-medium">{item.name}</TableCell>
-            <TableCell>
-              <span
-                className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${STATUS_CLASSES[item.status]}`}
-              >
-                {STATUS_LABELS[item.status]}
-              </span>
-            </TableCell>
-            <TableCell className="text-right tabular-nums">{item.quantity}</TableCell>
-            <TableCell className="text-muted-foreground">{item.unit ?? '—'}</TableCell>
-          </TableRow>
-        ))}
+        {items.map((item) => {
+          const isOffBalance = !item.balance_status || item.balance_status === 'off_balance'
+          return (
+            <TableRow key={item.id}>
+              <TableCell className="font-medium">
+                <span className="flex items-center gap-1.5">
+                  <span title={isOffBalance ? 'Позабаланс (без документів)' : 'На балансі (з документами)'}>
+                    {isOffBalance ? '⚠️' : '📄'}
+                  </span>
+                  {item.name}
+                </span>
+              </TableCell>
+              <TableCell>
+                <span
+                  className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${STATUS_CLASSES[item.status]}`}
+                >
+                  {STATUS_LABELS[item.status]}
+                </span>
+              </TableCell>
+              <TableCell className="text-right tabular-nums">{item.quantity}</TableCell>
+              <TableCell className="text-muted-foreground">{item.unit ?? '—'}</TableCell>
+              {showActionsColumn && (
+                <TableCell className="text-right">
+                  {isOffBalance && onRegisterDocuments && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="h-7 px-2 text-xs text-amber-700 border-amber-300 hover:bg-amber-50 dark:text-amber-400 dark:border-amber-700 dark:hover:bg-amber-950"
+                      onClick={() => onRegisterDocuments(item)}
+                    >
+                      Оформити документи
+                    </Button>
+                  )}
+                </TableCell>
+              )}
+            </TableRow>
+          )
+        })}
       </TableBody>
     </Table>
   )

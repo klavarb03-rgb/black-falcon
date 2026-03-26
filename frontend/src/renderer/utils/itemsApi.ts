@@ -14,6 +14,10 @@ export interface CreateItemInput {
   metadata?: string
   ownerId: string
   token: string
+  balance_status?: 'off_balance' | 'on_balance'
+  document_number?: string
+  document_date?: string
+  supplier_name?: string
 }
 
 export interface CreatedItem {

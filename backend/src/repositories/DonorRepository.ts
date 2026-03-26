@@ -19,6 +19,15 @@ export class DonorRepository {
     });
   }
 
+  findPaginated(page: number, limit: number): Promise<[Donor[], number]> {
+    return this.repo.findAndCount({
+      where: { isDeleted: false },
+      order: { name: 'ASC' },
+      skip: (page - 1) * limit,
+      take: limit,
+    });
+  }
+
   save(donor: Partial<Donor>): Promise<Donor> {
     return this.repo.save(this.repo.create(donor));
   }

@@ -21,7 +21,7 @@ function _interopNamespaceDefault(e) {
   return Object.freeze(n);
 }
 const fs__namespace = /* @__PURE__ */ _interopNamespaceDefault(fs);
-const UserEntity = new typeorm.EntitySchema({
+new typeorm.EntitySchema({
   name: "User",
   tableName: "users",
   columns: {
@@ -36,7 +36,7 @@ const UserEntity = new typeorm.EntitySchema({
   },
   indices: [{ columns: ["role"] }]
 });
-const DonorEntity = new typeorm.EntitySchema({
+new typeorm.EntitySchema({
   name: "Donor",
   tableName: "donors",
   columns: {
@@ -48,7 +48,7 @@ const DonorEntity = new typeorm.EntitySchema({
     updatedAt: { type: "datetime", name: "updated_at", updateDate: true }
   }
 });
-const ItemGroupEntity = new typeorm.EntitySchema({
+new typeorm.EntitySchema({
   name: "ItemGroup",
   tableName: "item_groups",
   columns: {
@@ -84,7 +84,7 @@ const ItemGroupEntity = new typeorm.EntitySchema({
     { columns: ["parentId"] }
   ]
 });
-const ItemEntity = new typeorm.EntitySchema({
+new typeorm.EntitySchema({
   name: "Item",
   tableName: "items",
   columns: {
@@ -130,7 +130,7 @@ const ItemEntity = new typeorm.EntitySchema({
     { columns: ["version"] }
   ]
 });
-const OperationEntity = new typeorm.EntitySchema({
+new typeorm.EntitySchema({
   name: "Operation",
   tableName: "operations",
   columns: {
@@ -179,7 +179,7 @@ const OperationEntity = new typeorm.EntitySchema({
     { columns: ["type"] }
   ]
 });
-const KitTemplateEntity = new typeorm.EntitySchema({
+new typeorm.EntitySchema({
   name: "KitTemplate",
   tableName: "kit_templates",
   columns: {
@@ -204,7 +204,7 @@ const KitTemplateEntity = new typeorm.EntitySchema({
     }
   }
 });
-const KitEntity = new typeorm.EntitySchema({
+new typeorm.EntitySchema({
   name: "Kit",
   tableName: "kits",
   columns: {
@@ -234,7 +234,7 @@ const KitEntity = new typeorm.EntitySchema({
     { columns: ["itemId"] }
   ]
 });
-const SyncQueueEntity = new typeorm.EntitySchema({
+new typeorm.EntitySchema({
   name: "SyncQueue",
   tableName: "sync_queue",
   columns: {
@@ -252,167 +252,12 @@ const SyncQueueEntity = new typeorm.EntitySchema({
     { columns: ["entityType", "entityId"] }
   ]
 });
-class InitialSchema1742860800000 {
-  async up(queryRunner) {
-    await queryRunner.query(`PRAGMA foreign_keys = ON`);
-    await queryRunner.query(`
-      CREATE TABLE IF NOT EXISTS users (
-        id TEXT PRIMARY KEY,
-        username TEXT NOT NULL UNIQUE,
-        password_hash TEXT NOT NULL,
-        role TEXT NOT NULL CHECK(role IN ('superadmin', 'admin', 'manager')),
-        full_name TEXT NOT NULL,
-        created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        deleted_at DATETIME
-      )
-    `);
-    await queryRunner.query(`
-      CREATE TABLE IF NOT EXISTS donors (
-        id TEXT PRIMARY KEY,
-        name TEXT NOT NULL,
-        contact TEXT,
-        notes TEXT,
-        created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-      )
-    `);
-    await queryRunner.query(`
-      CREATE TABLE IF NOT EXISTS item_groups (
-        id TEXT PRIMARY KEY,
-        name TEXT NOT NULL,
-        parent_id TEXT REFERENCES item_groups(id) ON DELETE SET NULL,
-        level INTEGER NOT NULL CHECK(level BETWEEN 1 AND 4),
-        user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-        created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-      )
-    `);
-    await queryRunner.query(`
-      CREATE TABLE IF NOT EXISTS items (
-        id TEXT PRIMARY KEY,
-        name TEXT NOT NULL,
-        description TEXT,
-        quantity INTEGER NOT NULL DEFAULT 0,
-        unit TEXT NOT NULL DEFAULT 'шт',
-        status TEXT NOT NULL CHECK(status IN ('government', 'volunteer')),
-        group_id TEXT REFERENCES item_groups(id) ON DELETE SET NULL,
-        owner_id TEXT NOT NULL REFERENCES users(id) ON DELETE RESTRICT,
-        donor_id TEXT REFERENCES donors(id) ON DELETE SET NULL,
-        metadata TEXT,
-        version INTEGER NOT NULL DEFAULT 1,
-        created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        deleted_at DATETIME
-      )
-    `);
-    await queryRunner.query(`
-      CREATE TABLE IF NOT EXISTS operations (
-        id TEXT PRIMARY KEY,
-        type TEXT NOT NULL CHECK(type IN ('transfer', 'writeoff', 'receive')),
-        item_id TEXT NOT NULL REFERENCES items(id) ON DELETE RESTRICT,
-        from_user_id TEXT REFERENCES users(id) ON DELETE SET NULL,
-        to_user_id TEXT REFERENCES users(id) ON DELETE SET NULL,
-        quantity INTEGER NOT NULL,
-        notes TEXT,
-        performed_by TEXT NOT NULL REFERENCES users(id) ON DELETE RESTRICT,
-        performed_at DATETIME NOT NULL,
-        created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-      )
-    `);
-    await queryRunner.query(`
-      CREATE TABLE IF NOT EXISTS kit_templates (
-        id TEXT PRIMARY KEY,
-        name TEXT NOT NULL,
-        description TEXT,
-        created_by TEXT NOT NULL REFERENCES users(id) ON DELETE RESTRICT,
-        created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-      )
-    `);
-    await queryRunner.query(`
-      CREATE TABLE IF NOT EXISTS kits (
-        id TEXT PRIMARY KEY,
-        template_id TEXT NOT NULL REFERENCES kit_templates(id) ON DELETE CASCADE,
-        item_id TEXT NOT NULL REFERENCES items(id) ON DELETE RESTRICT,
-        quantity INTEGER NOT NULL,
-        notes TEXT
-      )
-    `);
-    await queryRunner.query(`
-      CREATE TABLE IF NOT EXISTS sync_queue (
-        id TEXT PRIMARY KEY,
-        entity_type TEXT NOT NULL,
-        entity_id TEXT NOT NULL,
-        operation TEXT NOT NULL CHECK(operation IN ('create', 'update', 'delete')),
-        payload TEXT NOT NULL,
-        synced INTEGER NOT NULL DEFAULT 0,
-        created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        synced_at DATETIME
-      )
-    `);
-    await queryRunner.query(`CREATE INDEX IF NOT EXISTS idx_item_groups_user ON item_groups(user_id)`);
-    await queryRunner.query(`CREATE INDEX IF NOT EXISTS idx_item_groups_parent ON item_groups(parent_id)`);
-    await queryRunner.query(`CREATE INDEX IF NOT EXISTS idx_items_owner ON items(owner_id)`);
-    await queryRunner.query(`CREATE INDEX IF NOT EXISTS idx_items_group ON items(group_id)`);
-    await queryRunner.query(`CREATE INDEX IF NOT EXISTS idx_items_status ON items(status)`);
-    await queryRunner.query(`CREATE INDEX IF NOT EXISTS idx_items_version ON items(version)`);
-    await queryRunner.query(`CREATE INDEX IF NOT EXISTS idx_operations_item ON operations(item_id)`);
-    await queryRunner.query(`CREATE INDEX IF NOT EXISTS idx_operations_performed_by ON operations(performed_by)`);
-    await queryRunner.query(`CREATE INDEX IF NOT EXISTS idx_operations_performed_at ON operations(performed_at)`);
-    await queryRunner.query(`CREATE INDEX IF NOT EXISTS idx_operations_type ON operations(type)`);
-    await queryRunner.query(`CREATE INDEX IF NOT EXISTS idx_kits_template ON kits(template_id)`);
-    await queryRunner.query(`CREATE INDEX IF NOT EXISTS idx_kits_item ON kits(item_id)`);
-    await queryRunner.query(`CREATE INDEX IF NOT EXISTS idx_sync_queue_synced ON sync_queue(synced)`);
-    await queryRunner.query(`CREATE INDEX IF NOT EXISTS idx_sync_queue_entity ON sync_queue(entity_type, entity_id)`);
-  }
-  async down(queryRunner) {
-    await queryRunner.query(`DROP TABLE IF EXISTS sync_queue`);
-    await queryRunner.query(`DROP TABLE IF EXISTS kits`);
-    await queryRunner.query(`DROP TABLE IF EXISTS kit_templates`);
-    await queryRunner.query(`DROP TABLE IF EXISTS operations`);
-    await queryRunner.query(`DROP TABLE IF EXISTS items`);
-    await queryRunner.query(`DROP TABLE IF EXISTS item_groups`);
-    await queryRunner.query(`DROP TABLE IF EXISTS donors`);
-    await queryRunner.query(`DROP TABLE IF EXISTS users`);
-  }
-}
-let dataSource = null;
-async function initDatabase() {
-  const dbPath = path.join(electron.app.getPath("userData"), "black-falcon.db");
-  dataSource = new typeorm.DataSource({
-    type: "better-sqlite3",
-    database: dbPath,
-    entities: [
-      UserEntity,
-      DonorEntity,
-      ItemGroupEntity,
-      ItemEntity,
-      OperationEntity,
-      KitTemplateEntity,
-      KitEntity,
-      SyncQueueEntity
-    ],
-    migrations: [InitialSchema1742860800000],
-    migrationsRun: true,
-    synchronize: false,
-    logging: process.env["NODE_ENV"] === "development"
-  });
-  await dataSource.initialize();
-  return dataSource;
-}
 function getDatabase() {
-  if (!dataSource || !dataSource.isInitialized) {
+  {
     throw new Error("Database not initialized. Call initDatabase() first.");
   }
-  return dataSource;
 }
 async function closeDatabase() {
-  if (dataSource?.isInitialized) {
-    await dataSource.destroy();
-    dataSource = null;
-  }
 }
 const getTokenFilePath = () => path.join(electron.app.getPath("userData"), ".auth_token");
 function registerAuthHandlers() {
@@ -499,6 +344,7 @@ function registerItemHandlers() {
   });
 }
 function createWindow() {
+  console.log("[main] createWindow() called");
   const mainWindow = new electron.BrowserWindow({
     width: 1280,
     height: 800,
@@ -508,27 +354,49 @@ function createWindow() {
     show: false,
     autoHideMenuBar: true,
     webPreferences: {
-      preload: path.join(__dirname, "../preload/index.js"),
+      preload: path.join(__dirname, "../preload/preload.js"),
       sandbox: false,
       contextIsolation: true,
       nodeIntegration: false
     }
   });
   mainWindow.on("ready-to-show", () => {
+    console.log("[main] ready-to-show fired, showing window");
     mainWindow.show();
+  });
+  const showFallback = setTimeout(() => {
+    if (!mainWindow.isDestroyed() && !mainWindow.isVisible()) {
+      console.warn("[main] fallback show triggered — ready-to-show never fired");
+      mainWindow.show();
+    }
+  }, 5e3);
+  mainWindow.once("show", () => clearTimeout(showFallback));
+  mainWindow.webContents.on("did-fail-load", (_e, code, desc, url) => {
+    console.error(`[main] renderer failed to load: ${code} ${desc} (${url})`);
+  });
+  mainWindow.webContents.on("render-process-gone", (_e, details) => {
+    console.error("[main] renderer process gone:", details);
   });
   mainWindow.webContents.setWindowOpenHandler((details) => {
     electron.shell.openExternal(details.url);
     return { action: "deny" };
   });
   if (utils.is.dev && process.env["ELECTRON_RENDERER_URL"]) {
+    console.log("[main] loading dev URL:", process.env["ELECTRON_RENDERER_URL"]);
     mainWindow.loadURL(process.env["ELECTRON_RENDERER_URL"]);
   } else {
-    mainWindow.loadFile(path.join(__dirname, "../renderer/index.html"));
+    const htmlPath = path.join(__dirname, "../renderer/index.html");
+    console.log("[main] loading file:", htmlPath);
+    mainWindow.loadFile(htmlPath);
   }
 }
 electron.app.whenReady().then(async () => {
-  await initDatabase();
+  console.log("[main] app ready");
+  try {
+    console.log("[main] database initialized");
+  } catch (err) {
+    console.error("[main] database initialization failed (continuing without DB):", err);
+  }
   registerAuthHandlers();
   registerItemHandlers();
   createWindow();

@@ -9,6 +9,10 @@ import userRoutes from './routes/user.routes';
 import itemRoutes from './routes/item.routes';
 import operationRoutes from './routes/operation.routes';
 import reportRoutes from './routes/report.routes';
+import groupRoutes from './routes/group.routes';
+import syncRoutes from './routes/sync.routes';
+import kitRoutes from './routes/kit.routes';
+import donorRoutes from './routes/donor.routes';
 
 const app = express();
 
@@ -27,6 +31,10 @@ app.use('/api/users', userRoutes);
 app.use('/api/items', itemRoutes);
 app.use('/api/operations', operationRoutes);
 app.use('/api/reports', reportRoutes);
+app.use('/api/groups', groupRoutes);
+app.use('/api/sync', syncRoutes);
+app.use('/api/kits', kitRoutes);
+app.use('/api/donors', donorRoutes);
 
 // Health check
 app.get('/health', (_req: Request, res: Response) => {
