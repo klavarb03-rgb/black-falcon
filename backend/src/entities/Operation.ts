@@ -21,35 +21,35 @@ export class Operation {
   @Column({ type: 'enum', enum: ['transfer', 'write_off', 'receive', 'adjustment', 'transfer_to_balance'] })
   type!: OperationType;
 
-  @Column({ type: 'uuid' })
+  @Column({ type: 'uuid', name: 'item_id' })
   itemId!: string;
 
   @ManyToOne(() => Item, (item) => item.operations, { onDelete: 'RESTRICT' })
-  @JoinColumn({ name: 'itemId' })
+  @JoinColumn({ name: 'item_id' })
   item!: Item;
 
-  @Column({ type: 'int' })
+  @Column({ type: 'int', name: 'quantity_delta' })
   quantityDelta!: number; // positive = in, negative = out
 
-  @Column({ type: 'uuid', nullable: true })
+  @Column({ type: 'uuid', nullable: true, name: 'from_user_id' })
   fromUserId!: string | null;
 
   @ManyToOne(() => User, { nullable: true, onDelete: 'SET NULL' })
-  @JoinColumn({ name: 'fromUserId' })
+  @JoinColumn({ name: 'from_user_id' })
   fromUser!: User | null;
 
-  @Column({ type: 'uuid', nullable: true })
+  @Column({ type: 'uuid', nullable: true, name: 'to_user_id' })
   toUserId!: string | null;
 
   @ManyToOne(() => User, { nullable: true, onDelete: 'SET NULL' })
-  @JoinColumn({ name: 'toUserId' })
+  @JoinColumn({ name: 'to_user_id' })
   toUser!: User | null;
 
-  @Column({ type: 'uuid' })
+  @Column({ type: 'uuid', name: 'performed_by' })
   createdById!: string;
 
   @ManyToOne(() => User, (user) => user.performedOperations, { onDelete: 'RESTRICT' })
-  @JoinColumn({ name: 'createdById' })
+  @JoinColumn({ name: 'performed_by' })
   createdBy!: User;
 
   @Column({ type: 'text', nullable: true })
@@ -58,9 +58,9 @@ export class Operation {
   @Column({ type: 'jsonb', nullable: true })
   metadata!: Record<string, unknown> | null;
 
-  @CreateDateColumn({ type: 'timestamptz' })
+  @CreateDateColumn({ type: 'timestamptz', name: 'created_at' })
   createdAt!: Date;
 
-  @UpdateDateColumn({ type: 'timestamptz' })
+  @UpdateDateColumn({ type: 'timestamptz', name: 'updated_at' })
   updatedAt!: Date;
 }

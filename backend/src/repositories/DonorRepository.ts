@@ -1,4 +1,4 @@
-import { DataSource, Repository } from 'typeorm';
+import { DataSource, Repository, IsNull } from 'typeorm';
 import { Donor } from '../entities';
 
 export class DonorRepository {
@@ -9,19 +9,19 @@ export class DonorRepository {
   }
 
   findById(id: string): Promise<Donor | null> {
-    return this.repo.findOne({ where: { id, isDeleted: false } });
+    return this.repo.findOne({ where: { id, deletedAt: IsNull() } });
   }
 
   findAll(): Promise<Donor[]> {
     return this.repo.find({
-      where: { isDeleted: false },
+      where: { deletedAt: IsNull() },
       order: { name: 'ASC' },
     });
   }
 
   findPaginated(page: number, limit: number): Promise<[Donor[], number]> {
     return this.repo.findAndCount({
-      where: { isDeleted: false },
+      where: { deletedAt: IsNull() },
       order: { name: 'ASC' },
       skip: (page - 1) * limit,
       take: limit,
@@ -39,6 +39,6 @@ export class DonorRepository {
   }
 
   async softDelete(id: string): Promise<void> {
-    await this.repo.update(id, { isDeleted: true });
+    await this.repo.update(id, { deletedAt: new Date() } as any);
   }
 }

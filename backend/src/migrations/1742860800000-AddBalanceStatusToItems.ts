@@ -30,7 +30,7 @@ export class AddBalanceStatusToItems1742860800000 implements MigrationInterface 
 
     // Add 'transfer_to_balance' to the operations type enum
     await queryRunner.query(`
-      ALTER TYPE "operations_type_enum" ADD VALUE IF NOT EXISTS 'transfer_to_balance'
+      ALTER TYPE "operation_type" ADD VALUE IF NOT EXISTS 'transfer_to_balance'
     `);
   }
 

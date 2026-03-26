@@ -1,3 +1,4 @@
+import { IsNull } from 'typeorm';
 import { Request, Response, NextFunction } from 'express';
 import { getDataSource } from '../database';
 import { Item, Kit, KitItemEntry } from '../entities';
@@ -86,7 +87,7 @@ export async function createTemplate(req: Request, res: Response, next: NextFunc
       description: description ?? null,
       items: validatedItems,
       metadata: metadata ?? null,
-      isDeleted: false,
+      deletedAt: IsNull(),
     });
 
     res.status(201).json({ status: 'success', data: template });
@@ -138,7 +139,7 @@ export async function getAvailableKits(req: Request, res: Response, next: NextFu
     let bottleneck: { itemId: string; name: string; available: number; required: number } | null = null;
 
     for (const entry of template.items) {
-      const item = await itemRepo.findOne({ where: { id: entry.itemId, isDeleted: false } });
+      const item = await itemRepo.findOne({ where: { id: entry.itemId, deletedAt: IsNull() } });
       const available = item ? item.quantity : 0;
       const canMake = Math.floor(available / entry.quantity);
 
@@ -180,7 +181,7 @@ export async function getKits(_req: Request, res: Response, next: NextFunction):
       kits = await kitRepo.findKitsByOwner(userId);
     } else {
       kits = await ds.getRepository(Kit).find({
-        where: { isDeleted: false },
+        where: { deletedAt: IsNull() },
         relations: ['template', 'owner'],
         order: { createdAt: 'DESC' },
       });
@@ -232,7 +233,7 @@ export async function assembleKit(req: Request, res: Response, next: NextFunctio
         const item = await itemRepo
           .createQueryBuilder('item')
           .setLock('pessimistic_write')
-          .where('item.id = :id AND item."isDeleted" = false', { id: entry.itemId })
+          .where('item.id = :id AND item."deleted_at" IS NULL', { id: entry.itemId })
           .getOne();
 
         if (!item) {
@@ -282,7 +283,7 @@ export async function assembleKit(req: Request, res: Response, next: NextFunctio
           ownerId,
           items: validatedItems,
           metadata: metadata ?? null,
-          isDeleted: false,
+          deletedAt: IsNull(),
           version: 1,
         }),
       );
@@ -318,7 +319,7 @@ export async function disassembleKit(req: Request, res: Response, next: NextFunc
 
       // Return components to inventory (skip items that no longer exist)
       for (const entry of kit.items) {
-        const exists = await itemRepo.findOne({ where: { id: entry.itemId, isDeleted: false } });
+        const exists = await itemRepo.findOne({ where: { id: entry.itemId, deletedAt: IsNull() } });
         if (exists) {
           await itemRepo
             .createQueryBuilder()

@@ -25,16 +25,21 @@ export class KitTemplate {
   @Column({ type: 'jsonb', default: '[]' })
   items!: KitItemEntry[]; // bill-of-materials for this template
 
-  @Column({ type: 'boolean', default: false })
-  isDeleted!: boolean;
+  @Column({ type: 'timestamptz', nullable: true, name: 'deleted_at' })
+  deletedAt!: Date | null;
+  
+  // Compatibility getter for soft delete
+  get isDeleted(): boolean {
+    return this.deletedAt !== null;
+  }
 
   @Column({ type: 'jsonb', nullable: true })
   metadata!: Record<string, unknown> | null;
 
-  @CreateDateColumn({ type: 'timestamptz' })
+  @CreateDateColumn({ type: 'timestamptz', name: 'created_at' })
   createdAt!: Date;
 
-  @UpdateDateColumn({ type: 'timestamptz' })
+  @UpdateDateColumn({ type: 'timestamptz', name: 'updated_at' })
   updatedAt!: Date;
 
   @OneToMany(() => Kit, (kit) => kit.template)
@@ -46,18 +51,18 @@ export class Kit {
   @PrimaryGeneratedColumn('uuid')
   id!: string;
 
-  @Column({ type: 'uuid', nullable: true })
+  @Column({ type: 'uuid', nullable: true, name: 'template_id' })
   templateId!: string | null;
 
   @ManyToOne(() => KitTemplate, (template) => template.kits, { nullable: true, onDelete: 'SET NULL' })
-  @JoinColumn({ name: 'templateId' })
+  @JoinColumn({ name: 'template_id' })
   template!: KitTemplate | null;
 
-  @Column({ type: 'uuid' })
+  @Column({ type: 'uuid', name: 'user_id' })
   ownerId!: string;
 
   @ManyToOne(() => User, { onDelete: 'RESTRICT' })
-  @JoinColumn({ name: 'ownerId' })
+  @JoinColumn({ name: 'user_id' })
   owner!: User;
 
   @Column({ type: 'varchar', length: 255, nullable: true })
@@ -66,8 +71,13 @@ export class Kit {
   @Column({ type: 'jsonb', default: '[]' })
   items!: KitItemEntry[]; // JSONB bill-of-materials: [{itemId, quantity, notes}]
 
-  @Column({ type: 'boolean', default: false })
-  isDeleted!: boolean;
+  @Column({ type: 'timestamptz', nullable: true, name: 'deleted_at' })
+  deletedAt!: Date | null;
+  
+  // Compatibility getter for soft delete
+  get isDeleted(): boolean {
+    return this.deletedAt !== null;
+  }
 
   @Column({ type: 'int', default: 1 })
   version!: number;
@@ -75,10 +85,10 @@ export class Kit {
   @Column({ type: 'jsonb', nullable: true })
   metadata!: Record<string, unknown> | null;
 
-  @CreateDateColumn({ type: 'timestamptz' })
+  @CreateDateColumn({ type: 'timestamptz', name: 'created_at' })
   createdAt!: Date;
 
-  @UpdateDateColumn({ type: 'timestamptz' })
+  @UpdateDateColumn({ type: 'timestamptz', name: 'updated_at' })
   updatedAt!: Date;
 }
 

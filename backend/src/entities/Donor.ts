@@ -23,16 +23,21 @@ export class Donor {
   @Column({ type: 'varchar', length: 255, nullable: true })
   contactInfo!: string | null;
 
-  @Column({ type: 'boolean', default: false })
-  isDeleted!: boolean;
+  @Column({ type: 'timestamptz', nullable: true, name: 'deleted_at' })
+  deletedAt!: Date | null;
+  
+  // Compatibility getter for soft delete
+  get isDeleted(): boolean {
+    return this.deletedAt !== null;
+  }
 
   @Column({ type: 'jsonb', nullable: true })
   metadata!: Record<string, unknown> | null;
 
-  @CreateDateColumn({ type: 'timestamptz' })
+  @CreateDateColumn({ type: 'timestamptz', name: 'created_at' })
   createdAt!: Date;
 
-  @UpdateDateColumn({ type: 'timestamptz' })
+  @UpdateDateColumn({ type: 'timestamptz', name: 'updated_at' })
   updatedAt!: Date;
 
   @OneToMany(() => Item, (item) => item.donor)

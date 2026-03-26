@@ -1,4 +1,4 @@
-import { DataSource, Repository } from 'typeorm';
+import { DataSource, Repository, IsNull } from 'typeorm';
 import { Kit, KitTemplate } from '../entities';
 
 export class KitRepository {
@@ -12,14 +12,14 @@ export class KitRepository {
 
   findKitById(id: string): Promise<Kit | null> {
     return this.kitRepo.findOne({
-      where: { id, isDeleted: false },
+      where: { id, deletedAt: IsNull() },
       relations: ['template', 'owner'],
     });
   }
 
   findKitsByOwner(ownerId: string): Promise<Kit[]> {
     return this.kitRepo.find({
-      where: { ownerId, isDeleted: false },
+      where: { ownerId, deletedAt: IsNull() },
       relations: ['template'],
       order: { createdAt: 'DESC' },
     });
@@ -37,19 +37,19 @@ export class KitRepository {
   }
 
   async softDeleteKit(id: string): Promise<void> {
-    await this.kitRepo.update(id, { isDeleted: true });
+    await this.kitRepo.update(id, { deletedAt: new Date() } as any);
   }
 
   findTemplateById(id: string): Promise<KitTemplate | null> {
     return this.templateRepo.findOne({
-      where: { id, isDeleted: false },
+      where: { id, deletedAt: IsNull() },
       relations: ['kits'],
     });
   }
 
   findAllTemplates(): Promise<KitTemplate[]> {
     return this.templateRepo.find({
-      where: { isDeleted: false },
+      where: { deletedAt: IsNull() },
       order: { name: 'ASC' },
     });
   }
@@ -59,6 +59,6 @@ export class KitRepository {
   }
 
   async softDeleteTemplate(id: string): Promise<void> {
-    await this.templateRepo.update(id, { isDeleted: true });
+    await this.templateRepo.update(id, { deletedAt: new Date() } as any);
   }
 }

@@ -53,9 +53,12 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-amber-50: oklch(98.7% .022 95.277);
+    --color-amber-300: oklch(87.9% .169 91.605);
     --color-amber-400: oklch(82.8% .189 84.429);
     --color-amber-500: oklch(76.9% .188 70.08);
     --color-amber-700: oklch(55.5% .163 48.998);
+    --color-amber-950: oklch(27.9% .077 45.635);
     --color-yellow-400: oklch(85.2% .199 91.936);
     --color-yellow-500: oklch(79.5% .184 86.047);
     --color-yellow-700: oklch(55.4% .135 66.442);
@@ -76,6 +79,7 @@
     --color-blue-700: oklch(48.8% .243 264.376);
     --color-blue-800: oklch(42.4% .199 265.638);
     --color-blue-900: oklch(37.9% .146 265.522);
+    --color-white: #fff;
     --spacing: .25rem;
     --container-xs: 20rem;
     --container-sm: 24rem;
@@ -500,6 +504,10 @@
     margin-inline: auto;
   }
 
+  .-mt-1 {
+    margin-top: calc(var(--spacing) * -1);
+  }
+
   .mt-0\.5 {
     margin-top: calc(var(--spacing) * .5);
   }
@@ -514,6 +522,10 @@
 
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
+  }
+
+  .mr-1 {
+    margin-right: calc(var(--spacing) * 1);
   }
 
   .mr-1\.5 {
@@ -945,6 +957,20 @@
     border-bottom-width: 1px;
   }
 
+  .border-amber-300 {
+    border-color: var(--color-amber-300);
+  }
+
+  .border-amber-400\/60 {
+    border-color: #fcbb0099;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .border-amber-400\/60 {
+      border-color: color-mix(in oklab, var(--color-amber-400) 60%, transparent);
+    }
+  }
+
   .border-amber-500\/30 {
     border-color: #f99c004d;
   }
@@ -1031,6 +1057,20 @@
     border-top-color: #0000;
   }
 
+  .bg-amber-50\/50 {
+    background-color: #fffbeb80;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-amber-50\/50 {
+      background-color: color-mix(in oklab, var(--color-amber-50) 50%, transparent);
+    }
+  }
+
+  .bg-amber-500 {
+    background-color: var(--color-amber-500);
+  }
+
   .bg-amber-500\/10 {
     background-color: #f99c001a;
   }
@@ -1114,6 +1154,16 @@
   @supports (color: color-mix(in lab, red, red)) {
     .bg-muted\/20 {
       background-color: color-mix(in oklab, hsl(var(--muted)) 20%, transparent);
+    }
+  }
+
+  .bg-muted\/30 {
+    background-color: hsl(var(--muted));
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-muted\/30 {
+      background-color: color-mix(in oklab, hsl(var(--muted)) 30%, transparent);
     }
   }
 
@@ -1239,6 +1289,10 @@
 
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
+  }
+
+  .py-6 {
+    padding-block: calc(var(--spacing) * 6);
   }
 
   .py-8 {
@@ -1436,6 +1490,10 @@
     color: hsl(var(--foreground));
   }
 
+  .text-green-500 {
+    color: var(--color-green-500);
+  }
+
   .text-green-700 {
     color: var(--color-green-700);
   }
@@ -1490,6 +1548,10 @@
     .text-primary\/70 {
       color: color-mix(in oklab, hsl(var(--primary)) 70%, transparent);
     }
+  }
+
+  .text-white {
+    color: var(--color-white);
   }
 
   .text-yellow-700 {
@@ -1597,6 +1659,10 @@
       .hover\:bg-accent\/50:hover {
         background-color: color-mix(in oklab, hsl(var(--accent)) 50%, transparent);
       }
+    }
+
+    .hover\:bg-amber-50:hover {
+      background-color: var(--color-amber-50);
     }
 
     .hover\:bg-destructive\/10:hover {
@@ -1767,6 +1833,30 @@
   }
 
   @media (prefers-color-scheme: dark) {
+    .dark\:border-amber-700 {
+      border-color: var(--color-amber-700);
+    }
+
+    .dark\:border-amber-700\/50 {
+      border-color: #b7500080;
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .dark\:border-amber-700\/50 {
+        border-color: color-mix(in oklab, var(--color-amber-700) 50%, transparent);
+      }
+    }
+
+    .dark\:bg-amber-950\/20 {
+      background-color: #46190133;
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .dark\:bg-amber-950\/20 {
+        background-color: color-mix(in oklab, var(--color-amber-950) 20%, transparent);
+      }
+    }
+
     .dark\:bg-blue-900\/30 {
       background-color: #1c398e4d;
     }
@@ -1833,6 +1923,12 @@
 
     .dark\:text-yellow-400 {
       color: var(--color-yellow-400);
+    }
+
+    @media (hover: hover) {
+      .dark\:hover\:bg-amber-950:hover {
+        background-color: var(--color-amber-950);
+      }
     }
   }
 }

@@ -12648,31 +12648,31 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$E = [
+const __iconNode$G = [
   ["path", { d: "M8 3 4 7l4 4", key: "9rb6wj" }],
   ["path", { d: "M4 7h16", key: "6tx8e3" }],
   ["path", { d: "m16 21 4-4-4-4", key: "siv7j2" }],
   ["path", { d: "M20 17H4", key: "h6l3hr" }]
 ];
-const ArrowLeftRight = createLucideIcon("arrow-left-right", __iconNode$E);
+const ArrowLeftRight = createLucideIcon("arrow-left-right", __iconNode$G);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$D = [
+const __iconNode$F = [
   ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
   ["path", { d: "M19 12H5", key: "x3x0zl" }]
 ];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$D);
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$F);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$C = [
+const __iconNode$E = [
   [
     "path",
     {
@@ -12683,44 +12683,67 @@ const __iconNode$C = [
   ["path", { d: "m3.3 7 8.7 5 8.7-5", key: "g66t2b" }],
   ["path", { d: "M12 22V12", key: "d0xqtd" }]
 ];
-const Box = createLucideIcon("box", __iconNode$C);
+const Box = createLucideIcon("box", __iconNode$E);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$B = [
+const __iconNode$D = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M18 17V9", key: "2bz60n" }],
   ["path", { d: "M13 17V5", key: "1frdt8" }],
   ["path", { d: "M8 17v-3", key: "17ska0" }]
 ];
-const ChartColumn = createLucideIcon("chart-column", __iconNode$B);
+const ChartColumn = createLucideIcon("chart-column", __iconNode$D);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$A = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$A);
+const __iconNode$C = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$C);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$z = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$z);
+const __iconNode$B = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$B);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$y = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$y);
+const __iconNode$A = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$A);
+/**
+ * @license lucide-react v1.6.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$z = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+];
+const CircleAlert = createLucideIcon("circle-alert", __iconNode$z);
+/**
+ * @license lucide-react v1.6.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$y = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+];
+const CircleCheck = createLucideIcon("circle-check", __iconNode$y);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -12729,10 +12752,10 @@ const ChevronRight = createLucideIcon("chevron-right", __iconNode$y);
  */
 const __iconNode$x = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+  ["path", { d: "M8 12h8", key: "1wcyev" }],
+  ["path", { d: "M12 8v8", key: "napkw2" }]
 ];
-const CircleAlert = createLucideIcon("circle-alert", __iconNode$x);
+const CirclePlus = createLucideIcon("circle-plus", __iconNode$x);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -12741,9 +12764,9 @@ const CircleAlert = createLucideIcon("circle-alert", __iconNode$x);
  */
 const __iconNode$w = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+  ["path", { d: "M12 6v6l4 2", key: "mmk7yg" }]
 ];
-const CircleCheck = createLucideIcon("circle-check", __iconNode$w);
+const Clock = createLucideIcon("clock", __iconNode$w);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -12751,11 +12774,11 @@ const CircleCheck = createLucideIcon("circle-check", __iconNode$w);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$v = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M8 12h8", key: "1wcyev" }],
-  ["path", { d: "M12 8v8", key: "napkw2" }]
+  ["path", { d: "M12 15V3", key: "m9g1x1" }],
+  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
+  ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
 ];
-const CirclePlus = createLucideIcon("circle-plus", __iconNode$v);
+const Download = createLucideIcon("download", __iconNode$v);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -12763,17 +12786,6 @@ const CirclePlus = createLucideIcon("circle-plus", __iconNode$v);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$u = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M12 6v6l4 2", key: "mmk7yg" }]
-];
-const Clock = createLucideIcon("clock", __iconNode$u);
-/**
- * @license lucide-react v1.6.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$t = [
   [
     "path",
     {
@@ -12791,7 +12803,24 @@ const __iconNode$t = [
   ],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
 ];
-const EyeOff = createLucideIcon("eye-off", __iconNode$t);
+const EyeOff = createLucideIcon("eye-off", __iconNode$u);
+/**
+ * @license lucide-react v1.6.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$t = [
+  [
+    "path",
+    {
+      d: "M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0",
+      key: "1nclc0"
+    }
+  ],
+  ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
+];
+const Eye = createLucideIcon("eye", __iconNode$t);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -12802,13 +12831,16 @@ const __iconNode$s = [
   [
     "path",
     {
-      d: "M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0",
-      key: "1nclc0"
+      d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
+      key: "1oefj6"
     }
   ],
-  ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
+  ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
+  ["path", { d: "M10 9H8", key: "b1mrlr" }],
+  ["path", { d: "M16 13H8", key: "t4e002" }],
+  ["path", { d: "M16 17H8", key: "z1uh3a" }]
 ];
-const Eye = createLucideIcon("eye", __iconNode$s);
+const FileText = createLucideIcon("file-text", __iconNode$s);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -12819,15 +12851,12 @@ const __iconNode$r = [
   [
     "path",
     {
-      d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
-      key: "1oefj6"
+      d: "m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2",
+      key: "usdka0"
     }
-  ],
-  ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
-  ["path", { d: "M12 18v-6", key: "17g6i2" }],
-  ["path", { d: "m9 15 3 3 3-3", key: "1npd3o" }]
+  ]
 ];
-const FileDown = createLucideIcon("file-down", __iconNode$r);
+const FolderOpen = createLucideIcon("folder-open", __iconNode$r);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -12838,12 +12867,12 @@ const __iconNode$q = [
   [
     "path",
     {
-      d: "m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2",
-      key: "usdka0"
+      d: "M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z",
+      key: "1kt360"
     }
   ]
 ];
-const FolderOpen = createLucideIcon("folder-open", __iconNode$q);
+const Folder = createLucideIcon("folder", __iconNode$q);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -12854,12 +12883,12 @@ const __iconNode$p = [
   [
     "path",
     {
-      d: "M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z",
-      key: "1kt360"
+      d: "M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5",
+      key: "mvr1a0"
     }
   ]
 ];
-const Folder = createLucideIcon("folder", __iconNode$p);
+const Heart = createLucideIcon("heart", __iconNode$p);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -12867,22 +12896,6 @@ const Folder = createLucideIcon("folder", __iconNode$p);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$o = [
-  [
-    "path",
-    {
-      d: "M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5",
-      key: "mvr1a0"
-    }
-  ]
-];
-const Heart = createLucideIcon("heart", __iconNode$o);
-/**
- * @license lucide-react v1.6.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$n = [
   [
     "path",
     {
@@ -12905,7 +12918,20 @@ const __iconNode$n = [
     }
   ]
 ];
-const Layers = createLucideIcon("layers", __iconNode$n);
+const Layers = createLucideIcon("layers", __iconNode$o);
+/**
+ * @license lucide-react v1.6.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$n = [
+  ["rect", { width: "7", height: "9", x: "3", y: "3", rx: "1", key: "10lvy0" }],
+  ["rect", { width: "7", height: "5", x: "14", y: "3", rx: "1", key: "16une8" }],
+  ["rect", { width: "7", height: "9", x: "14", y: "12", rx: "1", key: "1hutg5" }],
+  ["rect", { width: "7", height: "5", x: "3", y: "16", rx: "1", key: "ldoo1y" }]
+];
+const LayoutDashboard = createLucideIcon("layout-dashboard", __iconNode$n);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -12913,12 +12939,12 @@ const Layers = createLucideIcon("layers", __iconNode$n);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$m = [
-  ["rect", { width: "7", height: "9", x: "3", y: "3", rx: "1", key: "10lvy0" }],
-  ["rect", { width: "7", height: "5", x: "14", y: "3", rx: "1", key: "16une8" }],
-  ["rect", { width: "7", height: "9", x: "14", y: "12", rx: "1", key: "1hutg5" }],
-  ["rect", { width: "7", height: "5", x: "3", y: "16", rx: "1", key: "ldoo1y" }]
+  ["rect", { width: "7", height: "7", x: "3", y: "3", rx: "1", key: "1g98yp" }],
+  ["rect", { width: "7", height: "7", x: "14", y: "3", rx: "1", key: "6d4xhi" }],
+  ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }],
+  ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }]
 ];
-const LayoutDashboard = createLucideIcon("layout-dashboard", __iconNode$m);
+const LayoutGrid = createLucideIcon("layout-grid", __iconNode$m);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -12926,19 +12952,6 @@ const LayoutDashboard = createLucideIcon("layout-dashboard", __iconNode$m);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$l = [
-  ["rect", { width: "7", height: "7", x: "3", y: "3", rx: "1", key: "1g98yp" }],
-  ["rect", { width: "7", height: "7", x: "14", y: "3", rx: "1", key: "6d4xhi" }],
-  ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }],
-  ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }]
-];
-const LayoutGrid = createLucideIcon("layout-grid", __iconNode$l);
-/**
- * @license lucide-react v1.6.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$k = [
   ["path", { d: "M11 5h10", key: "1cz7ny" }],
   ["path", { d: "M11 12h10", key: "1438ji" }],
   ["path", { d: "M11 19h10", key: "11t30w" }],
@@ -12946,15 +12959,27 @@ const __iconNode$k = [
   ["path", { d: "M4 9h2", key: "r1h2o0" }],
   ["path", { d: "M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02", key: "xtkcd5" }]
 ];
-const ListOrdered = createLucideIcon("list-ordered", __iconNode$k);
+const ListOrdered = createLucideIcon("list-ordered", __iconNode$l);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$j = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("loader-circle", __iconNode$j);
+const __iconNode$k = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("loader-circle", __iconNode$k);
+/**
+ * @license lucide-react v1.6.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$j = [
+  ["path", { d: "m10 17 5-5-5-5", key: "1bsop3" }],
+  ["path", { d: "M15 12H3", key: "6jk70r" }],
+  ["path", { d: "M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4", key: "u53s6r" }]
+];
+const LogIn = createLucideIcon("log-in", __iconNode$j);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -12962,11 +12987,11 @@ const LoaderCircle = createLucideIcon("loader-circle", __iconNode$j);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$i = [
-  ["path", { d: "m10 17 5-5-5-5", key: "1bsop3" }],
-  ["path", { d: "M15 12H3", key: "6jk70r" }],
-  ["path", { d: "M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4", key: "u53s6r" }]
+  ["path", { d: "m16 17 5-5-5-5", key: "1bji2h" }],
+  ["path", { d: "M21 12H9", key: "dn1m92" }],
+  ["path", { d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4", key: "1uf3rs" }]
 ];
-const LogIn = createLucideIcon("log-in", __iconNode$i);
+const LogOut = createLucideIcon("log-out", __iconNode$i);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -12974,18 +12999,6 @@ const LogIn = createLucideIcon("log-in", __iconNode$i);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$h = [
-  ["path", { d: "m16 17 5-5-5-5", key: "1bji2h" }],
-  ["path", { d: "M21 12H9", key: "dn1m92" }],
-  ["path", { d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4", key: "1uf3rs" }]
-];
-const LogOut = createLucideIcon("log-out", __iconNode$h);
-/**
- * @license lucide-react v1.6.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$g = [
   [
     "path",
     {
@@ -12994,14 +13007,14 @@ const __iconNode$g = [
     }
   ]
 ];
-const Moon = createLucideIcon("moon", __iconNode$g);
+const Moon = createLucideIcon("moon", __iconNode$h);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$f = [
+const __iconNode$g = [
   ["path", { d: "M12 22V12", key: "d0xqtd" }],
   ["path", { d: "M16 17h6", key: "1ook5g" }],
   [
@@ -13014,14 +13027,14 @@ const __iconNode$f = [
   ["path", { d: "M3.29 7 12 12l8.71-5", key: "19ckod" }],
   ["path", { d: "m7.5 4.27 8.997 5.148", key: "9yrvtv" }]
 ];
-const PackageMinus = createLucideIcon("package-minus", __iconNode$f);
+const PackageMinus = createLucideIcon("package-minus", __iconNode$g);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$e = [
+const __iconNode$f = [
   ["path", { d: "M12 22V12", key: "d0xqtd" }],
   ["path", { d: "M16 17h6", key: "1ook5g" }],
   ["path", { d: "M19 14v6", key: "1ckrd5" }],
@@ -13035,14 +13048,14 @@ const __iconNode$e = [
   ["path", { d: "M3.29 7 12 12l8.71-5", key: "19ckod" }],
   ["path", { d: "m7.5 4.27 8.997 5.148", key: "9yrvtv" }]
 ];
-const PackagePlus = createLucideIcon("package-plus", __iconNode$e);
+const PackagePlus = createLucideIcon("package-plus", __iconNode$f);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$d = [
+const __iconNode$e = [
   [
     "path",
     {
@@ -13054,14 +13067,14 @@ const __iconNode$d = [
   ["polyline", { points: "3.29 7 12 12 20.71 7", key: "ousv84" }],
   ["path", { d: "m7.5 4.27 9 5.15", key: "1c824w" }]
 ];
-const Package = createLucideIcon("package", __iconNode$d);
+const Package = createLucideIcon("package", __iconNode$e);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$c = [
+const __iconNode$d = [
   [
     "path",
     {
@@ -13071,7 +13084,18 @@ const __iconNode$c = [
   ],
   ["path", { d: "m15 5 4 4", key: "1mk7zo" }]
 ];
-const Pencil = createLucideIcon("pencil", __iconNode$c);
+const Pencil = createLucideIcon("pencil", __iconNode$d);
+/**
+ * @license lucide-react v1.6.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$c = [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "M12 5v14", key: "s699le" }]
+];
+const Plus = createLucideIcon("plus", __iconNode$c);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -13079,10 +13103,12 @@ const Pencil = createLucideIcon("pencil", __iconNode$c);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$b = [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "M12 5v14", key: "s699le" }]
+  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
+  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
+  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
+  ["path", { d: "M8 16H3v5", key: "1cv678" }]
 ];
-const Plus = createLucideIcon("plus", __iconNode$b);
+const RefreshCw = createLucideIcon("refresh-cw", __iconNode$b);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -13090,19 +13116,6 @@ const Plus = createLucideIcon("plus", __iconNode$b);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$a = [
-  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
-  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
-  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
-  ["path", { d: "M8 16H3v5", key: "1cv678" }]
-];
-const RefreshCw = createLucideIcon("refresh-cw", __iconNode$a);
-/**
- * @license lucide-react v1.6.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$9 = [
   [
     "path",
     {
@@ -13113,7 +13126,18 @@ const __iconNode$9 = [
   ["path", { d: "M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7", key: "1ydtos" }],
   ["path", { d: "M7 3v4a1 1 0 0 0 1 1h7", key: "t51u73" }]
 ];
-const Save = createLucideIcon("save", __iconNode$9);
+const Save = createLucideIcon("save", __iconNode$a);
+/**
+ * @license lucide-react v1.6.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$9 = [
+  ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
+  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
+];
+const Search = createLucideIcon("search", __iconNode$9);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -13121,17 +13145,6 @@ const Save = createLucideIcon("save", __iconNode$9);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$8 = [
-  ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
-  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
-];
-const Search = createLucideIcon("search", __iconNode$8);
-/**
- * @license lucide-react v1.6.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$7 = [
   [
     "path",
     {
@@ -13141,14 +13154,14 @@ const __iconNode$7 = [
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const Settings = createLucideIcon("settings", __iconNode$7);
+const Settings = createLucideIcon("settings", __iconNode$8);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$6 = [
+const __iconNode$7 = [
   ["circle", { cx: "12", cy: "12", r: "4", key: "4exip2" }],
   ["path", { d: "M12 2v2", key: "tus03m" }],
   ["path", { d: "M12 20v2", key: "1lh1kg" }],
@@ -13159,7 +13172,21 @@ const __iconNode$6 = [
   ["path", { d: "m6.34 17.66-1.41 1.41", key: "1m8zz5" }],
   ["path", { d: "m19.07 4.93-1.41 1.41", key: "1shlcs" }]
 ];
-const Sun = createLucideIcon("sun", __iconNode$6);
+const Sun = createLucideIcon("sun", __iconNode$7);
+/**
+ * @license lucide-react v1.6.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$6 = [
+  ["path", { d: "M10 11v6", key: "nco0om" }],
+  ["path", { d: "M14 11v6", key: "outv1u" }],
+  ["path", { d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6", key: "miytrc" }],
+  ["path", { d: "M3 6h18", key: "d0wm0j" }],
+  ["path", { d: "M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2", key: "e791ji" }]
+];
+const Trash2 = createLucideIcon("trash-2", __iconNode$6);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -13167,13 +13194,10 @@ const Sun = createLucideIcon("sun", __iconNode$6);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$5 = [
-  ["path", { d: "M10 11v6", key: "nco0om" }],
-  ["path", { d: "M14 11v6", key: "outv1u" }],
-  ["path", { d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6", key: "miytrc" }],
-  ["path", { d: "M3 6h18", key: "d0wm0j" }],
-  ["path", { d: "M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2", key: "e791ji" }]
+  ["path", { d: "M16 7h6v6", key: "box55l" }],
+  ["path", { d: "m22 7-8.5 8.5-5-5L2 17", key: "1t1m79" }]
 ];
-const Trash2 = createLucideIcon("trash-2", __iconNode$5);
+const TrendingUp = createLucideIcon("trending-up", __iconNode$5);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -13181,10 +13205,17 @@ const Trash2 = createLucideIcon("trash-2", __iconNode$5);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$4 = [
-  ["path", { d: "M16 7h6v6", key: "box55l" }],
-  ["path", { d: "m22 7-8.5 8.5-5-5L2 17", key: "1t1m79" }]
+  [
+    "path",
+    {
+      d: "m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3",
+      key: "wmoenq"
+    }
+  ],
+  ["path", { d: "M12 9v4", key: "juzpu7" }],
+  ["path", { d: "M12 17h.01", key: "p32p05" }]
 ];
-const TrendingUp = createLucideIcon("trending-up", __iconNode$4);
+const TriangleAlert = createLucideIcon("triangle-alert", __iconNode$4);
 /**
  * @license lucide-react v1.6.0 - ISC
  *
@@ -50484,30 +50515,6 @@ async function request$4(path, token) {
   }
   return res.json();
 }
-function groupByStatus(items) {
-  const map2 = /* @__PURE__ */ new Map();
-  for (const item of items) {
-    const key = item.status;
-    const existing = map2.get(key) ?? { count: 0, quantity: 0 };
-    map2.set(key, { count: existing.count + 1, quantity: existing.quantity + item.quantity });
-  }
-  return Array.from(map2.entries()).map(([status, v]) => ({ status, ...v }));
-}
-function groupByType(ops) {
-  const map2 = /* @__PURE__ */ new Map();
-  for (const op of ops) {
-    map2.set(op.type, (map2.get(op.type) ?? 0) + 1);
-  }
-  return Array.from(map2.entries()).map(([type, count2]) => ({ type, count: count2 }));
-}
-function groupByDay(ops) {
-  const map2 = /* @__PURE__ */ new Map();
-  for (const op of ops) {
-    const date2 = op.createdAt.slice(0, 10);
-    map2.set(date2, (map2.get(date2) ?? 0) + 1);
-  }
-  return Array.from(map2.entries()).sort((a2, b) => a2[0].localeCompare(b[0])).map(([date2, count2]) => ({ date: date2, count: count2 }));
-}
 const reportService = {
   async getInventoryReport(token) {
     const res = await request$4(
@@ -50515,51 +50522,59 @@ const reportService = {
       token
     );
     const items = res.data;
+    const map2 = /* @__PURE__ */ new Map();
+    for (const item of items) {
+      const existing = map2.get(item.status) ?? { count: 0, quantity: 0 };
+      map2.set(item.status, { count: existing.count + 1, quantity: existing.quantity + item.quantity });
+    }
     return {
       items,
       total: res.pagination.total,
-      byStatus: groupByStatus(items)
+      byStatus: Array.from(map2.entries()).map(([status, v]) => ({ status, ...v }))
     };
   },
   async getOperationsReport(token, dateFrom, dateTo) {
-    const params = new URLSearchParams({ dateFrom, dateTo, limit: "500" });
-    let operations = [];
+    const params = new URLSearchParams({ from: dateFrom, to: dateTo, limit: "500" });
+    let rows = [];
+    let total = 0;
     try {
-      const res = await request$4(
-        `/operations?${params.toString()}`,
-        token
-      );
-      operations = res.data ?? [];
+      const res = await request$4(`/reports/operations?${params.toString()}`, token);
+      rows = res.data ?? [];
+      total = res.pagination?.total ?? rows.length;
     } catch {
-      operations = [];
+      rows = [];
+      total = 0;
     }
-    return {
-      operations,
-      total: operations.length,
-      byType: groupByType(operations),
-      byDay: groupByDay(operations)
-    };
+    const typeMap = /* @__PURE__ */ new Map();
+    for (const op of rows) typeMap.set(op.type, (typeMap.get(op.type) ?? 0) + 1);
+    const byType = Array.from(typeMap.entries()).map(([type, count2]) => ({ type, count: count2 }));
+    const dayMap = /* @__PURE__ */ new Map();
+    for (const op of rows) {
+      const date2 = op.createdAt.slice(0, 10);
+      dayMap.set(date2, (dayMap.get(date2) ?? 0) + 1);
+    }
+    const byDay = Array.from(dayMap.entries()).sort((a2, b) => a2[0].localeCompare(b[0])).map(([date2, count2]) => ({ date: date2, count: count2 }));
+    return { operations: rows, total, byType, byDay };
   },
   async getSummaryReport(token, dateFrom, dateTo) {
-    const [inv, ops] = await Promise.all([
-      reportService.getInventoryReport(token),
+    const [summaryRes, ops] = await Promise.all([
+      request$4("/reports/summary", token),
       reportService.getOperationsReport(token, dateFrom, dateTo)
     ]);
-    const govCount = inv.items.filter((i2) => i2.status === "government").length;
-    const volCount = inv.items.filter((i2) => i2.status === "volunteer").length;
-    const totalQty = inv.items.reduce((s2, i2) => s2 + i2.quantity, 0);
+    const { totals, byStatus, byCategory } = summaryRes.data;
     return {
-      totalItems: inv.total,
-      totalQuantity: totalQty,
-      governmentItems: govCount,
-      volunteerItems: volCount,
+      totalItems: totals.items,
+      totalQuantity: totals.quantity,
+      governmentItems: byStatus.government.items,
+      volunteerItems: byStatus.volunteer.items,
       totalOperations: ops.total,
       operationsByType: ops.byType,
       itemsByStatus: [
-        { name: "Держ.", value: govCount },
-        { name: "Волонт.", value: volCount }
+        { name: "Держ.", value: byStatus.government.items },
+        { name: "Волонт.", value: byStatus.volunteer.items }
       ],
-      activityByDay: ops.byDay.map((d) => ({ date: d.date, операції: d.count }))
+      activityByDay: ops.byDay.map((d) => ({ date: d.date, операції: d.count })),
+      byCategory
     };
   }
 };
@@ -50584,87 +50599,32 @@ const itemService = {
   /**
    * Fetch a page of items. Defaults to a large limit so all items
    * are available for client-side filtering and pagination.
+   * Optionally filter by balance_status on the server if supported,
+   * otherwise filtering is handled client-side.
    */
-  async getItems(token, page = 1, limit = 500) {
-    return request$3(`/items/?page=${page}&limit=${limit}`, {
+  async getItems(token, page = 1, limit = 500, balanceStatus) {
+    const params = new URLSearchParams({ page: String(page), limit: String(limit) });
+    if (balanceStatus && balanceStatus !== "all") {
+      params.set("balance_status", balanceStatus);
+    }
+    return request$3(`/items/?${params.toString()}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` }
     });
-  }
-};
-const BASE_URL$2 = "http://localhost:3000/api";
-async function request$2(path, init) {
-  const res = await fetch(`${BASE_URL$2}${path}`, {
-    headers: { "Content-Type": "application/json", ...init.headers },
-    ...init
-  });
-  if (!res.ok) {
-    let message = `HTTP ${res.status}`;
-    try {
-      const body = await res.json();
-      if (body.message) message = body.message;
-    } catch {
-    }
-    throw new Error(message);
-  }
-  if (res.status === 204) return void 0;
-  return res.json();
-}
-function buildTree(flat) {
-  const map2 = /* @__PURE__ */ new Map();
-  flat.forEach((g) => map2.set(g.id, { ...g, children: [] }));
-  const roots = [];
-  for (const g of map2.values()) {
-    if (g.parentId) {
-      const parent = map2.get(g.parentId);
-      if (parent) parent.children.push(g);
-    } else {
-      roots.push(g);
-    }
-  }
-  return roots;
-}
-const groupService = {
-  /** Fetch all groups as a nested tree (up to 4 levels). */
-  async getGroups(token) {
-    const data = await request$2("/groups/", {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` }
-    });
-    const flat = Array.isArray(data) ? data : data.data;
-    const alreadyNested = flat.length > 0 && Array.isArray(flat[0].children);
-    return alreadyNested ? flat : buildTree(flat);
   },
-  /** Create a new group. parentId=null creates a root group. */
-  async createGroup(token, input) {
-    return request$2("/groups/", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${token}` },
-      body: JSON.stringify(input)
-    });
-  },
-  /** Rename an existing group. */
-  async renameGroup(token, id, name) {
-    return request$2(`/groups/${id}`, {
-      method: "PATCH",
-      headers: { Authorization: `Bearer ${token}` },
-      body: JSON.stringify({ name })
-    });
-  },
-  /** Delete a group (and its subtree). */
-  async deleteGroup(token, id) {
-    return request$2(`/groups/${id}`, {
-      method: "DELETE",
-      headers: { Authorization: `Bearer ${token}` }
-    });
-  },
-  /** Move a group to a new parent (drag-drop). Pass null to make it a root group. */
-  async moveGroup(token, id, parentId) {
-    return request$2(`/groups/${id}/move`, {
-      method: "PATCH",
-      headers: { Authorization: `Bearer ${token}` },
-      body: JSON.stringify({ parentId })
-    });
+  /**
+   * Transfer an off-balance item to on-balance by providing document details.
+   * Calls PATCH /items/:id/transfer-to-balance
+   */
+  async transferToBalance(token, itemId, data) {
+    return request$3(
+      `/items/${itemId}/transfer-to-balance`,
+      {
+        method: "PATCH",
+        headers: { Authorization: `Bearer ${token}` },
+        body: JSON.stringify(data)
+      }
+    );
   }
 };
 const roleLabels = {
@@ -50685,45 +50645,89 @@ function fmtDate(iso) {
   const [, m, d] = iso.split("-");
   return `${d}.${m}`;
 }
+async function downloadExcel$1(token) {
+  if (!token) {
+    alert("Помилка: не авторизований");
+    return;
+  }
+  try {
+    const response = await fetch("http://localhost:3000/api/reports/export/excel", {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `mc-report-${(/* @__PURE__ */ new Date()).toISOString().split("T")[0]}.xlsx`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.URL.revokeObjectURL(url);
+  } catch (error) {
+    console.error("Export Excel failed:", error);
+    alert(`Помилка експорту Excel: ${error instanceof Error ? error.message : "Невідома помилка"}`);
+  }
+}
+async function downloadPDF$1(token) {
+  if (!token) {
+    alert("Помилка: не авторизований");
+    return;
+  }
+  try {
+    const response = await fetch("http://localhost:3000/api/reports/export/pdf", {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `mc-report-${(/* @__PURE__ */ new Date()).toISOString().split("T")[0]}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.URL.revokeObjectURL(url);
+  } catch (error) {
+    console.error("Export PDF failed:", error);
+    alert(`Помилка експорту PDF: ${error instanceof Error ? error.message : "Невідома помилка"}`);
+  }
+}
 function DashboardScreen({ onNavigate }) {
   const { user, token } = useAuthStore();
   const [chartData, setChartData2] = reactExports.useState(null);
   const [loading, setLoading] = reactExports.useState(true);
+  const [offBalanceCount, setOffBalanceCount] = reactExports.useState(null);
   reactExports.useEffect(() => {
     if (!token) return;
     const today2 = daysAgo(0);
     const sevenDaysAgo = daysAgo(6);
     const dates = lastNDates(7);
-    Promise.all([
-      reportService.getSummaryReport(token, sevenDaysAgo, today2),
-      itemService.getItems(token, 1, 1e3),
-      groupService.getGroups(token)
-    ]).then(([summary, itemsRes, groups]) => {
-      const statusPie = summary.itemsByStatus.length > 0 ? summary.itemsByStatus : [
-        { name: "Держ.", value: summary.governmentItems },
-        { name: "Волонт.", value: summary.volunteerItems }
-      ];
+    itemService.getItems(token, 1, 1e3).then((res) => {
+      const count2 = res.data.filter(
+        (item) => !item.balance_status || item.balance_status === "off_balance"
+      ).length;
+      setOffBalanceCount(count2);
+    }).catch(() => {
+    });
+    reportService.getSummaryReport(token, sevenDaysAgo, today2).then((summary) => {
+      const statusPie = summary.itemsByStatus;
       const dayMap = new Map(summary.activityByDay.map((d) => [d.date, d.операції]));
       const activityLine = dates.map((date2) => ({
         date: fmtDate(date2),
         операції: dayMap.get(date2) ?? 0
       }));
-      const flatGroups = /* @__PURE__ */ new Map();
-      function flattenGroups(gs) {
-        for (const g of gs) {
-          flatGroups.set(g.id, g.name);
-          if (g.children?.length) flattenGroups(g.children);
-        }
-      }
-      flattenGroups(groups);
-      const groupCounts = /* @__PURE__ */ new Map();
-      for (const item of itemsRes.data) {
-        const key = item.groupId ?? "__none__";
-        groupCounts.set(key, (groupCounts.get(key) ?? 0) + 1);
-      }
-      const groupBar = Array.from(groupCounts.entries()).map(([id, кількість]) => ({
-        group: flatGroups.get(id) ?? (id === "__none__" ? "Без групи" : id.slice(0, 8)),
-        кількість
+      const groupBar = (summary.byCategory ?? []).filter((g) => g.itemCount > 0).map((g) => ({
+        group: g.groupName === "(ungrouped)" ? "Без групи" : g.groupName,
+        кількість: g.itemCount
       })).sort((a2, b) => b.кількість - a2.кількість).slice(0, 10);
       const todayOperations = dayMap.get(today2) ?? 0;
       setChartData2({
@@ -50742,25 +50746,29 @@ function DashboardScreen({ onNavigate }) {
       label: "Всього МЦ",
       value: loading ? "…" : chartData?.totalItems ?? "—",
       description: "Позицій в інвентарі",
-      icon: Package
+      icon: Package,
+      highlight: false
+    },
+    {
+      label: "Позабаланс",
+      value: loading || offBalanceCount === null ? "…" : offBalanceCount,
+      description: "МЦ без документів",
+      icon: TriangleAlert,
+      highlight: true
     },
     {
       label: "Операцій сьогодні",
       value: loading ? "…" : chartData?.todayOperations ?? "—",
       description: "Передачі та списання",
-      icon: TrendingUp
+      icon: TrendingUp,
+      highlight: false
     },
     {
       label: "Останні 7 днів",
       value: loading ? "…" : chartData?.totalOperations ?? "—",
       description: "Загальна активність",
-      icon: Clock
-    },
-    {
-      label: "Комплекти",
-      value: "—",
-      description: "Активних комплектів",
-      icon: Box
+      icon: Clock,
+      highlight: false
     }
   ];
   const quickActions = [
@@ -50790,28 +50798,64 @@ function DashboardScreen({ onNavigate }) {
     }
   ];
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-xl font-semibold", children: [
-        "Вітаємо, ",
-        user?.fullName ?? "Користувач"
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-between", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-xl font-semibold", children: [
+          "Вітаємо, ",
+          user?.fullName ?? "Користувач"
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-muted-foreground mt-1", children: [
+          roleLabels[user?.role ?? ""] ?? user?.role,
+          " · Огляд системи"
+        ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-muted-foreground mt-1", children: [
-        roleLabels[user?.role ?? ""] ?? user?.role,
-        " · Огляд системи"
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(Button, { variant: "outline", size: "sm", onClick: () => downloadExcel$1(token), children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Download, { className: "w-4 h-4 mr-1.5" }),
+          "Excel"
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(Button, { variant: "outline", size: "sm", onClick: () => downloadPDF$1(token), children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FileText, { className: "w-4 h-4 mr-1.5" }),
+          "PDF"
+        ] })
       ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid gap-4 sm:grid-cols-2 lg:grid-cols-4", children: stats.map((stat) => {
       const Icon2 = stat.icon;
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { className: "pb-2 flex flex-row items-center justify-between space-y-0", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(CardDescription, { children: stat.label }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: "h-4 w-4 text-muted-foreground" })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl font-bold", children: String(stat.value) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-1", children: stat.description })
-        ] })
-      ] }, stat.label);
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        Card,
+        {
+          className: stat.highlight && typeof stat.value === "number" && stat.value > 0 ? "border-amber-400/60 bg-amber-50/50 dark:bg-amber-950/20 dark:border-amber-700/50" : void 0,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { className: "pb-2 flex flex-row items-center justify-between space-y-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                CardDescription,
+                {
+                  className: stat.highlight && typeof stat.value === "number" && stat.value > 0 ? "text-amber-700 dark:text-amber-400" : void 0,
+                  children: stat.label
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Icon2,
+                {
+                  className: `h-4 w-4 ${stat.highlight && typeof stat.value === "number" && stat.value > 0 ? "text-amber-500" : "text-muted-foreground"}`
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: `text-2xl font-bold ${stat.highlight && typeof stat.value === "number" && stat.value > 0 ? "text-amber-700 dark:text-amber-400" : ""}`,
+                  children: String(stat.value)
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-1", children: stat.description })
+            ] })
+          ]
+        },
+        stat.label
+      );
     }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid gap-4 lg:grid-cols-3", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
@@ -50986,6 +51030,27 @@ const TableCaption = reactExports.forwardRef(({ className, ...props }, ref) => /
   }
 ));
 TableCaption.displayName = "TableCaption";
+const badgeVariants = cva(
+  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+  {
+    variants: {
+      variant: {
+        default: "border-transparent bg-primary text-primary-foreground",
+        secondary: "border-transparent bg-secondary text-secondary-foreground",
+        success: "border-transparent bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400",
+        warning: "border-transparent bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400",
+        destructive: "border-transparent bg-destructive text-destructive-foreground",
+        outline: "text-foreground"
+      }
+    },
+    defaultVariants: {
+      variant: "default"
+    }
+  }
+);
+function Badge({ className, variant, ...props }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: cn(badgeVariants({ variant }), className), ...props });
+}
 const STATUS_LABELS = {
   government: "Державне",
   volunteer: "Волонтерське"
@@ -50994,7 +51059,12 @@ const STATUS_CLASSES = {
   government: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400",
   volunteer: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
 };
-function ItemsTable({ items, isLoading }) {
+function ItemsTable({
+  items,
+  isLoading,
+  canRegisterDocuments = false,
+  onRegisterDocuments
+}) {
   if (isLoading) {
     return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-center py-16 text-muted-foreground", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center gap-3", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-6 w-6 animate-spin rounded-full border-2 border-current border-t-transparent" }),
@@ -51008,1336 +51078,48 @@ function ItemsTable({ items, isLoading }) {
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-xs", children: "Спробуйте змінити пошуковий запит або фільтр" })
     ] });
   }
+  const showActionsColumn = canRegisterDocuments;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(Table, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(TableHeader, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(TableRow, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Назва" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Статус" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Баланс" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { className: "text-right", children: "Кількість" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Одиниця" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Одиниця" }),
+      showActionsColumn && /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { className: "text-right", children: "Дії" })
     ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(TableBody, { children: items.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(TableRow, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "font-medium", children: item.name }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "span",
-        {
-          className: `inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${STATUS_CLASSES[item.status]}`,
-          children: STATUS_LABELS[item.status]
-        }
-      ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-right tabular-nums", children: item.quantity }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-muted-foreground", children: item.unit ?? "—" })
-    ] }, item.id)) })
-  ] });
-}
-const PAGE_SIZE = 50;
-function useItems() {
-  const { token } = useAuthStore();
-  const [allItems, setAllItems] = reactExports.useState([]);
-  const [isLoading, setIsLoading] = reactExports.useState(false);
-  const [error, setError] = reactExports.useState(null);
-  const [search, setSearchState] = reactExports.useState("");
-  const [statusFilter, setStatusFilterState] = reactExports.useState("");
-  const [page, setPageState] = reactExports.useState(1);
-  const fetchItems = reactExports.useCallback(async () => {
-    if (!token) return;
-    setIsLoading(true);
-    setError(null);
-    try {
-      const response = await itemService.getItems(token);
-      setAllItems(response.data);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Помилка завантаження даних");
-    } finally {
-      setIsLoading(false);
-    }
-  }, [token]);
-  reactExports.useEffect(() => {
-    fetchItems();
-  }, [fetchItems]);
-  const setSearch = (value) => {
-    setSearchState(value);
-    setPageState(1);
-  };
-  const setStatusFilter = (value) => {
-    setStatusFilterState(value);
-    setPageState(1);
-  };
-  const filteredItems = allItems.filter((item) => {
-    const matchesSearch = search === "" || item.name.toLowerCase().includes(search.toLowerCase());
-    const matchesStatus = statusFilter === "" || item.status === statusFilter;
-    return matchesSearch && matchesStatus;
-  });
-  const totalPages = Math.max(1, Math.ceil(filteredItems.length / PAGE_SIZE));
-  const safePage = Math.min(page, totalPages);
-  const paginatedItems = filteredItems.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
-  return {
-    allItems,
-    filteredItems,
-    paginatedItems,
-    isLoading,
-    error,
-    search,
-    statusFilter,
-    page: safePage,
-    totalPages,
-    setSearch,
-    setStatusFilter,
-    setPage: setPageState,
-    refresh: fetchItems
-  };
-}
-const STATUS_OPTIONS = [
-  { value: "", label: "Всі" },
-  { value: "government", label: "Державне" },
-  { value: "volunteer", label: "Волонтерське" }
-];
-function ItemsListScreen({ onNavigate } = {}) {
-  const {
-    filteredItems,
-    paginatedItems,
-    isLoading,
-    error,
-    search,
-    statusFilter,
-    page,
-    totalPages,
-    setSearch,
-    setStatusFilter,
-    setPage,
-    refresh
-  } = useItems();
-  const {
-    isOnline,
-    isSyncing,
-    isOffline,
-    isError: isSyncError,
-    lastSyncLabel,
-    pendingCount,
-    syncError,
-    conflicts,
-    resolveConflict,
-    clearError
-  } = useSync();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-3", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex-1 min-w-48", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { className: "absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Input,
+    /* @__PURE__ */ jsxRuntimeExports.jsx(TableBody, { children: items.map((item) => {
+      const isOffBalance = !item.balance_status || item.balance_status === "off_balance";
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(TableRow, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "font-medium", children: item.name }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "span",
           {
-            placeholder: "Пошук за назвою…",
-            value: search,
-            onChange: (e) => setSearch(e.target.value),
-            className: "pl-9"
+            className: `inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${STATUS_CLASSES[item.status]}`,
+            children: STATUS_LABELS[item.status]
           }
-        )
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex rounded-md border border-input bg-background overflow-hidden", children: STATUS_OPTIONS.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "button",
-        {
-          onClick: () => setStatusFilter(opt.value),
-          className: cn(
-            "px-3 py-1.5 text-sm font-medium transition-colors",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset",
-            statusFilter === opt.value ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground hover:bg-muted"
-          ),
-          children: opt.label
-        },
-        opt.value
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        Button,
-        {
-          variant: "outline",
-          size: "icon",
-          onClick: refresh,
-          disabled: isLoading,
-          title: "Оновити список",
-          children: /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: cn("h-4 w-4", isLoading && "animate-spin") })
-        }
-      ),
-      onNavigate && /* @__PURE__ */ jsxRuntimeExports.jsxs(Button, { onClick: () => onNavigate("add-item"), children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-4 w-4" }),
-        "Додати позицію"
-      ] })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-xs text-muted-foreground", children: [
-      isOffline && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1 text-amber-500 font-medium", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(WifiOff, { className: "h-3.5 w-3.5" }),
-        "Офлайн"
-      ] }),
-      !isOffline && isOnline && !isSyncing && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1 text-emerald-500", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Wifi, { className: "h-3.5 w-3.5" }),
-        "Онлайн"
-      ] }),
-      isSyncing && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1 text-primary animate-pulse", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { className: "h-3.5 w-3.5 animate-spin" }),
-        "Синхронізація…"
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { className: "h-3 w-3" }),
-        lastSyncLabel
-      ] }),
-      pendingCount > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1 text-amber-500", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "h-3.5 w-3.5" }),
-        pendingCount,
-        " очікують синхронізації"
-      ] }),
-      conflicts.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1 text-destructive font-medium", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "h-3.5 w-3.5" }),
-        conflicts.length,
-        " конфлікт(ів)"
-      ] })
-    ] }),
-    isSyncError && syncError && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between rounded-md border border-amber-500/30 bg-amber-500/10 px-4 py-2.5 text-sm text-amber-700 dark:text-amber-400", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-2", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "h-4 w-4 shrink-0" }),
-        "Помилка синхронізації: ",
-        syncError
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "button",
-        {
-          onClick: clearError,
-          className: "text-xs underline opacity-70 hover:opacity-100 ml-4 shrink-0",
-          children: "Закрити"
-        }
-      )
-    ] }),
-    conflicts.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-md border border-destructive/30 bg-destructive/5 px-4 py-3 space-y-2", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm font-medium text-destructive flex items-center gap-2", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "h-4 w-4" }),
-        "Конфлікти синхронізації"
-      ] }),
-      conflicts.map((c2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "div",
-        {
-          className: "flex items-center justify-between text-sm rounded-md border border-border bg-background px-3 py-2",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-medium truncate", children: c2.itemName }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground", children: [
-                "Поле «",
-                c2.field,
-                "»: локально ",
-                String(c2.localValue),
-                ", сервер ",
-                String(c2.serverValue)
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Button,
-              {
-                variant: "ghost",
-                size: "sm",
-                onClick: () => resolveConflict(c2.id),
-                className: "ml-3 shrink-0 h-7 text-xs",
-                children: "Вирішити"
-              }
-            )
-          ]
-        },
-        c2.id
-      ))
-    ] }),
-    error && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "rounded-md border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive", children: error }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-0 pt-4 px-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: isLoading ? "Завантаження…" : `${filteredItems.length} позицій` }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "pt-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ItemsTable, { items: paginatedItems, isLoading }) })
-    ] }),
-    !isLoading && totalPages > 1 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-muted-foreground", children: [
-        "Сторінка ",
-        page,
-        " з ",
-        totalPages
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
+        ) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { children: isOffBalance ? /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "warning", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { className: "w-3 h-3 mr-1" }),
+          "Позабаланс"
+        ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(Badge, { variant: "success", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FileText, { className: "w-3 h-3 mr-1" }),
+          "З документами"
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-right tabular-nums", children: item.quantity }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-muted-foreground", children: item.unit ?? "—" }),
+        showActionsColumn && /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-right", children: isOffBalance && onRegisterDocuments && /* @__PURE__ */ jsxRuntimeExports.jsx(
           Button,
           {
             variant: "outline",
-            size: "icon",
-            onClick: () => setPage(page - 1),
-            disabled: page <= 1,
-            title: "Попередня сторінка",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronLeft, { className: "h-4 w-4" })
+            size: "sm",
+            className: "h-7 px-2 text-xs text-amber-700 border-amber-300 hover:bg-amber-50 dark:text-amber-400 dark:border-amber-700 dark:hover:bg-amber-950",
+            onClick: () => onRegisterDocuments(item),
+            children: "Оформити документи"
           }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Button,
-          {
-            variant: "outline",
-            size: "icon",
-            onClick: () => setPage(page + 1),
-            disabled: page >= totalPages,
-            title: "Наступна сторінка",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "h-4 w-4" })
-          }
-        )
-      ] })
-    ] })
-  ] });
-}
-const itemSchema = object$1({
-  name: string$1().min(1, "Назва обовʼязкова").max(255, "Назва не може перевищувати 255 символів"),
-  status: _enum(["government", "volunteer"]),
-  quantity: number$3({ error: "Введіть кількість" }).int("Кількість має бути цілим числом").min(0, "Кількість не може бути відʼємною"),
-  unit: _enum(["шт", "кг", "л", "компл"]),
-  donorId: string$1().optional(),
-  serialNumber: string$1().max(100, "Серійний номер занадто довгий").optional(),
-  price: number$3({ error: "Введіть коректну ціну" }).min(0, "Ціна не може бути відʼємною").optional(),
-  notes: string$1().max(1e3, "Нотатки не можуть перевищувати 1000 символів").optional()
-});
-const selectClass = cn(
-  "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2",
-  "text-sm ring-offset-background",
-  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-  "disabled:cursor-not-allowed disabled:opacity-50"
-);
-const textareaClass$1 = cn(
-  "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2",
-  "text-sm ring-offset-background placeholder:text-muted-foreground resize-none",
-  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-  "disabled:cursor-not-allowed disabled:opacity-50"
-);
-function ItemForm({ onSubmit, isSubmitting = false, donors }) {
-  const form = useForm({
-    resolver: a$1(itemSchema),
-    defaultValues: {
-      name: "",
-      status: "government",
-      quantity: 1,
-      unit: "шт",
-      donorId: void 0,
-      serialNumber: "",
-      price: void 0,
-      notes: ""
-    }
-  });
-  const handleSubmit = async (values) => {
-    await onSubmit({
-      name: values.name,
-      status: values.status,
-      quantity: values.quantity,
-      unit: values.unit,
-      donorId: values.donorId || void 0,
-      serialNumber: values.serialNumber || void 0,
-      price: values.price,
-      notes: values.notes || void 0
-    });
-  };
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Form, { ...form, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: form.handleSubmit(handleSubmit), noValidate: true, className: "space-y-5", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FormField,
-      {
-        control: form.control,
-        name: "name",
-        render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(FormLabel, { children: [
-            "Назва ",
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            Input,
-            {
-              ...field,
-              placeholder: "Наприклад: Рація Baofeng UV-5R",
-              autoFocus: true,
-              disabled: isSubmitting
-            }
-          ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
-        ] })
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-4", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        FormField,
-        {
-          control: form.control,
-          name: "status",
-          render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(FormLabel, { children: [
-              "Статус ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("select", { ...field, className: selectClass, disabled: isSubmitting, children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "government", children: "Державне" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "volunteer", children: "Волонтерське" })
-            ] }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
-          ] })
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        FormField,
-        {
-          control: form.control,
-          name: "unit",
-          render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(FormLabel, { children: [
-              "Одиниця ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("select", { ...field, className: selectClass, disabled: isSubmitting, children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "шт", children: "шт" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "кг", children: "кг" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "л", children: "л" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "компл", children: "компл" })
-            ] }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
-          ] })
-        }
-      )
-    ] }),
-    donors && donors.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FormField,
-      {
-        control: form.control,
-        name: "donorId",
-        render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(FormLabel, { children: "Донор" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "select",
-            {
-              ...field,
-              value: field.value ?? "",
-              onChange: (e) => field.onChange(e.target.value || void 0),
-              className: selectClass,
-              disabled: isSubmitting,
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", children: "— Не вказано —" }),
-                donors.map((d) => /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: d.id, children: d.name }, d.id))
-              ]
-            }
-          ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
-        ] })
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-4", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        FormField,
-        {
-          control: form.control,
-          name: "quantity",
-          render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(FormLabel, { children: [
-              "Кількість ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Input,
-              {
-                value: field.value,
-                onChange: (e) => field.onChange(parseInt(e.target.value, 10) || 0),
-                onBlur: field.onBlur,
-                name: field.name,
-                ref: field.ref,
-                type: "number",
-                min: 0,
-                step: 1,
-                placeholder: "0",
-                disabled: isSubmitting
-              }
-            ) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
-          ] })
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        FormField,
-        {
-          control: form.control,
-          name: "price",
-          render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(FormLabel, { children: "Ціна (грн)" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Input,
-              {
-                value: field.value ?? "",
-                onChange: (e) => field.onChange(e.target.value === "" ? void 0 : parseFloat(e.target.value)),
-                onBlur: field.onBlur,
-                name: field.name,
-                ref: field.ref,
-                type: "number",
-                min: 0,
-                step: 0.01,
-                placeholder: "0.00",
-                disabled: isSubmitting
-              }
-            ) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
-          ] })
-        }
-      )
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FormField,
-      {
-        control: form.control,
-        name: "serialNumber",
-        render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(FormLabel, { children: "Серійний номер" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            Input,
-            {
-              ...field,
-              value: field.value ?? "",
-              placeholder: "Наприклад: SN-2024-001",
-              disabled: isSubmitting
-            }
-          ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
-        ] })
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      FormField,
-      {
-        control: form.control,
-        name: "notes",
-        render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(FormLabel, { children: "Нотатки" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "textarea",
-            {
-              ...field,
-              value: field.value ?? "",
-              className: textareaClass$1,
-              rows: 3,
-              placeholder: "Додаткова інформація про позицію…",
-              disabled: isSubmitting
-            }
-          ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
-        ] })
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { type: "submit", className: "w-full", disabled: isSubmitting, children: isSubmitting ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { className: "h-4 w-4 animate-spin" }),
-      "Збереження…"
-    ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Save, { className: "h-4 w-4" }),
-      "Зберегти позицію"
-    ] }) })
-  ] }) });
-}
-const itemsApi = {
-  createItem(input) {
-    return window.itemsAPI.createItem(input);
-  }
-};
-const BASE_URL$1 = "http://localhost:3000/api";
-async function request$1(path, init) {
-  const res = await fetch(`${BASE_URL$1}${path}`, {
-    headers: { "Content-Type": "application/json", ...init.headers },
-    ...init
-  });
-  if (!res.ok) {
-    let message = `HTTP ${res.status}`;
-    try {
-      const body = await res.json();
-      if (body.message) message = body.message;
-    } catch {
-    }
-    throw new Error(message);
-  }
-  if (res.status === 204) return void 0;
-  return res.json();
-}
-const donorService = {
-  async getDonors(token, page = 1, limit = 20) {
-    return request$1(`/donors?page=${page}&limit=${limit}`, {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` }
-    });
-  },
-  async createDonor(token, input) {
-    return request$1("/donors", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${token}` },
-      body: JSON.stringify(input)
-    });
-  },
-  async updateDonor(token, id, input) {
-    return request$1(`/donors/${id}`, {
-      method: "PATCH",
-      headers: { Authorization: `Bearer ${token}` },
-      body: JSON.stringify(input)
-    });
-  },
-  async deleteDonor(token, id) {
-    return request$1(`/donors/${id}`, {
-      method: "DELETE",
-      headers: { Authorization: `Bearer ${token}` }
-    });
-  }
-};
-function AddItemScreen({ onBack }) {
-  const { user, token } = useAuthStore();
-  const [isSubmitting, setIsSubmitting] = reactExports.useState(false);
-  const [notification, setNotification] = reactExports.useState(null);
-  const [formKey, setFormKey] = reactExports.useState(0);
-  const [donors, setDonors] = reactExports.useState([]);
-  reactExports.useEffect(() => {
-    if (!token) return;
-    donorService.getDonors(token).then(setDonors).catch(() => {
-    });
-  }, [token]);
-  const handleSubmit = async (values) => {
-    if (!user || !token) {
-      setNotification({
-        type: "error",
-        message: "Сесія закінчилась. Будь ласка, увійдіть знову."
-      });
-      return;
-    }
-    setIsSubmitting(true);
-    setNotification(null);
-    const metadataFields = {};
-    if (values.serialNumber) metadataFields.serialNumber = values.serialNumber;
-    if (values.price !== void 0) metadataFields.price = values.price;
-    const metadata = Object.keys(metadataFields).length > 0 ? JSON.stringify(metadataFields) : void 0;
-    try {
-      const result = await itemsApi.createItem({
-        name: values.name,
-        status: values.status,
-        quantity: values.quantity,
-        unit: values.unit,
-        description: values.notes || void 0,
-        metadata,
-        ownerId: user.id,
-        token
-      });
-      setNotification({
-        type: result.synced ? "success-synced" : "success-offline",
-        message: result.synced ? `Позицію "${result.item.name}" збережено та синхронізовано з сервером.` : `Позицію "${result.item.name}" збережено локально. Синхронізація відбудеться автоматично.`
-      });
-      setFormKey((k2) => k2 + 1);
-    } catch (err) {
-      const message = err instanceof Error ? err.message : "Не вдалося зберегти позицію. Спробуйте ще раз.";
-      setNotification({ type: "error", message });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { variant: "ghost", size: "icon", onClick: onBack, "aria-label": "Назад", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "h-4 w-4" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-2xl font-semibold tracking-tight", children: "Додати позицію" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Заповніть форму для додавання нової одиниці інвентарю" })
-      ] })
-    ] }),
-    notification && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "div",
-      {
-        role: "alert",
-        className: cn(
-          "flex items-start gap-3 rounded-md border px-4 py-3 text-sm",
-          notification.type === "error" && "border-destructive/30 bg-destructive/10 text-destructive",
-          notification.type === "success-synced" && "border-green-500/30 bg-green-500/10 text-green-700 dark:text-green-400",
-          notification.type === "success-offline" && "border-yellow-500/30 bg-yellow-500/10 text-yellow-700 dark:text-yellow-400"
-        ),
-        children: [
-          notification.type === "error" && /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "mt-0.5 h-4 w-4 shrink-0" }),
-          notification.type === "success-synced" && /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "mt-0.5 h-4 w-4 shrink-0" }),
-          notification.type === "success-offline" && /* @__PURE__ */ jsxRuntimeExports.jsx(WifiOff, { className: "mt-0.5 h-4 w-4 shrink-0" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: notification.message })
-        ]
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { className: "max-w-2xl", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { children: "Нова позиція інвентарю" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(CardDescription, { children: [
-          "Поля, позначені ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" }),
-          ", є обовʼязковими"
-        ] })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-        ItemForm,
-        {
-          onSubmit: handleSubmit,
-          isSubmitting,
-          donors
-        },
-        formKey
-      ) })
-    ] })
-  ] });
-}
-const BASE_URL = "http://localhost:3000/api";
-async function request(path, init) {
-  const res = await fetch(`${BASE_URL}${path}`, {
-    headers: { "Content-Type": "application/json", ...init.headers },
-    ...init
-  });
-  if (!res.ok) {
-    let message = `HTTP ${res.status}`;
-    try {
-      const body = await res.json();
-      if (body.message) message = body.message;
-    } catch {
-    }
-    throw new Error(message);
-  }
-  return res.json();
-}
-const writeoffService = {
-  async createWriteoff(token, input) {
-    return request("/operations/writeoff", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${token}` },
-      body: JSON.stringify(input)
-    });
-  }
-};
-function WriteOffScreen({ onBack }) {
-  const { user, token } = useAuthStore();
-  const [items, setItems] = reactExports.useState([]);
-  const [itemsLoading, setItemsLoading] = reactExports.useState(true);
-  const [itemId, setItemId] = reactExports.useState("");
-  const [quantity, setQuantity] = reactExports.useState("");
-  const [type, setType] = reactExports.useState("used");
-  const [reason, setReason] = reactExports.useState("");
-  const [donorId, setDonorId] = reactExports.useState("");
-  const [isSubmitting, setIsSubmitting] = reactExports.useState(false);
-  const [notification, setNotification] = reactExports.useState(null);
-  reactExports.useEffect(() => {
-    if (!token) return;
-    setItemsLoading(true);
-    itemService.getItems(token).then((res) => setItems(res.data)).catch(() => setItems([])).finally(() => setItemsLoading(false));
-  }, [token]);
-  const selectedItem = items.find((i2) => i2.id === itemId);
-  const resetForm = () => {
-    setItemId("");
-    setQuantity("");
-    setType("used");
-    setReason("");
-    setDonorId("");
-  };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setNotification(null);
-    if (!user || !token) {
-      setNotification({ type: "error", message: "Сесія закінчилась. Будь ласка, увійдіть знову." });
-      return;
-    }
-    if (!itemId) {
-      setNotification({ type: "error", message: "Оберіть позицію інвентарю." });
-      return;
-    }
-    const qty = parseInt(quantity, 10);
-    if (!quantity || !Number.isInteger(qty) || qty < 1) {
-      setNotification({ type: "error", message: "Кількість має бути цілим позитивним числом." });
-      return;
-    }
-    if (selectedItem && qty > selectedItem.quantity) {
-      setNotification({
-        type: "error",
-        message: `Недостатньо залишку. Доступно: ${selectedItem.quantity} ${selectedItem.unit ?? "шт"}.`
-      });
-      return;
-    }
-    if (type === "lost" && !reason.trim()) {
-      setNotification({ type: "error", message: 'Для типу "Втрачено" причина є обовʼязковою.' });
-      return;
-    }
-    setIsSubmitting(true);
-    try {
-      await writeoffService.createWriteoff(token, {
-        itemId,
-        quantity: qty,
-        type,
-        reason: reason.trim() || void 0,
-        donorId: donorId.trim() || void 0
-      });
-      setNotification({
-        type: "success",
-        message: `Списання "${selectedItem?.name ?? ""}" (${qty} ${selectedItem?.unit ?? "шт"}) успішно виконано.`
-      });
-      resetForm();
-    } catch (err) {
-      setNotification({
-        type: "error",
-        message: err instanceof Error ? err.message : "Не вдалося виконати списання. Спробуйте ще раз."
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { variant: "ghost", size: "icon", onClick: onBack, "aria-label": "Назад", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "h-4 w-4" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-2xl font-semibold tracking-tight", children: "Списання МЦ" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Списати матеріальні цінності з інвентарю" })
-      ] })
-    ] }),
-    notification && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "div",
-      {
-        role: "alert",
-        className: cn(
-          "flex items-start gap-3 rounded-md border px-4 py-3 text-sm",
-          notification.type === "error" && "border-destructive/30 bg-destructive/10 text-destructive",
-          notification.type === "success" && "border-green-500/30 bg-green-500/10 text-green-700 dark:text-green-400"
-        ),
-        children: [
-          notification.type === "error" && /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "mt-0.5 h-4 w-4 shrink-0" }),
-          notification.type === "success" && /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "mt-0.5 h-4 w-4 shrink-0" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: notification.message })
-        ]
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { className: "max-w-2xl", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { children: "Форма списання" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(CardDescription, { children: [
-          "Поля, позначені ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" }),
-          ", є обовʼязковими"
-        ] })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: handleSubmit, className: "space-y-5", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "text-sm font-medium", htmlFor: "itemId", children: [
-            "Позиція інвентарю ",
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
-          ] }),
-          itemsLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Завантаження позицій…" }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "select",
-            {
-              id: "itemId",
-              value: itemId,
-              onChange: (e) => setItemId(e.target.value),
-              className: "flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
-              disabled: isSubmitting,
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", children: "— Оберіть позицію —" }),
-                items.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs("option", { value: item.id, children: [
-                  item.name,
-                  item.quantity !== void 0 ? ` (залишок: ${item.quantity} ${item.unit ?? "шт"})` : ""
-                ] }, item.id))
-              ]
-            }
-          )
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "text-sm font-medium", htmlFor: "quantity", children: [
-            "Кількість ",
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "input",
-            {
-              id: "quantity",
-              type: "number",
-              min: 1,
-              max: selectedItem?.quantity ?? void 0,
-              value: quantity,
-              onChange: (e) => setQuantity(e.target.value),
-              placeholder: "0",
-              className: "flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
-              disabled: isSubmitting
-            }
-          ),
-          selectedItem && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground", children: [
-            "Доступно: ",
-            selectedItem.quantity,
-            " ",
-            selectedItem.unit ?? "шт"
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-sm font-medium", children: [
-            "Тип списання ",
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-6", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "flex items-center gap-2 cursor-pointer text-sm", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "input",
-                {
-                  type: "radio",
-                  name: "type",
-                  value: "used",
-                  checked: type === "used",
-                  onChange: () => setType("used"),
-                  disabled: isSubmitting,
-                  className: "accent-primary"
-                }
-              ),
-              "Використано"
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "flex items-center gap-2 cursor-pointer text-sm", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "input",
-                {
-                  type: "radio",
-                  name: "type",
-                  value: "lost",
-                  checked: type === "lost",
-                  onChange: () => setType("lost"),
-                  disabled: isSubmitting,
-                  className: "accent-primary"
-                }
-              ),
-              "Втрачено"
-            ] })
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "text-sm font-medium", htmlFor: "reason", children: [
-            "Причина",
-            " ",
-            type === "lost" && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" }),
-            type === "used" && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground font-normal", children: "(необовʼязково)" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "textarea",
-            {
-              id: "reason",
-              value: reason,
-              onChange: (e) => setReason(e.target.value),
-              placeholder: type === "lost" ? "Опишіть причину втрати…" : "Додаткові коментарі (необовʼязково)…",
-              rows: 3,
-              className: "flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 resize-none",
-              disabled: isSubmitting
-            }
-          )
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "text-sm font-medium", htmlFor: "donorId", children: [
-            "Донор ",
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground font-normal", children: "(необовʼязково)" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "select",
-            {
-              id: "donorId",
-              value: donorId,
-              onChange: (e) => setDonorId(e.target.value),
-              className: "flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
-              disabled: isSubmitting,
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", children: "— Не вказано —" }),
-                Array.from(
-                  new Map(
-                    items.filter((i2) => i2.donorId).map((i2) => [i2.donorId, i2.donorId])
-                  ).values()
-                ).map((id) => /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: id, children: id }, id))
-              ]
-            }
-          )
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3 pt-1", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { type: "submit", disabled: isSubmitting, children: isSubmitting ? "Збереження…" : "Списати" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { type: "button", variant: "outline", onClick: onBack, disabled: isSubmitting, children: "Скасувати" })
-        ] })
-      ] }) })
-    ] })
-  ] });
-}
-function today() {
-  return (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
-}
-function thirtyDaysAgo() {
-  const d = /* @__PURE__ */ new Date();
-  d.setDate(d.getDate() - 30);
-  return d.toISOString().slice(0, 10);
-}
-function formatDate(iso) {
-  return new Date(iso).toLocaleDateString("uk-UA");
-}
-const STATUS_UA = {
-  government: "Держ.",
-  volunteer: "Волонт."
-};
-const TYPE_UA = {
-  writeoff: "Списання",
-  transfer: "Передача",
-  receipt: "Надходження",
-  issue: "Видача"
-};
-const PIE_COLORS = ["#3b82f6", "#22c55e", "#f59e0b", "#ef4444"];
-function TabButton({ active, onClick, icon, label }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    "button",
-    {
-      onClick,
-      className: cn(
-        "flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-colors",
-        active ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-      ),
-      children: [
-        icon,
-        label
-      ]
-    }
-  );
-}
-function DateRangePicker({ from: from2, to: to2, onFromChange, onToChange }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-sm text-muted-foreground", children: "Від" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "input",
-      {
-        type: "date",
-        value: from2,
-        max: to2,
-        onChange: (e) => onFromChange(e.target.value),
-        className: "h-9 rounded-md border border-input bg-background px-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-sm text-muted-foreground", children: "До" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "input",
-      {
-        type: "date",
-        value: to2,
-        min: from2,
-        max: today(),
-        onChange: (e) => onToChange(e.target.value),
-        className: "h-9 rounded-md border border-input bg-background px-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-      }
-    )
-  ] });
-}
-function handleExportExcel() {
-  alert("Експорт в Excel — буде реалізовано");
-}
-function handleExportPDF() {
-  alert("Експорт в PDF — буде реалізовано");
-}
-function ExportButtons() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(Button, { variant: "outline", size: "sm", onClick: handleExportExcel, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(FileDown, { className: "w-4 h-4 mr-1.5" }),
-      "Excel"
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(Button, { variant: "outline", size: "sm", onClick: handleExportPDF, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(FileDown, { className: "w-4 h-4 mr-1.5" }),
-      "PDF"
-    ] })
-  ] });
-}
-function InventoryReportView({ data }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-4", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-1 pt-4 px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-xs font-medium text-muted-foreground", children: "Усього позицій" }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-4 pb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl font-bold", children: data.total }) })
-      ] }),
-      data.byStatus.map((s2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-1 pt-4 px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-xs font-medium text-muted-foreground", children: STATUS_UA[s2.status] ?? s2.status }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "px-4 pb-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl font-bold", children: s2.count }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground", children: [
-            "кількість: ",
-            s2.quantity
-          ] })
-        ] })
-      ] }, s2.status))
-    ] }),
-    data.byStatus.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "px-6 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-sm", children: "Розподіл за статусом" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-6 pb-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 220, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(BarChart, { data: data.byStatus, margin: { top: 4, right: 16, left: 0, bottom: 4 }, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CartesianGrid, { strokeDasharray: "3 3", className: "stroke-border" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          XAxis,
-          {
-            dataKey: "status",
-            tickFormatter: (v) => STATUS_UA[v] ?? v,
-            tick: { fontSize: 12 },
-            className: "fill-muted-foreground"
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(YAxis, { tick: { fontSize: 12 }, className: "fill-muted-foreground" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Tooltip,
-          {
-            formatter: (value, name) => [value, name === "count" ? "Позицій" : "Кількість"],
-            labelFormatter: (label) => STATUS_UA[label] ?? label
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Legend, { formatter: (v) => v === "count" ? "Позицій" : "Кількість" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Bar, { dataKey: "count", name: "count", fill: "#3b82f6", radius: [4, 4, 0, 0] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Bar, { dataKey: "quantity", name: "quantity", fill: "#22c55e", radius: [4, 4, 0, 0] })
-      ] }) }) })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "px-6 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardTitle, { className: "text-sm", children: [
-        "Перелік (",
-        data.items.length,
-        ")"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-0 pb-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-auto max-h-96", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Table, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(TableHeader, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(TableRow, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Назва" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Статус" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { className: "text-right", children: "Кількість" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Одиниця" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Оновлено" })
-        ] }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(TableBody, { children: data.items.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx(TableRow, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { colSpan: 5, className: "text-center text-muted-foreground py-8", children: "Немає даних" }) }) : data.items.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(TableRow, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "font-medium", children: item.name }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "span",
-            {
-              className: cn(
-                "inline-flex px-2 py-0.5 rounded text-xs font-medium",
-                item.status === "government" ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300" : "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300"
-              ),
-              children: STATUS_UA[item.status] ?? item.status
-            }
-          ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-right", children: item.quantity }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { children: item.unit ?? "—" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-muted-foreground", children: formatDate(item.updatedAt) })
-        ] }, item.id)) })
-      ] }) }) })
-    ] })
-  ] });
-}
-function OperationsReportView({ data }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 sm:grid-cols-3 gap-4", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-1 pt-4 px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-xs font-medium text-muted-foreground", children: "Усього операцій" }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-4 pb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl font-bold", children: data.total }) })
-      ] }),
-      data.byType.map((t2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-1 pt-4 px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-xs font-medium text-muted-foreground", children: TYPE_UA[t2.type] ?? t2.type }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-4 pb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl font-bold", children: t2.count }) })
-      ] }, t2.type))
-    ] }),
-    data.byDay.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "px-6 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-sm", children: "Активність по днях" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-6 pb-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 220, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(LineChart, { data: data.byDay, margin: { top: 4, right: 16, left: 0, bottom: 4 }, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CartesianGrid, { strokeDasharray: "3 3", className: "stroke-border" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(XAxis, { dataKey: "date", tick: { fontSize: 11 } }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(YAxis, { tick: { fontSize: 12 }, allowDecimals: false }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { labelFormatter: (v) => `Дата: ${v}`, formatter: (v) => [v, "Операцій"] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Line,
-          {
-            type: "monotone",
-            dataKey: "count",
-            name: "Операцій",
-            stroke: "#3b82f6",
-            strokeWidth: 2,
-            dot: { r: 3 },
-            activeDot: { r: 5 }
-          }
-        )
-      ] }) }) })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "px-6 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardTitle, { className: "text-sm", children: [
-        "Журнал операцій (",
-        data.operations.length,
-        ")"
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-0 pb-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-auto max-h-96", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Table, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(TableHeader, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(TableRow, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Дата" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Тип" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "МЦ" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { className: "text-right", children: "Кількість" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Причина" })
-        ] }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(TableBody, { children: data.operations.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx(TableRow, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { colSpan: 5, className: "text-center text-muted-foreground py-8", children: "Немає операцій за вибраний період" }) }) : data.operations.map((op) => /* @__PURE__ */ jsxRuntimeExports.jsxs(TableRow, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-muted-foreground", children: formatDate(op.createdAt) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-flex px-2 py-0.5 rounded text-xs font-medium bg-primary/10 text-primary", children: TYPE_UA[op.type] ?? op.type }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { children: op.itemName ?? op.itemId }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-right", children: op.quantity }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-muted-foreground", children: op.reason ?? "—" })
-        ] }, op.id)) })
-      ] }) }) })
-    ] })
-  ] });
-}
-function SummaryReportView({ data }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4", children: [
-      { label: "Позицій МЦ", value: data.totalItems },
-      { label: "Загальна кількість", value: data.totalQuantity },
-      { label: "Держ. позицій", value: data.governmentItems },
-      { label: "Волонт. позицій", value: data.volunteerItems },
-      { label: "Операцій", value: data.totalOperations }
-    ].map((kpi) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-1 pt-4 px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-xs font-medium text-muted-foreground", children: kpi.label }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-4 pb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl font-bold", children: kpi.value }) })
-    ] }, kpi.label)) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-6", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "px-6 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-sm", children: "МЦ за статусом" }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-6 pb-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 220, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(PieChart, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            Pie,
-            {
-              data: data.itemsByStatus,
-              dataKey: "value",
-              nameKey: "name",
-              cx: "50%",
-              cy: "50%",
-              outerRadius: 80,
-              label: ({ name, percent }) => `${name} ${((percent ?? 0) * 100).toFixed(0)}%`,
-              children: data.itemsByStatus.map((_, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(Cell, { fill: PIE_COLORS[idx % PIE_COLORS.length] }, idx))
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { formatter: (v) => [v, "Позицій"] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Legend, {})
-        ] }) }) })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "px-6 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-sm", children: "Операції за типом" }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-6 pb-6", children: data.operationsByType.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-center h-[220px] text-sm text-muted-foreground", children: "Немає операцій за вибраний період" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 220, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          BarChart,
-          {
-            data: data.operationsByType,
-            margin: { top: 4, right: 16, left: 0, bottom: 4 },
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(CartesianGrid, { strokeDasharray: "3 3", className: "stroke-border" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                XAxis,
-                {
-                  dataKey: "type",
-                  tickFormatter: (v) => TYPE_UA[v] ?? v,
-                  tick: { fontSize: 12 }
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(YAxis, { tick: { fontSize: 12 }, allowDecimals: false }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Tooltip,
-                {
-                  labelFormatter: (v) => TYPE_UA[v] ?? v,
-                  formatter: (v) => [v, "Операцій"]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Bar, { dataKey: "count", name: "Операцій", fill: "#3b82f6", radius: [4, 4, 0, 0] })
-            ]
-          }
-        ) }) })
-      ] })
-    ] }),
-    data.activityByDay.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "px-6 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-sm", children: "Активність по днях" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-6 pb-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 200, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(LineChart, { data: data.activityByDay, margin: { top: 4, right: 16, left: 0, bottom: 4 }, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CartesianGrid, { strokeDasharray: "3 3", className: "stroke-border" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(XAxis, { dataKey: "date", tick: { fontSize: 11 } }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(YAxis, { tick: { fontSize: 12 }, allowDecimals: false }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { labelFormatter: (v) => `Дата: ${v}` }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Line,
-          {
-            type: "monotone",
-            dataKey: "операції",
-            stroke: "#3b82f6",
-            strokeWidth: 2,
-            dot: { r: 3 },
-            activeDot: { r: 5 }
-          }
-        )
-      ] }) }) })
-    ] })
-  ] });
-}
-function ReportsScreen() {
-  const { token } = useAuthStore();
-  const [reportType, setReportType] = reactExports.useState("summary");
-  const [dateFrom, setDateFrom] = reactExports.useState(thirtyDaysAgo());
-  const [dateTo, setDateTo] = reactExports.useState(today());
-  const [loading, setLoading] = reactExports.useState(false);
-  const [error, setError] = reactExports.useState(null);
-  const [inventoryData, setInventoryData] = reactExports.useState(null);
-  const [operationsData, setOperationsData] = reactExports.useState(null);
-  const [summaryData, setSummaryData] = reactExports.useState(null);
-  const fetchReport = reactExports.useCallback(async () => {
-    if (!token) return;
-    setLoading(true);
-    setError(null);
-    try {
-      if (reportType === "inventory") {
-        const data = await reportService.getInventoryReport(token);
-        setInventoryData(data);
-      } else if (reportType === "operations") {
-        const data = await reportService.getOperationsReport(token, dateFrom, dateTo);
-        setOperationsData(data);
-      } else {
-        const data = await reportService.getSummaryReport(token, dateFrom, dateTo);
-        setSummaryData(data);
-      }
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Помилка завантаження даних");
-    } finally {
-      setLoading(false);
-    }
-  }, [token, reportType, dateFrom, dateTo]);
-  const showDateRange = reportType === "operations" || reportType === "summary";
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6 max-w-6xl mx-auto", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-3", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-1 p-1 bg-muted rounded-lg", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          TabButton,
-          {
-            active: reportType === "summary",
-            onClick: () => setReportType("summary"),
-            icon: /* @__PURE__ */ jsxRuntimeExports.jsx(LayoutGrid, { className: "w-4 h-4" }),
-            label: "Зведений"
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          TabButton,
-          {
-            active: reportType === "inventory",
-            onClick: () => setReportType("inventory"),
-            icon: /* @__PURE__ */ jsxRuntimeExports.jsx(ChartColumn, { className: "w-4 h-4" }),
-            label: "Інвентар"
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          TabButton,
-          {
-            active: reportType === "operations",
-            onClick: () => setReportType("operations"),
-            icon: /* @__PURE__ */ jsxRuntimeExports.jsx(ListOrdered, { className: "w-4 h-4" }),
-            label: "Операції"
-          }
-        )
-      ] }),
-      showDateRange && /* @__PURE__ */ jsxRuntimeExports.jsx(
-        DateRangePicker,
-        {
-          from: dateFrom,
-          to: dateTo,
-          onFromChange: setDateFrom,
-          onToChange: setDateTo
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ExportButtons, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(Button, { onClick: fetchReport, disabled: loading, size: "sm", children: [
-        loading ? /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { className: "w-4 h-4 mr-1.5 animate-spin" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-4 h-4 mr-1.5" }),
-        "Сформувати"
-      ] })
-    ] }),
-    error && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 rounded-md border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm text-destructive", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "w-4 h-4 shrink-0" }),
-      error
-    ] }),
-    !loading && !error && reportType === "inventory" && inventoryData && /* @__PURE__ */ jsxRuntimeExports.jsx(InventoryReportView, { data: inventoryData }),
-    !loading && !error && reportType === "operations" && operationsData && /* @__PURE__ */ jsxRuntimeExports.jsx(OperationsReportView, { data: operationsData }),
-    !loading && !error && reportType === "summary" && summaryData && /* @__PURE__ */ jsxRuntimeExports.jsx(SummaryReportView, { data: summaryData }),
-    !loading && !error && (reportType === "inventory" && !inventoryData || reportType === "operations" && !operationsData || reportType === "summary" && !summaryData) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center justify-center py-20 text-muted-foreground gap-3", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ChartColumn, { className: "w-10 h-10 opacity-30" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm", children: "Натисніть «Сформувати» для отримання звіту" })
-    ] })
+        ) })
+      ] }, item.id);
+    }) })
   ] });
 }
 function composeEventHandlers(originalEventHandler, ourEventHandler, { checkForDefaultPrevented = true } = {}) {
@@ -54415,6 +53197,1671 @@ const DialogDescription = reactExports.forwardRef(({ className, ...props }, ref)
   }
 ));
 DialogDescription.displayName = Description.displayName;
+function DocumentRegistrationModal({
+  item,
+  onClose,
+  onSuccess
+}) {
+  const { token } = useAuthStore();
+  const [documentNumber, setDocumentNumber] = reactExports.useState("");
+  const [documentDate, setDocumentDate] = reactExports.useState("");
+  const [supplierName, setSupplierName] = reactExports.useState("");
+  const [isSubmitting, setIsSubmitting] = reactExports.useState(false);
+  const [error, setError] = reactExports.useState(null);
+  const [success, setSuccess] = reactExports.useState(false);
+  const firstInputRef = reactExports.useRef(null);
+  const minDate = /* @__PURE__ */ new Date();
+  minDate.setFullYear(minDate.getFullYear() - 1);
+  const minDateString = minDate.toISOString().split("T")[0];
+  const maxDateString = (/* @__PURE__ */ new Date()).toISOString().split("T")[0];
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const trimmedNumber = documentNumber.trim();
+    const trimmedSupplier = supplierName.trim();
+    if (!trimmedNumber) {
+      setError("Номер накладної обов'язковий");
+      return;
+    }
+    if (!documentDate) {
+      setError("Дата накладної обов'язкова");
+      return;
+    }
+    if (!trimmedSupplier) {
+      setError("Постачальник обов'язковий");
+      return;
+    }
+    if (!token) {
+      setError("Сесія закінчилась. Будь ласка, увійдіть знову.");
+      return;
+    }
+    setIsSubmitting(true);
+    setError(null);
+    try {
+      await itemService.transferToBalance(token, item.id, {
+        document_number: trimmedNumber,
+        document_date: documentDate,
+        supplier_name: trimmedSupplier
+      });
+      setSuccess(true);
+      setTimeout(() => {
+        onSuccess();
+        onClose();
+      }, 1200);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Помилка сервера. Спробуйте ще раз.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Dialog, { open: true, onOpenChange: (open) => {
+    if (!open && !isSubmitting) onClose();
+  }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(DialogContent, { className: "max-w-md", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(DialogHeader, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(DialogTitle, { children: "Оформлення документів" }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-muted-foreground -mt-1", children: [
+      "МЦ: ",
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium text-foreground", children: item.name })
+    ] }),
+    success ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center gap-3 py-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "h-10 w-10 text-green-500" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-green-700 dark:text-green-400", children: "МЦ успішно переведено на баланс" })
+    ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: handleSubmit, className: "space-y-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "doc-number", className: "text-sm font-medium leading-none", children: [
+          "Номер накладної ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Input,
+          {
+            id: "doc-number",
+            ref: firstInputRef,
+            value: documentNumber,
+            onChange: (e) => setDocumentNumber(e.target.value),
+            placeholder: "Наприклад: НК-2024-001",
+            maxLength: 50,
+            disabled: isSubmitting,
+            autoFocus: true
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "doc-date", className: "text-sm font-medium leading-none", children: [
+          "Дата накладної ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Input,
+          {
+            id: "doc-date",
+            type: "date",
+            value: documentDate,
+            onChange: (e) => setDocumentDate(e.target.value),
+            min: minDateString,
+            max: maxDateString,
+            disabled: isSubmitting
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Виберіть дату не пізніше сьогодні" })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "supplier", className: "text-sm font-medium leading-none", children: [
+          "Постачальник ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Input,
+          {
+            id: "supplier",
+            value: supplierName,
+            onChange: (e) => setSupplierName(e.target.value),
+            placeholder: "Наприклад: ТОВ «Постачальник»",
+            maxLength: 255,
+            disabled: isSubmitting
+          }
+        )
+      ] }),
+      error && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 rounded-md border border-destructive/30 bg-destructive/10 px-3 py-2 text-sm text-destructive", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "h-4 w-4 shrink-0" }),
+        error
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(DialogFooter, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Button,
+          {
+            type: "button",
+            variant: "outline",
+            onClick: onClose,
+            disabled: isSubmitting,
+            children: "Скасувати"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Button,
+          {
+            type: "submit",
+            disabled: isSubmitting || !documentNumber.trim() || !documentDate || !supplierName.trim(),
+            children: isSubmitting ? "Збереження…" : "Перевести на баланс"
+          }
+        )
+      ] })
+    ] })
+  ] }) });
+}
+const PAGE_SIZE = 50;
+function useItems() {
+  const { token } = useAuthStore();
+  const [allItems, setAllItems] = reactExports.useState([]);
+  const [isLoading, setIsLoading] = reactExports.useState(false);
+  const [error, setError] = reactExports.useState(null);
+  const [search, setSearchState] = reactExports.useState("");
+  const [statusFilter, setStatusFilterState] = reactExports.useState("");
+  const [balanceFilter, setBalanceFilterState] = reactExports.useState("all");
+  const [page, setPageState] = reactExports.useState(1);
+  const fetchItems = reactExports.useCallback(async () => {
+    if (!token) return;
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await itemService.getItems(token);
+      setAllItems(response.data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Помилка завантаження даних");
+    } finally {
+      setIsLoading(false);
+    }
+  }, [token]);
+  reactExports.useEffect(() => {
+    fetchItems();
+  }, [fetchItems]);
+  const setSearch = (value) => {
+    setSearchState(value);
+    setPageState(1);
+  };
+  const setStatusFilter = (value) => {
+    setStatusFilterState(value);
+    setPageState(1);
+  };
+  const setBalanceFilter = (value) => {
+    setBalanceFilterState(value);
+    setPageState(1);
+  };
+  const offBalanceCount = allItems.filter(
+    (item) => !item.balance_status || item.balance_status === "off_balance"
+  ).length;
+  const filteredItems = allItems.filter((item) => {
+    const matchesSearch = search === "" || item.name.toLowerCase().includes(search.toLowerCase());
+    const matchesStatus = statusFilter === "" || item.status === statusFilter;
+    const itemBalanceStatus = item.balance_status ?? "off_balance";
+    const matchesBalance = balanceFilter === "all" || balanceFilter === "off_balance" && itemBalanceStatus === "off_balance" || balanceFilter === "on_balance" && itemBalanceStatus === "on_balance";
+    return matchesSearch && matchesStatus && matchesBalance;
+  });
+  const totalPages = Math.max(1, Math.ceil(filteredItems.length / PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  const paginatedItems = filteredItems.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
+  return {
+    allItems,
+    filteredItems,
+    paginatedItems,
+    isLoading,
+    error,
+    search,
+    statusFilter,
+    balanceFilter,
+    page: safePage,
+    totalPages,
+    offBalanceCount,
+    setSearch,
+    setStatusFilter,
+    setBalanceFilter,
+    setPage: setPageState,
+    refresh: fetchItems
+  };
+}
+const STATUS_OPTIONS = [
+  { value: "", label: "Всі" },
+  { value: "government", label: "Державне" },
+  { value: "volunteer", label: "Волонтерське" }
+];
+const BALANCE_OPTIONS = [
+  { value: "all", label: "Всі" },
+  { value: "on_balance", label: "На балансі 📄" },
+  { value: "off_balance", label: "Позабаланс ⚠️" }
+];
+function ItemsListScreen({ onNavigate } = {}) {
+  const { user } = useAuthStore();
+  const [registerItem, setRegisterItem] = reactExports.useState(null);
+  const {
+    filteredItems,
+    paginatedItems,
+    isLoading,
+    error,
+    search,
+    statusFilter,
+    balanceFilter,
+    page,
+    totalPages,
+    setSearch,
+    setStatusFilter,
+    setBalanceFilter,
+    setPage,
+    refresh
+  } = useItems();
+  const {
+    isOnline,
+    isSyncing,
+    isOffline,
+    isError: isSyncError,
+    lastSyncLabel,
+    pendingCount,
+    syncError,
+    conflicts,
+    resolveConflict,
+    clearError
+  } = useSync();
+  const canRegisterDocuments = user?.role === "admin" || user?.role === "superadmin";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-3", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex-1 min-w-48", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { className: "absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Input,
+          {
+            placeholder: "Пошук за назвою…",
+            value: search,
+            onChange: (e) => setSearch(e.target.value),
+            className: "pl-9"
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex rounded-md border border-input bg-background overflow-hidden", children: STATUS_OPTIONS.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "button",
+        {
+          onClick: () => setStatusFilter(opt.value),
+          className: cn(
+            "px-3 py-1.5 text-sm font-medium transition-colors",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset",
+            statusFilter === opt.value ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground hover:bg-muted"
+          ),
+          children: opt.label
+        },
+        opt.value
+      )) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex rounded-md border border-input bg-background overflow-hidden", children: BALANCE_OPTIONS.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "button",
+        {
+          onClick: () => setBalanceFilter(opt.value),
+          className: cn(
+            "px-3 py-1.5 text-sm font-medium transition-colors",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset",
+            balanceFilter === opt.value ? opt.value === "off_balance" ? "bg-amber-500 text-white" : "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground hover:bg-muted"
+          ),
+          children: opt.label
+        },
+        opt.value
+      )) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        Button,
+        {
+          variant: "outline",
+          size: "icon",
+          onClick: refresh,
+          disabled: isLoading,
+          title: "Оновити список",
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: cn("h-4 w-4", isLoading && "animate-spin") })
+        }
+      ),
+      onNavigate && /* @__PURE__ */ jsxRuntimeExports.jsxs(Button, { onClick: () => onNavigate("add-item"), children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "h-4 w-4" }),
+        "Додати позицію"
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-xs text-muted-foreground", children: [
+      isOffline && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1 text-amber-500 font-medium", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(WifiOff, { className: "h-3.5 w-3.5" }),
+        "Офлайн"
+      ] }),
+      !isOffline && isOnline && !isSyncing && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1 text-emerald-500", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Wifi, { className: "h-3.5 w-3.5" }),
+        "Онлайн"
+      ] }),
+      isSyncing && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1 text-primary animate-pulse", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { className: "h-3.5 w-3.5 animate-spin" }),
+        "Синхронізація…"
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { className: "h-3 w-3" }),
+        lastSyncLabel
+      ] }),
+      pendingCount > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1 text-amber-500", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "h-3.5 w-3.5" }),
+        pendingCount,
+        " очікують синхронізації"
+      ] }),
+      conflicts.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1 text-destructive font-medium", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "h-3.5 w-3.5" }),
+        conflicts.length,
+        " конфлікт(ів)"
+      ] })
+    ] }),
+    isSyncError && syncError && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between rounded-md border border-amber-500/30 bg-amber-500/10 px-4 py-2.5 text-sm text-amber-700 dark:text-amber-400", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-2", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "h-4 w-4 shrink-0" }),
+        "Помилка синхронізації: ",
+        syncError
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "button",
+        {
+          onClick: clearError,
+          className: "text-xs underline opacity-70 hover:opacity-100 ml-4 shrink-0",
+          children: "Закрити"
+        }
+      )
+    ] }),
+    conflicts.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-md border border-destructive/30 bg-destructive/5 px-4 py-3 space-y-2", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm font-medium text-destructive flex items-center gap-2", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "h-4 w-4" }),
+        "Конфлікти синхронізації"
+      ] }),
+      conflicts.map((c2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          className: "flex items-center justify-between text-sm rounded-md border border-border bg-background px-3 py-2",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-medium truncate", children: c2.itemName }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground", children: [
+                "Поле «",
+                c2.field,
+                "»: локально ",
+                String(c2.localValue),
+                ", сервер ",
+                String(c2.serverValue)
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Button,
+              {
+                variant: "ghost",
+                size: "sm",
+                onClick: () => resolveConflict(c2.id),
+                className: "ml-3 shrink-0 h-7 text-xs",
+                children: "Вирішити"
+              }
+            )
+          ]
+        },
+        c2.id
+      ))
+    ] }),
+    error && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "rounded-md border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive", children: error }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-0 pt-4 px-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: isLoading ? "Завантаження…" : `${filteredItems.length} позицій` }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "pt-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        ItemsTable,
+        {
+          items: paginatedItems,
+          isLoading,
+          canRegisterDocuments,
+          onRegisterDocuments: setRegisterItem
+        }
+      ) })
+    ] }),
+    !isLoading && totalPages > 1 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-muted-foreground", children: [
+        "Сторінка ",
+        page,
+        " з ",
+        totalPages
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Button,
+          {
+            variant: "outline",
+            size: "icon",
+            onClick: () => setPage(page - 1),
+            disabled: page <= 1,
+            title: "Попередня сторінка",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronLeft, { className: "h-4 w-4" })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Button,
+          {
+            variant: "outline",
+            size: "icon",
+            onClick: () => setPage(page + 1),
+            disabled: page >= totalPages,
+            title: "Наступна сторінка",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "h-4 w-4" })
+          }
+        )
+      ] })
+    ] }),
+    registerItem && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      DocumentRegistrationModal,
+      {
+        item: registerItem,
+        onClose: () => setRegisterItem(null),
+        onSuccess: () => {
+          setRegisterItem(null);
+          refresh();
+        }
+      }
+    )
+  ] });
+}
+const itemSchema = object$1({
+  name: string$1().min(1, "Назва обовʼязкова").max(255, "Назва не може перевищувати 255 символів"),
+  status: _enum(["government", "volunteer"]),
+  quantity: number$3({ error: "Введіть кількість" }).int("Кількість має бути цілим числом").min(0, "Кількість не може бути відʼємною"),
+  unit: _enum(["шт", "кг", "л", "компл"]),
+  donorId: string$1().optional(),
+  serialNumber: string$1().max(100, "Серійний номер занадто довгий").optional(),
+  price: number$3({ error: "Введіть коректну ціну" }).min(0, "Ціна не може бути відʼємною").optional(),
+  notes: string$1().max(1e3, "Нотатки не можуть перевищувати 1000 символів").optional(),
+  balance_status: _enum(["off_balance", "on_balance"]).default("off_balance"),
+  document_number: string$1().max(50).optional(),
+  document_date: string$1().optional(),
+  supplier_name: string$1().max(255).optional()
+});
+const selectClass = cn(
+  "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2",
+  "text-sm ring-offset-background",
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+  "disabled:cursor-not-allowed disabled:opacity-50"
+);
+const textareaClass$1 = cn(
+  "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2",
+  "text-sm ring-offset-background placeholder:text-muted-foreground resize-none",
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+  "disabled:cursor-not-allowed disabled:opacity-50"
+);
+function ItemForm({ onSubmit, isSubmitting = false, donors }) {
+  const form = useForm({
+    resolver: a$1(itemSchema),
+    defaultValues: {
+      name: "",
+      status: "government",
+      quantity: 1,
+      unit: "шт",
+      donorId: void 0,
+      serialNumber: "",
+      price: void 0,
+      notes: "",
+      balance_status: "off_balance",
+      document_number: "",
+      document_date: "",
+      supplier_name: ""
+    }
+  });
+  const watchedBalanceStatus = form.watch("balance_status");
+  const handleSubmit = async (values) => {
+    await onSubmit({
+      name: values.name,
+      status: values.status,
+      quantity: values.quantity,
+      unit: values.unit,
+      donorId: values.donorId || void 0,
+      serialNumber: values.serialNumber || void 0,
+      price: values.price,
+      notes: values.notes || void 0,
+      balance_status: values.balance_status,
+      document_number: values.balance_status === "on_balance" ? values.document_number || void 0 : void 0,
+      document_date: values.balance_status === "on_balance" ? values.document_date || void 0 : void 0,
+      supplier_name: values.balance_status === "on_balance" ? values.supplier_name || void 0 : void 0
+    });
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Form, { ...form, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: form.handleSubmit(handleSubmit), noValidate: true, className: "space-y-5", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FormField,
+      {
+        control: form.control,
+        name: "name",
+        render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(FormLabel, { children: [
+            "Назва ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Input,
+            {
+              ...field,
+              placeholder: "Наприклад: Рація Baofeng UV-5R",
+              autoFocus: true,
+              disabled: isSubmitting
+            }
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
+        ] })
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        FormField,
+        {
+          control: form.control,
+          name: "status",
+          render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(FormLabel, { children: [
+              "Статус ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("select", { ...field, className: selectClass, disabled: isSubmitting, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "government", children: "Державне" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "volunteer", children: "Волонтерське" })
+            ] }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
+          ] })
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        FormField,
+        {
+          control: form.control,
+          name: "unit",
+          render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(FormLabel, { children: [
+              "Одиниця ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("select", { ...field, className: selectClass, disabled: isSubmitting, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "шт", children: "шт" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "кг", children: "кг" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "л", children: "л" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "компл", children: "компл" })
+            ] }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
+          ] })
+        }
+      )
+    ] }),
+    donors && donors.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FormField,
+      {
+        control: form.control,
+        name: "donorId",
+        render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FormLabel, { children: "Донор" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "select",
+            {
+              ...field,
+              value: field.value ?? "",
+              onChange: (e) => field.onChange(e.target.value || void 0),
+              className: selectClass,
+              disabled: isSubmitting,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", children: "— Не вказано —" }),
+                donors.map((d) => /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: d.id, children: d.name }, d.id))
+              ]
+            }
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
+        ] })
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        FormField,
+        {
+          control: form.control,
+          name: "quantity",
+          render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(FormLabel, { children: [
+              "Кількість ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Input,
+              {
+                value: field.value,
+                onChange: (e) => field.onChange(parseInt(e.target.value, 10) || 0),
+                onBlur: field.onBlur,
+                name: field.name,
+                ref: field.ref,
+                type: "number",
+                min: 0,
+                step: 1,
+                placeholder: "0",
+                disabled: isSubmitting
+              }
+            ) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
+          ] })
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        FormField,
+        {
+          control: form.control,
+          name: "price",
+          render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(FormLabel, { children: "Ціна (грн)" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Input,
+              {
+                value: field.value ?? "",
+                onChange: (e) => field.onChange(e.target.value === "" ? void 0 : parseFloat(e.target.value)),
+                onBlur: field.onBlur,
+                name: field.name,
+                ref: field.ref,
+                type: "number",
+                min: 0,
+                step: 0.01,
+                placeholder: "0.00",
+                disabled: isSubmitting
+              }
+            ) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
+          ] })
+        }
+      )
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FormField,
+      {
+        control: form.control,
+        name: "serialNumber",
+        render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FormLabel, { children: "Серійний номер" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Input,
+            {
+              ...field,
+              value: field.value ?? "",
+              placeholder: "Наприклад: SN-2024-001",
+              disabled: isSubmitting
+            }
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
+        ] })
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FormField,
+      {
+        control: form.control,
+        name: "notes",
+        render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FormLabel, { children: "Нотатки" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "textarea",
+            {
+              ...field,
+              value: field.value ?? "",
+              className: textareaClass$1,
+              rows: 3,
+              placeholder: "Додаткова інформація про позицію…",
+              disabled: isSubmitting
+            }
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
+        ] })
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FormField,
+      {
+        control: form.control,
+        name: "balance_status",
+        render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FormLabel, { children: "Статус балансу" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("select", { ...field, className: selectClass, disabled: isSubmitting, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "off_balance", children: "⚠️ Позабаланс (без документів)" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "on_balance", children: "📄 На балансі (з документами)" })
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
+        ] })
+      }
+    ),
+    watchedBalanceStatus === "on_balance" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-md border border-border bg-muted/30 p-4 space-y-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-muted-foreground", children: "Дані накладної" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        FormField,
+        {
+          control: form.control,
+          name: "document_number",
+          render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(FormLabel, { children: "Номер накладної" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Input,
+              {
+                ...field,
+                value: field.value ?? "",
+                placeholder: "Наприклад: НК-2024-001",
+                maxLength: 50,
+                disabled: isSubmitting
+              }
+            ) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
+          ] })
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          FormField,
+          {
+            control: form.control,
+            name: "document_date",
+            render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(FormLabel, { children: "Дата накладної" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Input,
+                {
+                  ...field,
+                  value: field.value ?? "",
+                  type: "date",
+                  disabled: isSubmitting
+                }
+              ) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
+            ] })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          FormField,
+          {
+            control: form.control,
+            name: "supplier_name",
+            render: ({ field }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(FormItem, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(FormLabel, { children: "Постачальник" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(FormControl, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Input,
+                {
+                  ...field,
+                  value: field.value ?? "",
+                  placeholder: "Наприклад: ТОВ «Постачальник»",
+                  maxLength: 255,
+                  disabled: isSubmitting
+                }
+              ) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(FormMessage, {})
+            ] })
+          }
+        )
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { type: "submit", className: "w-full", disabled: isSubmitting, children: isSubmitting ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { className: "h-4 w-4 animate-spin" }),
+      "Збереження…"
+    ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Save, { className: "h-4 w-4" }),
+      "Зберегти позицію"
+    ] }) })
+  ] }) });
+}
+const itemsApi = {
+  createItem(input) {
+    return window.itemsAPI.createItem(input);
+  }
+};
+const BASE_URL$2 = "http://localhost:3000/api";
+async function request$2(path, init) {
+  const res = await fetch(`${BASE_URL$2}${path}`, {
+    headers: { "Content-Type": "application/json", ...init.headers },
+    ...init
+  });
+  if (!res.ok) {
+    let message = `HTTP ${res.status}`;
+    try {
+      const body = await res.json();
+      if (body.message) message = body.message;
+    } catch {
+    }
+    throw new Error(message);
+  }
+  if (res.status === 204) return void 0;
+  return res.json();
+}
+const donorService = {
+  async getDonors(token, page = 1, limit = 20) {
+    return request$2(`/donors?page=${page}&limit=${limit}`, {
+      method: "GET",
+      headers: { Authorization: `Bearer ${token}` }
+    });
+  },
+  async createDonor(token, input) {
+    return request$2("/donors", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}` },
+      body: JSON.stringify(input)
+    });
+  },
+  async updateDonor(token, id, input) {
+    return request$2(`/donors/${id}`, {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${token}` },
+      body: JSON.stringify(input)
+    });
+  },
+  async deleteDonor(token, id) {
+    return request$2(`/donors/${id}`, {
+      method: "DELETE",
+      headers: { Authorization: `Bearer ${token}` }
+    });
+  }
+};
+function AddItemScreen({ onBack }) {
+  const { user, token } = useAuthStore();
+  const [isSubmitting, setIsSubmitting] = reactExports.useState(false);
+  const [notification, setNotification] = reactExports.useState(null);
+  const [formKey, setFormKey] = reactExports.useState(0);
+  const [donors, setDonors] = reactExports.useState([]);
+  reactExports.useEffect(() => {
+    if (!token) return;
+    donorService.getDonors(token).then(setDonors).catch(() => {
+    });
+  }, [token]);
+  const handleSubmit = async (values) => {
+    if (!user || !token) {
+      setNotification({
+        type: "error",
+        message: "Сесія закінчилась. Будь ласка, увійдіть знову."
+      });
+      return;
+    }
+    setIsSubmitting(true);
+    setNotification(null);
+    const metadataFields = {};
+    if (values.serialNumber) metadataFields.serialNumber = values.serialNumber;
+    if (values.price !== void 0) metadataFields.price = values.price;
+    const metadata = Object.keys(metadataFields).length > 0 ? JSON.stringify(metadataFields) : void 0;
+    try {
+      const result = await itemsApi.createItem({
+        name: values.name,
+        status: values.status,
+        quantity: values.quantity,
+        unit: values.unit,
+        description: values.notes || void 0,
+        metadata,
+        ownerId: user.id,
+        token,
+        balance_status: values.balance_status,
+        document_number: values.document_number || void 0,
+        document_date: values.document_date || void 0,
+        supplier_name: values.supplier_name || void 0
+      });
+      setNotification({
+        type: result.synced ? "success-synced" : "success-offline",
+        message: result.synced ? `Позицію "${result.item.name}" збережено та синхронізовано з сервером.` : `Позицію "${result.item.name}" збережено локально. Синхронізація відбудеться автоматично.`
+      });
+      setFormKey((k2) => k2 + 1);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Не вдалося зберегти позицію. Спробуйте ще раз.";
+      setNotification({ type: "error", message });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { variant: "ghost", size: "icon", onClick: onBack, "aria-label": "Назад", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "h-4 w-4" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-2xl font-semibold tracking-tight", children: "Додати позицію" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Заповніть форму для додавання нової одиниці інвентарю" })
+      ] })
+    ] }),
+    notification && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        role: "alert",
+        className: cn(
+          "flex items-start gap-3 rounded-md border px-4 py-3 text-sm",
+          notification.type === "error" && "border-destructive/30 bg-destructive/10 text-destructive",
+          notification.type === "success-synced" && "border-green-500/30 bg-green-500/10 text-green-700 dark:text-green-400",
+          notification.type === "success-offline" && "border-yellow-500/30 bg-yellow-500/10 text-yellow-700 dark:text-yellow-400"
+        ),
+        children: [
+          notification.type === "error" && /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "mt-0.5 h-4 w-4 shrink-0" }),
+          notification.type === "success-synced" && /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "mt-0.5 h-4 w-4 shrink-0" }),
+          notification.type === "success-offline" && /* @__PURE__ */ jsxRuntimeExports.jsx(WifiOff, { className: "mt-0.5 h-4 w-4 shrink-0" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: notification.message })
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { className: "max-w-2xl", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { children: "Нова позиція інвентарю" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(CardDescription, { children: [
+          "Поля, позначені ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" }),
+          ", є обовʼязковими"
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        ItemForm,
+        {
+          onSubmit: handleSubmit,
+          isSubmitting,
+          donors
+        },
+        formKey
+      ) })
+    ] })
+  ] });
+}
+const BASE_URL$1 = "http://localhost:3000/api";
+async function request$1(path, init) {
+  const res = await fetch(`${BASE_URL$1}${path}`, {
+    headers: { "Content-Type": "application/json", ...init.headers },
+    ...init
+  });
+  if (!res.ok) {
+    let message = `HTTP ${res.status}`;
+    try {
+      const body = await res.json();
+      if (body.message) message = body.message;
+    } catch {
+    }
+    throw new Error(message);
+  }
+  return res.json();
+}
+const writeoffService = {
+  async createWriteoff(token, input) {
+    return request$1("/operations/writeoff", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}` },
+      body: JSON.stringify(input)
+    });
+  }
+};
+function WriteOffScreen({ onBack }) {
+  const { user, token } = useAuthStore();
+  const [items, setItems] = reactExports.useState([]);
+  const [itemsLoading, setItemsLoading] = reactExports.useState(true);
+  const [itemId, setItemId] = reactExports.useState("");
+  const [quantity, setQuantity] = reactExports.useState("");
+  const [type, setType] = reactExports.useState("used");
+  const [reason, setReason] = reactExports.useState("");
+  const [donorId, setDonorId] = reactExports.useState("");
+  const [isSubmitting, setIsSubmitting] = reactExports.useState(false);
+  const [notification, setNotification] = reactExports.useState(null);
+  reactExports.useEffect(() => {
+    if (!token) return;
+    setItemsLoading(true);
+    itemService.getItems(token).then((res) => setItems(res.data)).catch(() => setItems([])).finally(() => setItemsLoading(false));
+  }, [token]);
+  const selectedItem = items.find((i2) => i2.id === itemId);
+  const resetForm = () => {
+    setItemId("");
+    setQuantity("");
+    setType("used");
+    setReason("");
+    setDonorId("");
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setNotification(null);
+    if (!user || !token) {
+      setNotification({ type: "error", message: "Сесія закінчилась. Будь ласка, увійдіть знову." });
+      return;
+    }
+    if (!itemId) {
+      setNotification({ type: "error", message: "Оберіть позицію інвентарю." });
+      return;
+    }
+    const qty = parseInt(quantity, 10);
+    if (!quantity || !Number.isInteger(qty) || qty < 1) {
+      setNotification({ type: "error", message: "Кількість має бути цілим позитивним числом." });
+      return;
+    }
+    if (selectedItem && qty > selectedItem.quantity) {
+      setNotification({
+        type: "error",
+        message: `Недостатньо залишку. Доступно: ${selectedItem.quantity} ${selectedItem.unit ?? "шт"}.`
+      });
+      return;
+    }
+    if (type === "lost" && !reason.trim()) {
+      setNotification({ type: "error", message: 'Для типу "Втрачено" причина є обовʼязковою.' });
+      return;
+    }
+    setIsSubmitting(true);
+    try {
+      await writeoffService.createWriteoff(token, {
+        itemId,
+        quantity: qty,
+        type,
+        reason: reason.trim() || void 0,
+        donorId: donorId.trim() || void 0
+      });
+      setNotification({
+        type: "success",
+        message: `Списання "${selectedItem?.name ?? ""}" (${qty} ${selectedItem?.unit ?? "шт"}) успішно виконано.`
+      });
+      resetForm();
+    } catch (err) {
+      setNotification({
+        type: "error",
+        message: err instanceof Error ? err.message : "Не вдалося виконати списання. Спробуйте ще раз."
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { variant: "ghost", size: "icon", onClick: onBack, "aria-label": "Назад", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "h-4 w-4" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-2xl font-semibold tracking-tight", children: "Списання МЦ" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Списати матеріальні цінності з інвентарю" })
+      ] })
+    ] }),
+    notification && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        role: "alert",
+        className: cn(
+          "flex items-start gap-3 rounded-md border px-4 py-3 text-sm",
+          notification.type === "error" && "border-destructive/30 bg-destructive/10 text-destructive",
+          notification.type === "success" && "border-green-500/30 bg-green-500/10 text-green-700 dark:text-green-400"
+        ),
+        children: [
+          notification.type === "error" && /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "mt-0.5 h-4 w-4 shrink-0" }),
+          notification.type === "success" && /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "mt-0.5 h-4 w-4 shrink-0" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: notification.message })
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { className: "max-w-2xl", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(CardHeader, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { children: "Форма списання" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(CardDescription, { children: [
+          "Поля, позначені ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" }),
+          ", є обовʼязковими"
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: handleSubmit, className: "space-y-5", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "text-sm font-medium", htmlFor: "itemId", children: [
+            "Позиція інвентарю ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
+          ] }),
+          itemsLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Завантаження позицій…" }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "select",
+            {
+              id: "itemId",
+              value: itemId,
+              onChange: (e) => setItemId(e.target.value),
+              className: "flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+              disabled: isSubmitting,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", children: "— Оберіть позицію —" }),
+                items.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs("option", { value: item.id, children: [
+                  item.name,
+                  item.quantity !== void 0 ? ` (залишок: ${item.quantity} ${item.unit ?? "шт"})` : ""
+                ] }, item.id))
+              ]
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "text-sm font-medium", htmlFor: "quantity", children: [
+            "Кількість ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "input",
+            {
+              id: "quantity",
+              type: "number",
+              min: 1,
+              max: selectedItem?.quantity ?? void 0,
+              value: quantity,
+              onChange: (e) => setQuantity(e.target.value),
+              placeholder: "0",
+              className: "flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+              disabled: isSubmitting
+            }
+          ),
+          selectedItem && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground", children: [
+            "Доступно: ",
+            selectedItem.quantity,
+            " ",
+            selectedItem.unit ?? "шт"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-sm font-medium", children: [
+            "Тип списання ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-6", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "flex items-center gap-2 cursor-pointer text-sm", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "input",
+                {
+                  type: "radio",
+                  name: "type",
+                  value: "used",
+                  checked: type === "used",
+                  onChange: () => setType("used"),
+                  disabled: isSubmitting,
+                  className: "accent-primary"
+                }
+              ),
+              "Використано"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "flex items-center gap-2 cursor-pointer text-sm", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "input",
+                {
+                  type: "radio",
+                  name: "type",
+                  value: "lost",
+                  checked: type === "lost",
+                  onChange: () => setType("lost"),
+                  disabled: isSubmitting,
+                  className: "accent-primary"
+                }
+              ),
+              "Втрачено"
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "text-sm font-medium", htmlFor: "reason", children: [
+            "Причина",
+            " ",
+            type === "lost" && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" }),
+            type === "used" && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground font-normal", children: "(необовʼязково)" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "textarea",
+            {
+              id: "reason",
+              value: reason,
+              onChange: (e) => setReason(e.target.value),
+              placeholder: type === "lost" ? "Опишіть причину втрати…" : "Додаткові коментарі (необовʼязково)…",
+              rows: 3,
+              className: "flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 resize-none",
+              disabled: isSubmitting
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "text-sm font-medium", htmlFor: "donorId", children: [
+            "Донор ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground font-normal", children: "(необовʼязково)" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "select",
+            {
+              id: "donorId",
+              value: donorId,
+              onChange: (e) => setDonorId(e.target.value),
+              className: "flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+              disabled: isSubmitting,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", children: "— Не вказано —" }),
+                Array.from(
+                  new Map(
+                    items.filter((i2) => i2.donorId).map((i2) => [i2.donorId, i2.donorId])
+                  ).values()
+                ).map((id) => /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: id, children: id }, id))
+              ]
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3 pt-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { type: "submit", disabled: isSubmitting, children: isSubmitting ? "Збереження…" : "Списати" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { type: "button", variant: "outline", onClick: onBack, disabled: isSubmitting, children: "Скасувати" })
+        ] })
+      ] }) })
+    ] })
+  ] });
+}
+function today() {
+  return (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
+}
+function thirtyDaysAgo() {
+  const d = /* @__PURE__ */ new Date();
+  d.setDate(d.getDate() - 30);
+  return d.toISOString().slice(0, 10);
+}
+function formatDate(iso) {
+  return new Date(iso).toLocaleDateString("uk-UA");
+}
+const STATUS_UA = {
+  government: "Держ.",
+  volunteer: "Волонт."
+};
+const TYPE_UA = {
+  writeoff: "Списання",
+  transfer: "Передача",
+  receipt: "Надходження",
+  issue: "Видача"
+};
+const PIE_COLORS = ["#3b82f6", "#22c55e", "#f59e0b", "#ef4444"];
+function TabButton({ active, onClick, icon, label }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "button",
+    {
+      onClick,
+      className: cn(
+        "flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-colors",
+        active ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+      ),
+      children: [
+        icon,
+        label
+      ]
+    }
+  );
+}
+function DateRangePicker({ from: from2, to: to2, onFromChange, onToChange }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-sm text-muted-foreground", children: "Від" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "input",
+      {
+        type: "date",
+        value: from2,
+        max: to2,
+        onChange: (e) => onFromChange(e.target.value),
+        className: "h-9 rounded-md border border-input bg-background px-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-sm text-muted-foreground", children: "До" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "input",
+      {
+        type: "date",
+        value: to2,
+        min: from2,
+        max: today(),
+        onChange: (e) => onToChange(e.target.value),
+        className: "h-9 rounded-md border border-input bg-background px-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+      }
+    )
+  ] });
+}
+async function downloadExcel(token) {
+  if (!token) {
+    alert("Помилка: не авторизований");
+    return;
+  }
+  try {
+    const response = await fetch("http://localhost:3000/api/reports/export/excel", {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `mc-report-${(/* @__PURE__ */ new Date()).toISOString().split("T")[0]}.xlsx`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.URL.revokeObjectURL(url);
+  } catch (error) {
+    console.error("Export Excel failed:", error);
+    alert(`Помилка експорту Excel: ${error instanceof Error ? error.message : "Невідома помилка"}`);
+  }
+}
+async function downloadPDF(token) {
+  if (!token) {
+    alert("Помилка: не авторизований");
+    return;
+  }
+  try {
+    const response = await fetch("http://localhost:3000/api/reports/export/pdf", {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `mc-report-${(/* @__PURE__ */ new Date()).toISOString().split("T")[0]}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.URL.revokeObjectURL(url);
+  } catch (error) {
+    console.error("Export PDF failed:", error);
+    alert(`Помилка експорту PDF: ${error instanceof Error ? error.message : "Невідома помилка"}`);
+  }
+}
+function ExportButtons({ token }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(Button, { variant: "outline", size: "sm", onClick: () => downloadExcel(token), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Download, { className: "w-4 h-4 mr-1.5" }),
+      "Excel"
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(Button, { variant: "outline", size: "sm", onClick: () => downloadPDF(token), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(FileText, { className: "w-4 h-4 mr-1.5" }),
+      "PDF"
+    ] })
+  ] });
+}
+function InventoryReportView({ data }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-1 pt-4 px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-xs font-medium text-muted-foreground", children: "Усього позицій" }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-4 pb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl font-bold", children: data.total }) })
+      ] }),
+      data.byStatus.map((s2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-1 pt-4 px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-xs font-medium text-muted-foreground", children: STATUS_UA[s2.status] ?? s2.status }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(CardContent, { className: "px-4 pb-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl font-bold", children: s2.count }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground", children: [
+            "кількість: ",
+            s2.quantity
+          ] })
+        ] })
+      ] }, s2.status))
+    ] }),
+    data.byStatus.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "px-6 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-sm", children: "Розподіл за статусом" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-6 pb-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 220, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(BarChart, { data: data.byStatus, margin: { top: 4, right: 16, left: 0, bottom: 4 }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CartesianGrid, { strokeDasharray: "3 3", className: "stroke-border" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          XAxis,
+          {
+            dataKey: "status",
+            tickFormatter: (v) => STATUS_UA[v] ?? v,
+            tick: { fontSize: 12 },
+            className: "fill-muted-foreground"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(YAxis, { tick: { fontSize: 12 }, className: "fill-muted-foreground" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Tooltip,
+          {
+            formatter: (value, name) => [value, name === "count" ? "Позицій" : "Кількість"],
+            labelFormatter: (label) => STATUS_UA[label] ?? label
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Legend, { formatter: (v) => v === "count" ? "Позицій" : "Кількість" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Bar, { dataKey: "count", name: "count", fill: "#3b82f6", radius: [4, 4, 0, 0] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Bar, { dataKey: "quantity", name: "quantity", fill: "#22c55e", radius: [4, 4, 0, 0] })
+      ] }) }) })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "px-6 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardTitle, { className: "text-sm", children: [
+        "Перелік (",
+        data.items.length,
+        ")"
+      ] }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-0 pb-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-auto max-h-96", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Table, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TableHeader, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(TableRow, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Назва" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Статус" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { className: "text-right", children: "Кількість" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Одиниця" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Оновлено" })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TableBody, { children: data.items.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx(TableRow, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { colSpan: 5, className: "text-center text-muted-foreground py-8", children: "Немає даних" }) }) : data.items.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(TableRow, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "font-medium", children: item.name }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "span",
+            {
+              className: cn(
+                "inline-flex px-2 py-0.5 rounded text-xs font-medium",
+                item.status === "government" ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300" : "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300"
+              ),
+              children: STATUS_UA[item.status] ?? item.status
+            }
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-right", children: item.quantity }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { children: item.unit ?? "—" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-muted-foreground", children: formatDate(item.updatedAt) })
+        ] }, item.id)) })
+      ] }) }) })
+    ] })
+  ] });
+}
+function OperationsReportView({ data }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 sm:grid-cols-3 gap-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-1 pt-4 px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-xs font-medium text-muted-foreground", children: "Усього операцій" }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-4 pb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl font-bold", children: data.total }) })
+      ] }),
+      data.byType.map((t2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-1 pt-4 px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-xs font-medium text-muted-foreground", children: TYPE_UA[t2.type] ?? t2.type }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-4 pb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl font-bold", children: t2.count }) })
+      ] }, t2.type))
+    ] }),
+    data.byDay.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "px-6 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-sm", children: "Активність по днях" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-6 pb-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 220, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(LineChart, { data: data.byDay, margin: { top: 4, right: 16, left: 0, bottom: 4 }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CartesianGrid, { strokeDasharray: "3 3", className: "stroke-border" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(XAxis, { dataKey: "date", tick: { fontSize: 11 } }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(YAxis, { tick: { fontSize: 12 }, allowDecimals: false }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { labelFormatter: (v) => `Дата: ${v}`, formatter: (v) => [v, "Операцій"] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Line,
+          {
+            type: "monotone",
+            dataKey: "count",
+            name: "Операцій",
+            stroke: "#3b82f6",
+            strokeWidth: 2,
+            dot: { r: 3 },
+            activeDot: { r: 5 }
+          }
+        )
+      ] }) }) })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "px-6 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CardTitle, { className: "text-sm", children: [
+        "Журнал операцій (",
+        data.operations.length,
+        ")"
+      ] }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-0 pb-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-auto max-h-96", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Table, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TableHeader, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(TableRow, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Дата" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Тип" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "МЦ" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { className: "text-right", children: "Кількість" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { children: "Причина" })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(TableBody, { children: data.operations.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx(TableRow, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { colSpan: 5, className: "text-center text-muted-foreground py-8", children: "Немає операцій за вибраний період" }) }) : data.operations.map((op) => /* @__PURE__ */ jsxRuntimeExports.jsxs(TableRow, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-muted-foreground", children: formatDate(op.createdAt) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-flex px-2 py-0.5 rounded text-xs font-medium bg-primary/10 text-primary", children: TYPE_UA[op.type] ?? op.type }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { children: op.itemName ?? op.itemId }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-right", children: op.quantity }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-muted-foreground", children: op.reason ?? "—" })
+        ] }, op.id)) })
+      ] }) }) })
+    ] })
+  ] });
+}
+function SummaryReportView({ data }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4", children: [
+      { label: "Позицій МЦ", value: data.totalItems },
+      { label: "Загальна кількість", value: data.totalQuantity },
+      { label: "Держ. позицій", value: data.governmentItems },
+      { label: "Волонт. позицій", value: data.volunteerItems },
+      { label: "Операцій", value: data.totalOperations }
+    ].map((kpi) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "pb-1 pt-4 px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-xs font-medium text-muted-foreground", children: kpi.label }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-4 pb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl font-bold", children: kpi.value }) })
+    ] }, kpi.label)) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "px-6 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-sm", children: "МЦ за статусом" }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-6 pb-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 220, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(PieChart, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Pie,
+            {
+              data: data.itemsByStatus,
+              dataKey: "value",
+              nameKey: "name",
+              cx: "50%",
+              cy: "50%",
+              outerRadius: 80,
+              label: ({ name, percent }) => `${name} ${((percent ?? 0) * 100).toFixed(0)}%`,
+              children: data.itemsByStatus.map((_, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(Cell, { fill: PIE_COLORS[idx % PIE_COLORS.length] }, idx))
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { formatter: (v) => [v, "Позицій"] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Legend, {})
+        ] }) }) })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "px-6 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-sm", children: "Операції за типом" }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-6 pb-6", children: data.operationsByType.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-center h-[220px] text-sm text-muted-foreground", children: "Немає операцій за вибраний період" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 220, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          BarChart,
+          {
+            data: data.operationsByType,
+            margin: { top: 4, right: 16, left: 0, bottom: 4 },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CartesianGrid, { strokeDasharray: "3 3", className: "stroke-border" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                XAxis,
+                {
+                  dataKey: "type",
+                  tickFormatter: (v) => TYPE_UA[v] ?? v,
+                  tick: { fontSize: 12 }
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(YAxis, { tick: { fontSize: 12 }, allowDecimals: false }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Tooltip,
+                {
+                  labelFormatter: (v) => TYPE_UA[v] ?? v,
+                  formatter: (v) => [v, "Операцій"]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Bar, { dataKey: "count", name: "Операцій", fill: "#3b82f6", radius: [4, 4, 0, 0] })
+            ]
+          }
+        ) }) })
+      ] })
+    ] }),
+    data.activityByDay.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(Card, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardHeader, { className: "px-6 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardTitle, { className: "text-sm", children: "Активність по днях" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardContent, { className: "px-6 pb-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 200, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(LineChart, { data: data.activityByDay, margin: { top: 4, right: 16, left: 0, bottom: 4 }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(CartesianGrid, { strokeDasharray: "3 3", className: "stroke-border" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(XAxis, { dataKey: "date", tick: { fontSize: 11 } }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(YAxis, { tick: { fontSize: 12 }, allowDecimals: false }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { labelFormatter: (v) => `Дата: ${v}` }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Line,
+          {
+            type: "monotone",
+            dataKey: "операції",
+            stroke: "#3b82f6",
+            strokeWidth: 2,
+            dot: { r: 3 },
+            activeDot: { r: 5 }
+          }
+        )
+      ] }) }) })
+    ] })
+  ] });
+}
+function ReportsScreen() {
+  const { token } = useAuthStore();
+  const [reportType, setReportType] = reactExports.useState("summary");
+  const [dateFrom, setDateFrom] = reactExports.useState(thirtyDaysAgo());
+  const [dateTo, setDateTo] = reactExports.useState(today());
+  const [loading, setLoading] = reactExports.useState(false);
+  const [error, setError] = reactExports.useState(null);
+  const [inventoryData, setInventoryData] = reactExports.useState(null);
+  const [operationsData, setOperationsData] = reactExports.useState(null);
+  const [summaryData, setSummaryData] = reactExports.useState(null);
+  const fetchReport = reactExports.useCallback(async () => {
+    if (!token) return;
+    setLoading(true);
+    setError(null);
+    try {
+      if (reportType === "inventory") {
+        const data = await reportService.getInventoryReport(token);
+        setInventoryData(data);
+      } else if (reportType === "operations") {
+        const data = await reportService.getOperationsReport(token, dateFrom, dateTo);
+        setOperationsData(data);
+      } else {
+        const data = await reportService.getSummaryReport(token, dateFrom, dateTo);
+        setSummaryData(data);
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Помилка завантаження даних");
+    } finally {
+      setLoading(false);
+    }
+  }, [token, reportType, dateFrom, dateTo]);
+  const showDateRange = reportType === "operations" || reportType === "summary";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6 max-w-6xl mx-auto", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-3", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-1 p-1 bg-muted rounded-lg", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          TabButton,
+          {
+            active: reportType === "summary",
+            onClick: () => setReportType("summary"),
+            icon: /* @__PURE__ */ jsxRuntimeExports.jsx(LayoutGrid, { className: "w-4 h-4" }),
+            label: "Зведений"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          TabButton,
+          {
+            active: reportType === "inventory",
+            onClick: () => setReportType("inventory"),
+            icon: /* @__PURE__ */ jsxRuntimeExports.jsx(ChartColumn, { className: "w-4 h-4" }),
+            label: "Інвентар"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          TabButton,
+          {
+            active: reportType === "operations",
+            onClick: () => setReportType("operations"),
+            icon: /* @__PURE__ */ jsxRuntimeExports.jsx(ListOrdered, { className: "w-4 h-4" }),
+            label: "Операції"
+          }
+        )
+      ] }),
+      showDateRange && /* @__PURE__ */ jsxRuntimeExports.jsx(
+        DateRangePicker,
+        {
+          from: dateFrom,
+          to: dateTo,
+          onFromChange: setDateFrom,
+          onToChange: setDateTo
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ExportButtons, { token }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(Button, { onClick: fetchReport, disabled: loading, size: "sm", children: [
+        loading ? /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { className: "w-4 h-4 mr-1.5 animate-spin" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-4 h-4 mr-1.5" }),
+        "Сформувати"
+      ] })
+    ] }),
+    error && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 rounded-md border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm text-destructive", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "w-4 h-4 shrink-0" }),
+      error
+    ] }),
+    !loading && !error && reportType === "inventory" && inventoryData && /* @__PURE__ */ jsxRuntimeExports.jsx(InventoryReportView, { data: inventoryData }),
+    !loading && !error && reportType === "operations" && operationsData && /* @__PURE__ */ jsxRuntimeExports.jsx(OperationsReportView, { data: operationsData }),
+    !loading && !error && reportType === "summary" && summaryData && /* @__PURE__ */ jsxRuntimeExports.jsx(SummaryReportView, { data: summaryData }),
+    !loading && !error && (reportType === "inventory" && !inventoryData || reportType === "operations" && !operationsData || reportType === "summary" && !summaryData) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center justify-center py-20 text-muted-foreground gap-3", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ChartColumn, { className: "w-10 h-10 opacity-30" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm", children: "Натисніть «Сформувати» для отримання звіту" })
+    ] })
+  ] });
+}
 const INDENT = 20;
 function TreeNode({
   group,
@@ -54581,6 +55028,81 @@ function GroupTree({ groups, onContextMenu, onMove }) {
     )
   );
 }
+const BASE_URL = "http://localhost:3000/api";
+async function request(path, init) {
+  const res = await fetch(`${BASE_URL}${path}`, {
+    headers: { "Content-Type": "application/json", ...init.headers },
+    ...init
+  });
+  if (!res.ok) {
+    let message = `HTTP ${res.status}`;
+    try {
+      const body = await res.json();
+      if (body.message) message = body.message;
+    } catch {
+    }
+    throw new Error(message);
+  }
+  if (res.status === 204) return void 0;
+  return res.json();
+}
+function buildTree(flat) {
+  const map2 = /* @__PURE__ */ new Map();
+  flat.forEach((g) => map2.set(g.id, { ...g, children: [] }));
+  const roots = [];
+  for (const g of map2.values()) {
+    if (g.parentId) {
+      const parent = map2.get(g.parentId);
+      if (parent) parent.children.push(g);
+    } else {
+      roots.push(g);
+    }
+  }
+  return roots;
+}
+const groupService = {
+  /** Fetch all groups as a nested tree (up to 4 levels). */
+  async getGroups(token) {
+    const data = await request("/groups/", {
+      method: "GET",
+      headers: { Authorization: `Bearer ${token}` }
+    });
+    const flat = Array.isArray(data) ? data : data.data;
+    const alreadyNested = flat.length > 0 && Array.isArray(flat[0].children);
+    return alreadyNested ? flat : buildTree(flat);
+  },
+  /** Create a new group. parentId=null creates a root group. */
+  async createGroup(token, input) {
+    return request("/groups/", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}` },
+      body: JSON.stringify(input)
+    });
+  },
+  /** Rename an existing group. */
+  async renameGroup(token, id, name) {
+    return request(`/groups/${id}`, {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${token}` },
+      body: JSON.stringify({ name })
+    });
+  },
+  /** Delete a group (and its subtree). */
+  async deleteGroup(token, id) {
+    return request(`/groups/${id}`, {
+      method: "DELETE",
+      headers: { Authorization: `Bearer ${token}` }
+    });
+  },
+  /** Move a group to a new parent (drag-drop). Pass null to make it a root group. */
+  async moveGroup(token, id, parentId) {
+    return request(`/groups/${id}/move`, {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${token}` },
+      body: JSON.stringify({ parentId })
+    });
+  }
+};
 function ContextMenu({ state, onClose, onCreateChild, onRename, onDelete }) {
   const ref = reactExports.useRef(null);
   const canCreateChild = state.group.level < 4;

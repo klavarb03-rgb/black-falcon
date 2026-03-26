@@ -1,3 +1,4 @@
+import { IsNull } from 'typeorm';
 import { Request, Response, NextFunction } from 'express';
 import { getDataSource } from '../database';
 import { Group, Item } from '../entities';
@@ -175,7 +176,7 @@ export async function moveItems(req: Request, res: Response, next: NextFunction)
 
     const itemRepo = ds.getRepository(Item);
     const result = await itemRepo.update(
-      { groupId: group.id, isDeleted: false },
+      { groupId: group.id, deletedAt: IsNull() },
       { groupId: (targetGroupId ?? null) as unknown as string },
     );
 

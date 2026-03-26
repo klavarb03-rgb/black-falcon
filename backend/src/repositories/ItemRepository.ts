@@ -1,4 +1,4 @@
-import { DataSource, Repository } from 'typeorm';
+import { DataSource, Repository, IsNull } from 'typeorm';
 import { Item, ItemStatus, BalanceStatus } from '../entities';
 
 export class ItemRepository {
@@ -10,14 +10,14 @@ export class ItemRepository {
 
   findById(id: string): Promise<Item | null> {
     return this.repo.findOne({
-      where: { id, isDeleted: false },
+      where: { id, deletedAt: IsNull() },
       relations: ['owner', 'group', 'donor'],
     });
   }
 
   findByOwner(ownerId: string): Promise<Item[]> {
     return this.repo.find({
-      where: { ownerId, isDeleted: false },
+      where: { ownerId, deletedAt: IsNull() },
       relations: ['group', 'donor'],
       order: { createdAt: 'DESC' },
     });
@@ -25,14 +25,14 @@ export class ItemRepository {
 
   findByGroup(groupId: string): Promise<Item[]> {
     return this.repo.find({
-      where: { groupId, isDeleted: false },
+      where: { groupId, deletedAt: IsNull() },
       order: { name: 'ASC' },
     });
   }
 
   findByStatus(status: ItemStatus, ownerId?: string): Promise<Item[]> {
     return this.repo.find({
-      where: ownerId ? { status, ownerId, isDeleted: false } : { status, isDeleted: false },
+      where: ownerId ? { status, ownerId, deletedAt: IsNull() } : { status, deletedAt: IsNull() },
       relations: ['owner', 'group'],
     });
   }
@@ -49,7 +49,7 @@ export class ItemRepository {
   }
 
   async softDelete(id: string): Promise<void> {
-    await this.repo.update(id, { isDeleted: true });
+    await this.repo.update(id, { deletedAt: new Date() } as any);
   }
 
   findByBalanceStatus(
@@ -57,7 +57,7 @@ export class ItemRepository {
     balanceStatus: BalanceStatus | 'all',
     role: string,
   ): Promise<Item[]> {
-    const baseWhere = role === 'manager' ? { ownerId, isDeleted: false } : { isDeleted: false };
+    const baseWhere = role === 'manager' ? { ownerId, deletedAt: IsNull() } : { deletedAt: IsNull() };
 
     if (balanceStatus === 'all') {
       return this.repo.find({

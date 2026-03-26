@@ -1,3 +1,4 @@
+import { IsNull } from 'typeorm';
 import { Request, Response, NextFunction } from 'express';
 import { getDataSource } from '../database';
 import { Item } from '../entities';
@@ -59,7 +60,6 @@ export async function createDonor(req: Request, res: Response, next: NextFunctio
       description: description ?? null,
       contactInfo: contactInfo ?? null,
       metadata: metadata ?? null,
-      isDeleted: false,
     });
 
     res.status(201).json({ status: 'success', data: donor });
@@ -120,7 +120,7 @@ export async function linkItemToDonor(req: Request, res: Response, next: NextFun
 
     const ds = await getDataSource();
     const itemRepo = ds.getRepository(Item);
-    const item = await itemRepo.findOne({ where: { id: itemId, isDeleted: false } });
+    const item = await itemRepo.findOne({ where: { id: itemId, deletedAt: IsNull() } });
 
     if (!item) {
       const err: AppError = new Error('Предмет не знайдено');
@@ -159,7 +159,7 @@ export async function getDonorReport(req: Request, res: Response, next: NextFunc
 
     const itemRepo = ds.getRepository(Item);
     const items = await itemRepo.find({
-      where: { donorId: donor.id, isDeleted: false },
+      where: { donorId: donor.id, deletedAt: IsNull() },
       order: { createdAt: 'DESC' },
     });
 

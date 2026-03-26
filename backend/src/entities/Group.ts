@@ -23,29 +23,29 @@ export class Group {
   @Column({ type: 'int', default: 1 })
   level!: number; // 1–4, max depth per requirements
 
-  @Column({ type: 'uuid', nullable: true })
+  @Column({ type: 'uuid', nullable: true, name: 'parent_id' })
   parentId!: string | null;
 
   @ManyToOne(() => Group, (group) => group.children, { nullable: true, onDelete: 'SET NULL' })
-  @JoinColumn({ name: 'parentId' })
+  @JoinColumn({ name: 'parent_id' })
   parent!: Group | null;
 
   @OneToMany(() => Group, (group) => group.parent)
   children!: Group[];
 
-  @Column({ type: 'uuid' })
+  @Column({ type: 'uuid', name: 'user_id' })
   ownerId!: string;
 
   @ManyToOne(() => User, (user) => user.groups, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'ownerId' })
+  @JoinColumn({ name: 'user_id' })
   owner!: User;
 
   @OneToMany(() => Item, (item) => item.group)
   items!: Item[];
 
-  @CreateDateColumn({ type: 'timestamptz' })
+  @CreateDateColumn({ type: 'timestamptz', name: 'created_at' })
   createdAt!: Date;
 
-  @UpdateDateColumn({ type: 'timestamptz' })
+  @UpdateDateColumn({ type: 'timestamptz', name: 'updated_at' })
   updatedAt!: Date;
 }

@@ -1,3 +1,4 @@
+import { IsNull } from 'typeorm';
 import { Request, Response, NextFunction } from 'express';
 import { getDataSource } from '../database';
 import { ItemRepository } from '../repositories/ItemRepository';
@@ -79,7 +80,7 @@ export async function createTransfer(
         name: item.name,
         ownerId: toUserId,
         status: item.status,
-        isDeleted: false,
+        deletedAt: IsNull(),
       },
     });
 
@@ -107,7 +108,7 @@ export async function createTransfer(
         donorId: item.donorId,
         ownerId: toUserId,
         metadata: item.metadata,
-        isDeleted: false,
+        deletedAt: IsNull(),
       });
       receiverItem = await queryRunner.manager.save(Item, receiverItem);
     }

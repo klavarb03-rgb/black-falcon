@@ -1,3 +1,4 @@
+import { IsNull } from 'typeorm';
 import { Request, Response, NextFunction } from 'express';
 import { FindOptionsWhere } from 'typeorm';
 import { getDataSource } from '../database';
@@ -48,8 +49,7 @@ export async function createItem(req: Request, res: Response, next: NextFunction
       groupId: groupId ?? null,
       donorId: donorId ?? null,
       ownerId,
-      metadata: metadata ?? null,
-      isDeleted: false,
+      metadata: metadata ?? {},
       balance_status: balance_status ?? 'off_balance',
       document_number: document_number ?? null,
       document_date: document_date ?? null,
@@ -82,7 +82,7 @@ export async function getItems(req: Request, res: Response, next: NextFunction):
         ? balanceStatusFilter
         : 'all';
 
-    const where: FindOptionsWhere<Item> = { isDeleted: false };
+    const where: FindOptionsWhere<Item> = { deletedAt: IsNull() };
     if (role === 'manager') {
       where.ownerId = userId;
     }
