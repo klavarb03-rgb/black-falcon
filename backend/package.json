@@ -24,7 +24,6 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^25.5.0",
     "@types/pdfkit": "^0.17.5",
     "bcryptjs": "^3.0.3",
     "compression": "^1.8.1",
@@ -41,5 +40,8 @@
     "ts-node": "^10.9.2",
     "typeorm": "^0.3.28",
     "typescript": "^6.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0"
   }
 }

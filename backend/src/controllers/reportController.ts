@@ -7,6 +7,8 @@ import {
   exportOperationsPdf,
   exportDonorExcel,
   exportDonorPdf,
+  exportItemsToExcel,
+  exportItemsToPDF,
   InventoryRow,
   OperationRow,
   DonorRow,
@@ -426,6 +428,98 @@ export async function getDonorReport(req: Request, res: Response, next: NextFunc
     if (format === 'pdf') return void exportDonorPdf(data, res);
 
     res.json({ status: 'success', data });
+  } catch (err) {
+    next(err);
+  }
+}
+
+// ─── Items Export ─────────────────────────────────────────────────────────────
+
+// GET /api/reports/export/excel
+export async function exportItemsExcel(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const ds = await getDataSource();
+    const { role, userId } = req.user!;
+    const isManager = role === 'manager';
+
+    const params: string[] = [];
+    const conditions: string[] = ['deleted_at IS NULL'];
+
+    if (isManager) {
+      params.push(userId);
+      conditions.push(`user_id = $${params.length}`);
+    }
+
+    const whereClause = conditions.length ? `WHERE ${conditions.join(' AND ')}` : '';
+
+    const items = await ds.query(
+      `SELECT
+         i.id,
+         i.name,
+         i.description,
+         i.status,
+         i.quantity,
+         i.unit,
+         i.serial_number,
+         i.barcode,
+         i.created_at,
+         i.updated_at
+       FROM items i
+       ${whereClause}
+       ORDER BY i.name`,
+      params,
+    );
+
+    const buffer = await exportItemsToExcel(items);
+
+    res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    res.setHeader('Content-Disposition', `attachment; filename=mc-report-${Date.now()}.xlsx`);
+    res.send(buffer);
+  } catch (err) {
+    next(err);
+  }
+}
+
+// GET /api/reports/export/pdf
+export async function exportItemsPdf(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const ds = await getDataSource();
+    const { role, userId } = req.user!;
+    const isManager = role === 'manager';
+
+    const params: string[] = [];
+    const conditions: string[] = ['deleted_at IS NULL'];
+
+    if (isManager) {
+      params.push(userId);
+      conditions.push(`user_id = $${params.length}`);
+    }
+
+    const whereClause = conditions.length ? `WHERE ${conditions.join(' AND ')}` : '';
+
+    const items = await ds.query(
+      `SELECT
+         i.id,
+         i.name,
+         i.description,
+         i.status,
+         i.quantity,
+         i.unit,
+         i.serial_number,
+         i.barcode,
+         i.created_at,
+         i.updated_at
+       FROM items i
+       ${whereClause}
+       ORDER BY i.name`,
+      params,
+    );
+
+    const buffer = await exportItemsToPDF(items);
+
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename=mc-report-${Date.now()}.pdf`);
+    res.send(buffer);
   } catch (err) {
     next(err);
   }

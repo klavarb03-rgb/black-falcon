@@ -1,6 +1,7 @@
 import ExcelJS from 'exceljs';
 import PDFDocument from 'pdfkit';
 import { Response } from 'express';
+import { Item } from '../entities/Item';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -476,4 +477,92 @@ export function exportDonorPdf(data: DonorRow[], res: Response): void {
 
   pdfTable(doc, y, columns, rows, data.length > 0 ? totals : undefined);
   doc.end();
+}
+
+// ─── Items (МЦ) Excel ─────────────────────────────────────────────────────────
+
+export async function exportItemsToExcel(items: Item[]): Promise<Buffer> {
+  const workbook = new ExcelJS.Workbook();
+  workbook.creator = 'Black Falcon';
+  workbook.created = new Date();
+
+  const worksheet = workbook.addWorksheet('МЦ');
+
+  const COLS = 7;
+  addTitle(worksheet, 'Реєстр матеріальних цінностей', COLS);
+
+  worksheet.getRow(2).values = [
+    'ID',
+    'Назва',
+    'Опис',
+    'Статус',
+    'Серійний номер',
+    'Штрихкод',
+    'Кількість',
+  ];
+  styleHeader(worksheet, 2, COLS);
+
+  worksheet.columns = [
+    { key: 'id', width: 12 },
+    { key: 'name', width: 32 },
+    { key: 'description', width: 35 },
+    { key: 'status', width: 16 },
+    { key: 'serial_number', width: 18 },
+    { key: 'barcode', width: 18 },
+    { key: 'quantity', width: 12 },
+  ];
+
+  items.forEach((item: any, i: number) => {
+    const r = worksheet.addRow([
+      item.id.substring(0, 8), // short ID
+      item.name,
+      item.description || '-',
+      item.status === 'government' ? 'Державні' : 'Волонтерські',
+      item.serial_number || '-',
+      item.barcode || '-',
+      Number(item.quantity),
+    ]);
+    styleDataRow(worksheet, r.number, COLS, i % 2 === 0);
+    r.getCell(4).alignment = { horizontal: 'center' };
+    r.getCell(5).alignment = { horizontal: 'center' };
+    r.getCell(7).alignment = { horizontal: 'center' };
+  });
+
+  const buffer = await workbook.xlsx.writeBuffer();
+  return Buffer.from(buffer);
+}
+
+// ─── Items (МЦ) PDF ───────────────────────────────────────────────────────────
+
+export async function exportItemsToPDF(items: Item[]): Promise<Buffer> {
+  return new Promise((resolve, reject) => {
+    const doc = new PDFDocument({ margin: 40, size: 'A4' });
+    const buffers: Buffer[] = [];
+
+    doc.on('data', buffers.push.bind(buffers));
+    doc.on('end', () => resolve(Buffer.concat(buffers)));
+    doc.on('error', reject);
+
+    const now = new Date().toLocaleString('uk-UA', { timeZone: 'Europe/Kyiv' });
+    pdfTitle(doc, 'Реєстр матеріальних цінностей', `Сформовано: ${now}`);
+
+    const y = doc.y;
+
+    const columns: PdfColumn[] = [
+      { label: 'Назва', width: 180 },
+      { label: 'Статус', width: 80, align: 'center' },
+      { label: 'Серійний №', width: 100 },
+      { label: 'К-сть', width: 50, align: 'center' },
+    ];
+
+    const rows = items.map((item: any) => [
+      item.name,
+      item.status === 'government' ? 'Державні' : 'Волонтерські',
+      item.serial_number || '-',
+      Number(item.quantity),
+    ]);
+
+    pdfTable(doc, y, columns, rows);
+    doc.end();
+  });
 }
