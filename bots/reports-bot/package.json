@@ -1,0 +1,27 @@
+{
+  "name": "black-falcon-reports-bot",
+  "version": "1.0.0",
+  "description": "Black Falcon Reports Bot - Automated reports and alerts",
+  "main": "dist/bot.js",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/bot.ts",
+    "dev": "tsx watch src/bot.ts",
+    "build": "tsc"
+  },
+  "keywords": ["telegram", "bot", "grammy", "reports", "cron"],
+  "author": "Black Falcon Team",
+  "license": "ISC",
+  "dependencies": {
+    "grammy": "^1.21.1",
+    "dotenv": "^16.4.5",
+    "axios": "^1.6.8",
+    "node-cron": "^3.0.3"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.5",
+    "@types/node-cron": "^3.0.11"
+  }
+}
