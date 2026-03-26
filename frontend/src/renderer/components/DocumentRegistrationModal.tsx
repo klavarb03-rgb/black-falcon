@@ -32,6 +32,14 @@ export function DocumentRegistrationModal({
   const [success, setSuccess] = useState(false)
 
   const firstInputRef = useRef<HTMLInputElement>(null)
+  
+  // Min date: 1 year ago
+  const minDate = new Date()
+  minDate.setFullYear(minDate.getFullYear() - 1)
+  const minDateString = minDate.toISOString().split('T')[0]
+  
+  // Max date: today
+  const maxDateString = new Date().toISOString().split('T')[0]
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -128,8 +136,13 @@ export function DocumentRegistrationModal({
                 type="date"
                 value={documentDate}
                 onChange={(e) => setDocumentDate(e.target.value)}
+                min={minDateString}
+                max={maxDateString}
                 disabled={isSubmitting}
               />
+              <p className="text-xs text-muted-foreground">
+                Виберіть дату не пізніше сьогодні
+              </p>
             </div>
 
             {/* Постачальник */}

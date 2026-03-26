@@ -1,5 +1,5 @@
 import React from 'react'
-import { Package } from 'lucide-react'
+import { Package, FileText, AlertTriangle } from 'lucide-react'
 import {
   Table,
   TableHeader,
@@ -9,6 +9,7 @@ import {
   TableCell,
 } from '@components/ui/table'
 import { Button } from '@components/ui/button'
+import { Badge } from '@components/ui/badge'
 import type { Item, ItemStatus } from '@renderer/services/itemService'
 
 const STATUS_LABELS: Record<ItemStatus, string> = {
@@ -66,6 +67,7 @@ export function ItemsTable({
         <TableRow>
           <TableHead>Назва</TableHead>
           <TableHead>Статус</TableHead>
+          <TableHead>Баланс</TableHead>
           <TableHead className="text-right">Кількість</TableHead>
           <TableHead>Одиниця</TableHead>
           {showActionsColumn && <TableHead className="text-right">Дії</TableHead>}
@@ -76,20 +78,26 @@ export function ItemsTable({
           const isOffBalance = !item.balance_status || item.balance_status === 'off_balance'
           return (
             <TableRow key={item.id}>
-              <TableCell className="font-medium">
-                <span className="flex items-center gap-1.5">
-                  <span title={isOffBalance ? 'Позабаланс (без документів)' : 'На балансі (з документами)'}>
-                    {isOffBalance ? '⚠️' : '📄'}
-                  </span>
-                  {item.name}
-                </span>
-              </TableCell>
+              <TableCell className="font-medium">{item.name}</TableCell>
               <TableCell>
                 <span
                   className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${STATUS_CLASSES[item.status]}`}
                 >
                   {STATUS_LABELS[item.status]}
                 </span>
+              </TableCell>
+              <TableCell>
+                {isOffBalance ? (
+                  <Badge variant="warning">
+                    <AlertTriangle className="w-3 h-3 mr-1" />
+                    Позабаланс
+                  </Badge>
+                ) : (
+                  <Badge variant="success">
+                    <FileText className="w-3 h-3 mr-1" />
+                    З документами
+                  </Badge>
+                )}
               </TableCell>
               <TableCell className="text-right tabular-nums">{item.quantity}</TableCell>
               <TableCell className="text-muted-foreground">{item.unit ?? '—'}</TableCell>
